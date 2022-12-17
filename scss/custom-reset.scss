@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+$color: (
+    bg-basic: #fff,
+    bg-gray: #F5F5F5,
+    bg-point: #F2F8FD,
+    point: #497CFF,
+    point-light: #C7DAFF,
+    black-333: #333,
+    gray-7b: #7B7B7B,
+    gray-b4: #B4B4B4,
+    gray-ddd: #DDD
+);
+
+$font-size: (
+    big: 20px,
+    basic: 16px,
+    small: 14px
+);
+
+$padding-base: 20px;
+
+:root {
+    background-color: map-get($color, bg-gray);
+}
+:root, a, button {
+    color: map-get($color, black-333);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: map-get($font-size , basic);
+}
+
+table, details > p {
+    font-size: map-get($font-size, small);
+}
+
+table {
+    margin: $padding-base*0.4 auto;
+    border-collapse: collapse;
+    th:not(:last-child), td:not(:last-child) {
+        border-right: solid 1px map-get($color, gray-b4);
+    }
+    tbody > tr {
+        border-top: solid 1px map-get($color, gray-b4);
+    }
+    th, td, th[class], td[class] {
+        padding: $padding-base*0.4;
+    }
+}
+
+details {
+    summary {
+        font-weight: 700;
+        padding: $padding-base*0.2;
+    }
+    p.description {
+        padding: $padding-base*0.4;
+    }
+}

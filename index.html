@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>myBoard</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav id="main-menu" class="flex">
+                <ul class="flex left">
+                    <li class="current"><a href="">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                </ul>
+                <div class="flex right">
+                    <a href="">이 웹사이트는 이렇게 만들어졌어요</a>
+                    <a href="">업데이트 정보</a>
+                    <button class="round-bt">Dark Mode</button>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container grid">
+            <section class="card-nude" id="forStudy">
+                <h1 class="title">STUDY with</h1>
+                <div class="card-container">
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/baroutine/index.html">⏰Baroutine</a></li>
+                        <li><a href="https://blog.naver.com/su1324/222957155765">치치 blog</a></li>
+                        <li><a href="https://github.com/Ryusoo-h">Ryusoo-h github</a></li>
+                        <li><a href="https://codepen.io/your-work/">codepen : Your Work</a></li>
+                        <li><a href="https://heropy.blog/2018/11/24/css-flexible-box/">CSS Flex</a> / <a href="https://heropy.blog/2019/08/17/css-grid/">CSS Grid</a> 완벽가이드</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="card scroll-pretty" id="studyList">
+                <h1 class="title bt-line">Study List</h1>
+                <div class="card-container">
+                    <details class="scroll-pretty" open>
+                        <summary>리액트를 다루는 기술</summary>
+                        <p class="description bg-point">공부시작일 : 12/14(수)<br>
+                            공부완료 목표일 : 12/31(토)<br>
+                            총 페이지 : 905p
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="date">날짜</th>
+                                    <th class="page">진행된 페이지<br>(마지막 페이지)</th>
+                                    <th class="progress">총 진행률<br>(%)</th>
+                                    <th class="quota">목표까지 1일 최소 할당량<br>(남은 쪽수 / 남은 일수)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td class="date"></td>
+                                    <td class="page"></td>
+                                    <td class="progress"></td>
+                                    <td class="quota"></td>
+                                </tr> -->
+                                <tr>
+                                    <td class="date">12/18(일)</td>
+                                    <td class="page"></td>
+                                    <td class="progress"></td>
+                                    <td class="quota"></td>
+                                </tr>
+                                <tr>
+                                    <td class="date">12/15(목)</td>
+                                    <td class="page">92p</td>
+                                    <td class="progress">10.165%</td>
+                                    <td class="quota">50p (813p / D-16)</td>
+                                </tr>
+                                <tr>
+                                    <td class="date">12/14(수)</td>
+                                    <td class="page">69p</td>
+                                    <td class="progress">7.624%</td>
+                                    <td class="quota">49p (836p / D-17)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+                    <details class="details2 scroll-pretty" open>
+                        <summary>정보처리기사 - 필기</summary>
+                        <p class="description bg-point">공부시작일 : 11월 중..<br>
+                            1회독 완료 목표일 : 12/31(토)<br>
+                            2회독 완료 목표일 : 1/31 (화) (가능하면 더 빨리!)<br>
+                            <span class="red">원서접수 1.10~1.13</span><br>
+                            3회독 완료 목표일 : 2/12 (일)<br>
+                            <span class="red">필기 제1회 시험 2.13~2.28</span><br>
+                            총 페이지 : 560p + 328p = 888p</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="date">날짜</th>
+                                        <th class="page">진행된 페이지<br>(마지막 페이지)</th>
+                                        <th class="progress">총 진행률<br>(%)</th>
+                                        <th class="quota">목표까지 1일 최소 할당량<br>(남은 쪽수 / 남은 일수)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr>
+                                        <td class="date"></td>
+                                        <td class="page"></td>
+                                        <td class="progress"></td>
+                                        <td class="quota"></td>
+                                    </tr> -->
+                                    <tr>
+                                        <td class="date">~ 11/18(금)</td>
+                                        <td class="page">145p</td>
+                                        <td class="progress">16.328%</td>
+                                        <td class="quota">46p (743p / D-16)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </details>
+                </div>
+            </section>
+            <section class="card" id="youtube">
+                <h1 class="title">노동요</h1>
+                <div class="card-container">
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sqwiXUv0XkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    5pm까지 괜찮았음.. 10pm은 아닌듯
+                </div>
+            </section>
+            <section class="card bg-point scroll-pretty" id="links">
+                <h1 class="title">LINKS</h1>
+                <div class="card-container">
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=gOMljj6K2V0">[유튜브] IPv4주소 체계에 대한 암기사항</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=emGLxi0LvNI">[유튜브] 섬세한 ISFP의 코드 가독성 개선 경험 / if(kakao)2022</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="card" id="">
+                <h1 class="title">new title</h1>
+                <div class="card-container">
+                    내용을 적어주세요
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

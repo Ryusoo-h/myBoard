@@ -1,0 +1,162 @@
+@import 'reset';
+@import 'custom-reset';
+
+.flex {
+    display: flex;
+}
+.grid {
+    display: grid;
+}
+.red {
+    color: red;
+}
+.bg-point {
+    background-color: map-get($color, bg-point);
+}
+
+.container {
+    margin: 0 auto;
+    width: 1520px;
+}
+.round-bt {
+    background-color: map-get($color, black-333);
+    font-weight: 400;
+    border-radius: 25px;
+    color: #87BEFF;
+    padding: $padding-base*0.5 $padding-base*0.6;
+    margin: 0 $padding-base*0.5;
+}
+
+.scroll-pretty {
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 10px; /*스크롤바의 너비*/
+    }
+    &::-webkit-scrollbar-thumb {
+        /*스크롤바*/
+    background-color: map-get($color, bg-basic);
+    border-radius: 5px;
+    border: solid 2px map-get($color, point-light);
+    }
+    &::-webkit-scrollbar-track {
+    /* 스크롤바 트랙*/
+    border-radius: 5px;
+    background-color: map-get($color, point-light);
+    }
+}
+
+
+nav#main-menu {
+    height: 86px;
+
+    &.flex {
+        justify-content: space-between;
+    }
+    .left {
+        &.flex {
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        & > li > a {
+            font-size: map-get($font-size, big);
+            font-weight: 700;
+            padding: $padding-base;
+            text-decoration: none;
+        }
+    }
+    .right {
+        &.flex {
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        & a {
+            font-size: map-get($font-size, small);
+            padding: $padding-base*0.5;
+            text-decoration: none;
+            color: map-get($color, gray-7b);
+            filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.14));
+        }
+    }
+}
+
+main > .grid {
+    grid-template-rows: repeat(6, 117px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: $padding-base;
+    .card {
+        background-color: map-get($color, bg-basic);
+        border-radius: $padding-base*0.5;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+        overflow: auto;
+        &.bg-point {
+            background-color: map-get($color, bg-point);
+        }
+        .card-container {
+            padding: $padding-base*0.4 $padding-base*0.6;
+        }
+        h1.title {
+            padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
+            background-color: map-get($color, bg-basic);
+            position: relative;
+            display: block;
+            &.bt-line::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 2px;
+                width: calc(100% - $padding-base*1.2);
+                background-color: map-get($color, gray-ddd);
+            }
+        }
+    }
+    .card-nude {
+        overflow: auto;
+        h1 {
+            padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
+        }
+    }
+    #forStudy {
+        // grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>;
+        grid-area: 1/1/3/2;
+    }
+    #studyList {
+        grid-area: 1/2/7/3;
+        details[open] {
+            height: 240px;
+            overflow: auto;
+            &.details2 {
+                height: 300px;
+            }
+        }
+        table {
+            .progress {
+                color: map-get($color, point );
+            }
+        }
+    }
+    #youtube {
+        grid-area: 1/3/4/4;
+        .video-wrapper {
+            width: 100%;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+                padding-top: 55%;
+            }
+            iframe {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    #links {
+        grid-area: 4/3/7/4;
+    }
+}
+
