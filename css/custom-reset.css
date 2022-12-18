@@ -10,6 +10,10 @@
   font-size: 16px;
 }
 
+a, a[class] {
+  text-decoration: none;
+}
+
 table, details > p {
   font-size: 14px;
 }

@@ -29,7 +29,9 @@ $padding-base: 20px;
     font-weight: 300;
     font-size: map-get($font-size , basic);
 }
-
+a, a[class] {
+    text-decoration: none;
+}
 table, details > p {
     font-size: map-get($font-size, small);
 }
