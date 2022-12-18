@@ -193,6 +193,10 @@ nav#main-menu .left > li > a {
   font-weight: 700;
   padding: 20px;
   text-decoration: none;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.12));
+}
+nav#main-menu .left > li.current > a {
+  color: #497CFF;
 }
 nav#main-menu .right.flex {
   flex-wrap: wrap;
@@ -203,7 +207,7 @@ nav#main-menu .right a {
   padding: 10px;
   text-decoration: none;
   color: #7B7B7B;
-  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.14));
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.14));
 }
 
 main > .grid {

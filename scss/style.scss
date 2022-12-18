@@ -99,6 +99,10 @@ nav#main-menu {
             font-weight: 700;
             padding: $padding-base;
             text-decoration: none;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.12));
+        }
+        & > li.current > a {
+            color: map-get($color, point);
         }
     }
     .right {
@@ -111,7 +115,7 @@ nav#main-menu {
             padding: $padding-base*0.5;
             text-decoration: none;
             color: map-get($color, gray-7b);
-            filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.14));
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.14));
         }
     }
 }
