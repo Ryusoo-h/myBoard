@@ -13,18 +13,39 @@
 .bg-point {
     background-color: map-get($color, bg-point);
 }
-
 .container {
     margin: 0 auto;
     width: 1520px;
 }
 .round-bt {
     background-color: map-get($color, black-333);
+    color: #87BEFF;
     font-weight: 400;
     border-radius: 25px;
-    color: #87BEFF;
     padding: $padding-base*0.5 $padding-base*0.6;
     margin: 0 $padding-base*0.5;
+}
+@mixin round-bts {
+    background-color: map-get($color, bg-gray);
+    color: map-get($color, gray-b4);
+    font-weight: 700;
+    padding: $padding-base*0.5 $padding-base*0.6;
+    &.current {
+        background-color: map-get($color, point);
+        color: map-get($color, bg-basic);
+    }
+}
+.round-bts {
+    $radius: 7px;
+    font-size: 0;
+    .round-bt-left {
+        @include round-bts;
+        border-radius: $radius 0 0 $radius;
+    }
+    .round-bt-right {
+        @include round-bts;
+        border-radius: 0 $radius $radius 0;
+    }
 }
 
 .scroll-pretty {
@@ -45,6 +66,22 @@
     }
 }
 
+.tab-wrapper {
+    position: relative;
+}
+.tab-wrapper [role=tabpanel] {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+.tab-wrapper [role=tabpanel].current {
+    z-index: 2;
+    opacity: 1;
+}
 
 nav#main-menu {
     height: 86px;
@@ -83,19 +120,29 @@ main > .grid {
     grid-template-rows: repeat(6, 117px);
     grid-template-columns: repeat(3, 1fr);
     gap: $padding-base;
-    .card {
-        background-color: map-get($color, bg-basic);
-        border-radius: $padding-base*0.5;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+    
+    @mixin card-base {
         overflow: auto;
-        &.bg-point {
-            background-color: map-get($color, bg-point);
-        }
         .card-container {
             padding: $padding-base*0.4 $padding-base*0.6;
         }
-        h1.title {
+        .title {
             padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
+        }
+    }
+    .card-nude {
+        @include card-base;
+    }
+    .card {
+        @include card-base;
+        background-color: map-get($color, bg-basic);
+        border-radius: $padding-base*0.5;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+        
+        &.bg-point {
+            background-color: map-get($color, bg-point);
+        }
+        .title {
             background-color: map-get($color, bg-basic);
             position: relative;
             display: block;
@@ -110,12 +157,6 @@ main > .grid {
                 width: calc(100% - $padding-base*1.2);
                 background-color: map-get($color, gray-ddd);
             }
-        }
-    }
-    .card-nude {
-        overflow: auto;
-        h1 {
-            padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
         }
     }
     #forStudy {

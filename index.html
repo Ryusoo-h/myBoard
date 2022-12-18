@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./util/api.js" defer></script>
     <title>myBoard</title>
 </head>
 <body>
@@ -123,12 +124,22 @@
                 </div>
             </section>
             <section class="card" id="youtube">
-                <h1 class="title">노동요</h1>
-                <div class="card-container">
-                    <div class="video-wrapper">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sqwiXUv0XkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="title round-bts playlist-tab" role="tablist">
+                    <button id="study" class="round-bt-left current" role="tab" aria-selected="true">STUDY PLAYLIST</button>
+                    <button id="rest" class="round-bt-right" role="tab">REST PLAYLIST</button>
+                </div>
+                <div class="tab-wrapper">
+                    <div class="card-container study playlist-tab current" role="tabpanel">
+                        <div class="video-wrapper">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sqwiXUv0XkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        5pm까지 괜찮았음.. 10pm은 아닌듯
                     </div>
-                    5pm까지 괜찮았음.. 10pm은 아닌듯
+                    <div class="card-container rest playlist-tab" role="tabpanel">
+                        <div class="video-wrapper">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dp8fgSykQZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="card bg-point scroll-pretty" id="links">
