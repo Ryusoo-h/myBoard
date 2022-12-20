@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="image/favicon34.ico" type="image/x-icon">
     <script src="./util/api.js" defer></script>
     <title>myBoard</title>
 </head>
@@ -15,11 +16,11 @@
         <div class="container">
             <nav id="main-menu" class="flex">
                 <ul class="flex left">
-                    <li class="current"><a href="">Home</a></li>
+                    <li class="current"><a href="/">Home</a></li>
                     <li><a href="">Profile</a></li>
                 </ul>
                 <div class="flex right">
-                    <a href="">이 웹사이트는 이렇게 만들어졌어요</a>
+                    <a href="./page/making-record.html">이 웹사이트는 이렇게 만들어졌어요</a>
                     <a href="">업데이트 정보</a>
                     <button class="round-bt">Dark Mode</button>
 
@@ -30,8 +31,13 @@
     <main>
         <div class="container grid">
             <section class="card-nude" id="forStudy">
-                <h1 class="title">STUDY with</h1>
+                <h1 class="title">STUDY with
+                </h1>
                 <div class="card-container">
+                    <img src="./image/owo.svg" alt="" width="114px" height="114px">
+                    <img src="./image/oAo.svg" alt="" width="114px" height="114px">
+                    <img src="./image/oAoGoGo.svg" alt="" width="114px" height="114px">
+                    <img src="./image/oAoGo.svg" alt="" width="114px" height="114px">
                     <ul>
                         <li><a href="https://blog.naver.com/su1324/222957155765">치치 blog</a></li>
                         <li><a href="https://github.com/Ryusoo-h">Ryusoo-h github</a></li>
@@ -66,10 +72,22 @@
                                     <td class="quota"></td>
                                 </tr> -->
                                 <tr>
+                                    <td class="date">12/20(화)</td>
+                                    <td class="page">180p</td>
+                                    <td class="progress"></td>
+                                    <td class="quota">오늘할당량 : 238p까지</td>
+                                </tr>
+                                <tr>
+                                    <td class="date">12/19(월)</td>
+                                    <td class="page">180p</td>
+                                    <td class="progress">19.889%</td>
+                                    <td class="quota">60p(725p / D-12)</td>
+                                </tr>
+                                <tr>
                                     <td class="date">12/18(일)</td>
-                                    <td class="page">140p</td>
-                                    <td class="progress">15.469%</td>
-                                    <td class="quota">58p(765p / D-13)</td>
+                                    <td class="page">162p</td>
+                                    <td class="progress">17.900%</td>
+                                    <td class="quota">57p(761p / D-13)</td>
                                 </tr>
                                 <tr>
                                     <td class="date">12/15(목)</td>
@@ -112,17 +130,29 @@
                                         <td class="quota"></td>
                                     </tr> -->
                                     <tr>
+                                        <td class="date">~ 12/20(화)</td>
+                                        <td class="page">148p</td>
+                                        <td class="progress"></td>
+                                        <td class="quota">오늘할당량 : 209p까지</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="date">~ 12/19(월)</td>
+                                        <td class="page">148p</td>
+                                        <td class="progress">16.666%</td>
+                                        <td class="quota">61p (740p / D-12)</td>
+                                    </tr>
+                                    <tr>
                                         <td class="date">~ 11/18(금)</td>
                                         <td class="page">145p</td>
                                         <td class="progress">16.328%</td>
-                                        <td class="quota">46p (743p / D-16)</td>
+                                        <td class="quota">57p (743p / D-13)</td>
                                     </tr>
                                 </tbody>
                             </table>
                     </details>
                 </div>
             </section>
-            <section class="card" id="youtube">
+            <section class="card scroll-pretty" id="youtube">
                 <div class="title round-bts playlist-tab" role="tablist">
                     <button id="study" class="round-bt-left current" role="tab" aria-selected="true">STUDY PLAYLIST</button>
                     <button id="rest" class="round-bt-right" role="tab">REST PLAYLIST</button>
@@ -137,6 +167,10 @@
                     <div class="card-container rest playlist-tab" role="tabpanel">
                         <div class="video-wrapper">
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dp8fgSykQZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <br>
+                        <div class="video-wrapper">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iTgcp1oDk2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
