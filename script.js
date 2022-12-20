@@ -29,6 +29,7 @@ class CreateReadingStudyTable {
             </table>
         `;
         let quotaPage = 0;
+        const remainingQuota = quotaPage - this.data.information.memo.current;
         const trList = this.data.information.table.map((item, index) => {
             const progress = ((item.page / this.data.information.totalPage)*100).toFixed(3);
             const remainingPages = this.data.information.totalPage - item.page;
@@ -48,7 +49,7 @@ class CreateReadingStudyTable {
                 <td class="date">${this.data.information.memo.date}</td>
                 <td class="page">${this.data.information.memo.current + 'p'}</td>
                 <td class="progress"></td>
-                <td class="quota">오늘할당량 : ${quotaPage}p까지</td>
+                <td class="quota">할당량 : ${quotaPage}p까지 ${remainingQuota}p남음</td>
             </tr>
         `
 
@@ -66,12 +67,12 @@ const reactVelopert = new CreateReadingStudyTable({
         Dday : '12/31(토)',
         totalPage : 905,
         table : [
-            { date : '12/19(월)', page: 180, Dday: 12},
+            { date : '12/19(월)', page: 180, Dday: 11},
             { date : '12/18(일)', page: 162, Dday: 13},
             { date : '12/15(목)', page: 92, Dday: 16},
             { date : '2/14(수)', page: 69, Dday: 17}
         ],
-        memo : { date : '12/20(화)', current: 184}
+        memo : { date : '12/20(수)', current: 189}
     }
 });
 reactVelopert.render();
@@ -82,10 +83,10 @@ const engineerInformationProcessing = new CreateReadingStudyTable({
         Dday : '12/31(토)',
         totalPage : 888,
         table : [
-            { date : '12/19(월)', page: 148, Dday: 12},
+            { date : '12/19(월)', page: 148, Dday: 11},
             { date : '~11/18(일)', page: 145, Dday: 13},
         ],
-        memo : { date : '12/20(화)', current: 148}
+        memo : { date : '12/20(수)', current: 148}
     }
 });
 engineerInformationProcessing.render();
