@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="image/favicon34.ico" type="image/x-icon">
+    <script src="./script.js" defer></script>
     <script src="./util/api.js" defer></script>
     <title>myBoard</title>
 </head>
@@ -48,109 +49,25 @@
             </section>
             <section class="card scroll-pretty" id="studyList">
                 <h1 class="title bt-line">Study List</h1>
-                <div class="card-container">
+                <div id="react-velopert" class="card-container study-item">
                     <details class="scroll-pretty" open>
                         <summary>리액트를 다루는 기술</summary>
                         <p class="description bg-point">공부시작일 : 12/14(수)<br>
-                            공부완료 목표일 : 12/31(토)<br>
-                            총 페이지 : 905p
+                            공부완료 목표일 : <span class="Dday"></span><br>
+                            총 페이지 : <span class="totalPage"></span>
                         </p>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="date">날짜</th>
-                                    <th class="page">진행된 페이지<br>(마지막 페이지)</th>
-                                    <th class="progress">총 진행률<br>(%)</th>
-                                    <th class="quota">목표까지 1일 최소 할당량<br>(남은 쪽수 / 남은 일수)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <tr>
-                                    <td class="date"></td>
-                                    <td class="page"></td>
-                                    <td class="progress"></td>
-                                    <td class="quota"></td>
-                                </tr> -->
-                                <tr>
-                                    <td class="date">12/20(화)</td>
-                                    <td class="page">180p</td>
-                                    <td class="progress"></td>
-                                    <td class="quota">오늘할당량 : 238p까지</td>
-                                </tr>
-                                <tr>
-                                    <td class="date">12/19(월)</td>
-                                    <td class="page">180p</td>
-                                    <td class="progress">19.889%</td>
-                                    <td class="quota">60p(725p / D-12)</td>
-                                </tr>
-                                <tr>
-                                    <td class="date">12/18(일)</td>
-                                    <td class="page">162p</td>
-                                    <td class="progress">17.900%</td>
-                                    <td class="quota">57p(761p / D-13)</td>
-                                </tr>
-                                <tr>
-                                    <td class="date">12/15(목)</td>
-                                    <td class="page">92p</td>
-                                    <td class="progress">10.165%</td>
-                                    <td class="quota">50p (813p / D-16)</td>
-                                </tr>
-                                <tr>
-                                    <td class="date">12/14(수)</td>
-                                    <td class="page">69p</td>
-                                    <td class="progress">7.624%</td>
-                                    <td class="quota">49p (836p / D-17)</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </details>
                 </div>
-                <div class="card-container">
+                <div id="engineer-information-processing" class="card-container study-item">
                     <details class="details2 scroll-pretty" open>
                         <summary>정보처리기사 - 필기</summary>
                         <p class="description bg-point">공부시작일 : 11월 중..<br>
-                            1회독 완료 목표일 : 12/31(토)<br>
+                            1회독 완료 목표일 : <span class="Dday"></span><br>
                             2회독 완료 목표일 : 1/31 (화) (가능하면 더 빨리!)<br>
                             <span class="red">원서접수 1.10~1.13</span><br>
                             3회독 완료 목표일 : 2/12 (일)<br>
                             <span class="red">필기 제1회 시험 2.13~2.28</span><br>
-                            총 페이지 : 560p + 328p = 888p</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th class="date">날짜</th>
-                                        <th class="page">진행된 페이지<br>(마지막 페이지)</th>
-                                        <th class="progress">총 진행률<br>(%)</th>
-                                        <th class="quota">목표까지 1일 최소 할당량<br>(남은 쪽수 / 남은 일수)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- <tr>
-                                        <td class="date"></td>
-                                        <td class="page"></td>
-                                        <td class="progress"></td>
-                                        <td class="quota"></td>
-                                    </tr> -->
-                                    <tr>
-                                        <td class="date">~ 12/20(화)</td>
-                                        <td class="page">148p</td>
-                                        <td class="progress"></td>
-                                        <td class="quota">오늘할당량 : 209p까지</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="date">~ 12/19(월)</td>
-                                        <td class="page">148p</td>
-                                        <td class="progress">16.666%</td>
-                                        <td class="quota">61p (740p / D-12)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="date">~ 11/18(금)</td>
-                                        <td class="page">145p</td>
-                                        <td class="progress">16.328%</td>
-                                        <td class="quota">57p (743p / D-13)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            총 페이지 : 560p + 328p = <span class="totalPage"></span></p>
                     </details>
                 </div>
             </section>
