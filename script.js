@@ -29,7 +29,6 @@ class CreateReadingStudyTable {
             </table>
         `;
         let quotaPage = 0;
-        const remainingQuota = quotaPage - this.data.information.memo.current;
         const trList = this.data.information.table.map((item, index) => {
             const progress = ((item.page / this.data.information.totalPage)*100).toFixed(3);
             const remainingPages = this.data.information.totalPage - item.page;
@@ -44,6 +43,7 @@ class CreateReadingStudyTable {
                     </tr>
                 `
         }).join('');
+        const remainingQuota = quotaPage - this.data.information.memo.current;
         const trMemo = `
             <tr>
                 <td class="date">${this.data.information.memo.date}</td>
