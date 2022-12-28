@@ -167,17 +167,21 @@ main > .grid {
             }
         }
     }
-    #forStudy {
+    #study-with {
         // grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>;
         grid-area: 1/1/4/2;
     }
+    #have-todo {
+        grid-area: 4/1/6/2;
+    }
+
     #studyList {
         grid-area: 1/2/7/3;
         details[open] {
-            height: 240px;
+            height: 300px;
             overflow: auto;
             &.details2 {
-                height: 300px;
+                height: 380px;
             }
         }
         table {

@@ -64,15 +64,18 @@ class CreateReadingStudyTable {
 const reactVelopert = new CreateReadingStudyTable({
     id : 'react-velopert',
     information : {
-        Dday : '12/31(토)',
+        Dday : '1/7(토)',
         totalPage : 905,
         table : [
-            { date : '12/19(월)', page: 180, Dday: 11},
-            { date : '12/18(일)', page: 162, Dday: 13},
-            { date : '12/15(목)', page: 92, Dday: 16},
-            { date : '2/14(수)', page: 69, Dday: 17}
+            { date : '12/27(화)', page: 317, Dday: 11},
+            { date : '12/26(월)', page: 304, Dday: 12},
+            { date : '12/22(목)', page: 250, Dday: 13},
+            { date : '12/19(월)', page: 180, Dday: 17},
+            { date : '12/18(일)', page: 162, Dday: 21},
+            { date : '12/15(목)', page: 92, Dday: 23},
+            { date : '2/14(수)', page: 69, Dday: 24}
         ],
-        memo : { date : '12/20(수)', current: 189}
+        memo : { date : '12/28(수)', current: 349}
     }
 });
 reactVelopert.render();
@@ -80,13 +83,14 @@ reactVelopert.render();
 const engineerInformationProcessing = new CreateReadingStudyTable({
     id : 'engineer-information-processing',
     information : {
-        Dday : '12/31(토)',
+        Dday : '1/7(토)',
         totalPage : 888,
         table : [
-            { date : '12/19(월)', page: 148, Dday: 11},
-            { date : '~11/18(일)', page: 145, Dday: 13},
+            { date : '12/27(화)', page: 175, Dday: 11},
+            { date : '12/19(월)', page: 148, Dday: 13},
+            { date : '~11/18(일)', page: 145, Dday: 20},
         ],
-        memo : { date : '12/20(수)', current: 148}
+        memo : { date : '12/28(수)', current: 175}
     }
 });
 engineerInformationProcessing.render();
