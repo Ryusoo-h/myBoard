@@ -17,6 +17,9 @@
     margin: 0 auto;
     width: 1520px;
 }
+a:hover {
+    color: map-get($color, point );
+}
 .round-bt {
     background-color: map-get($color, black-333);
     color: #87BEFF;

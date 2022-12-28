@@ -110,6 +110,10 @@ details p.description {
   width: 1520px;
 }
 
+a:hover {
+  color: #497CFF;
+}
+
 .round-bt {
   background-color: #333;
   color: #87BEFF;
