@@ -67,6 +67,8 @@ const reactVelopert = new CreateReadingStudyTable({
         Dday : '1/7(토)',
         totalPage : 905,
         table : [
+            { date : '12/29(목)', page: 381, Dday: 9},
+            { date : '12/28(수)', page: 355, Dday: 10},
             { date : '12/27(화)', page: 317, Dday: 11},
             { date : '12/26(월)', page: 304, Dday: 12},
             { date : '12/22(목)', page: 250, Dday: 13},
@@ -75,7 +77,7 @@ const reactVelopert = new CreateReadingStudyTable({
             { date : '12/15(목)', page: 92, Dday: 23},
             { date : '2/14(수)', page: 69, Dday: 24}
         ],
-        memo : { date : '12/28(수)', current: 349}
+        memo : { date : '12/30(금)', current: 383}
     }
 });
 reactVelopert.render();
@@ -86,11 +88,13 @@ const engineerInformationProcessing = new CreateReadingStudyTable({
         Dday : '1/7(토)',
         totalPage : 888,
         table : [
+            { date : '12/29(목)', page: 233, Dday: 9},
+            { date : '12/28(수)', page: 184, Dday: 10},
             { date : '12/27(화)', page: 175, Dday: 11},
             { date : '12/19(월)', page: 148, Dday: 13},
             { date : '~11/18(일)', page: 145, Dday: 20},
         ],
-        memo : { date : '12/28(수)', current: 175}
+        memo : { date : '12/30(금)', current: 233}
     }
 });
 engineerInformationProcessing.render();
