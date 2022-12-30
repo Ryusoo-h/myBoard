@@ -175,9 +175,9 @@ main > .grid {
         ul.list-round {
             li {
                 background-color: map-get($color, bg-basic);
-                padding: $padding-base/4 $padding-base/2;
-                border-radius: $padding-base/2;
-                margin: $padding-base/4 0 $padding-base/2;
+                padding: $padding-base*0.4 $padding-base*0.5;
+                border-radius: $padding-base*0.5;
+                margin: $padding-base*0.25 0 $padding-base*0.5;
                 box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
                 &, a {
                     font-size: map-get($font-size, small);
