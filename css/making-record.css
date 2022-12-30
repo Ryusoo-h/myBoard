@@ -200,6 +200,10 @@ details p.description {
   width: 1520px;
 }
 
+a:hover {
+  color: #497CFF;
+}
+
 .round-bt {
   background-color: #333;
   color: #87BEFF;
@@ -357,6 +361,15 @@ main > .grid .card .title.bt-line::after {
   width: calc(100% - 24px);
   background-color: #DDD;
 }
+main > .grid .card ul.list-round li {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px 0 10px;
+}
+main > .grid .card ul.list-round li, main > .grid .card ul.list-round li a {
+  font-size: 14px;
+}
 main > .grid #study-with {
   grid-area: 1/1/4/2;
 }
@@ -396,6 +409,18 @@ main > .grid #youtube .video-wrapper iframe {
 }
 main > .grid #links {
   grid-area: 4/3/7/4;
+}
+main > .grid #links ul a > span {
+  font-weight: 500;
+}
+main > .grid #links ul a > span.youtube {
+  color: #d12121;
+}
+main > .grid #links ul a > span.velog {
+  color: #068b5f;
+}
+main > .grid #links ul a > span .wishket {
+  color: #0d5dbe;
 }
 main > .grid #baroutine {
   grid-area: 7/1/14/4;
