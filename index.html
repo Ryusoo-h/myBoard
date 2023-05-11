@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./image/favicon34.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="./image/favicon34.ico" type="image/x-icon">
-    <script src="./script.js" defer></script>
-    <script src="./util/api.js" defer></script>
+    <link rel="stylesheet" href="./css/page-home.css">
+    <link rel="stylesheet" href="./util/tabMenu.style.css">
+    <script type="module" src="./util/tabMenu.js" defer></script>
+    <script type="module" src="./script/page-home/createReadingStudyTable.js" defer></script>
+    <script type="module" src="./script/page-home/printQuickLinksList.js" defer></script>
+    <script type="module" src="./script/page-home/pirintLinksList.js" defer></script>
+    <script type="module" src="./util/calculateDday.js" defer></script>
+    <script type="module" src="./util/changeTheme.js" defer></script>
     <title>myBoard</title>
 </head>
 <body>
@@ -17,35 +22,37 @@
         <div class="container">
             <nav id="main-menu" class="flex">
                 <ul class="flex left">
-                    <li class="current"><a href="/">Home</a></li>
-                    <li><a href="">Profile</a></li>
+                    <li class="current"><a href="/myBoard/">Home</a></li>
+                    <li><a href="/baroutine/" target="_blank">Baroutine <span class="link-icon"></span></a></li>
+                    <li><a href="./blog" class="disabled">Blog(준비중)</a></li>
+                    <li><a href="" class="disabled">Profile(준비중)</a></li>
                 </ul>
                 <div class="flex right">
-                    <a href="./page/making-record.html">이 웹사이트는 이렇게 만들어졌어요</a>
-                    <a href="">업데이트 정보</a>
-                    <button class="round-bt">Dark Mode</button>
-
+                    <a href="./making-record">이 웹사이트는 이렇게 만들어졌어요</a>
+                    <button id="change-theme" class="round-bt">Dark Mode</button>
                 </div>
             </nav>
         </div>
     </header>
     <main>
         <div class="container grid">
-            <section class="card-nude" id="study-with">
+            <section class="card-nude" id="study-for">
                 <h1 class="title">STUDY with
                 </h1>
                 <div class="card-container">
-                    <img src="./image/owo.svg" alt="" width="114px" height="114px">
-                    <img src="./image/oAo.svg" alt="" width="114px" height="114px">
-                    <img src="./image/oAoGoGo.svg" alt="" width="114px" height="114px">
-                    <img src="./image/oAoGo.svg" alt="" width="114px" height="114px">
-                    <ul>
-                        <li><a href="https://github.com/Ryusoo-h">Ryusoo-h github</a></li>
-                        <li><a href="https://codepen.io/your-work/">codepen : Your Work</a></li>
-                        <li><a href="https://ryu-soohyeon.notion.site/VSCode-1dc7b5361f1e40b49f509709c5b34747">내 설정 VSCode 단축키</a></li>
-                        <li><a href="https://heropy.blog/2018/11/24/css-flexible-box/">CSS Flex</a> / <a href="https://heropy.blog/2019/08/17/css-grid/">CSS Grid</a> 완벽가이드</li>
-                        <li><a href="https://flexboxfroggy.com/#ko">[게임]Flexbox Froggy</a></li>
+                    <div class="wrapper flex">
+                        <img src="./image/owo.svg" alt="" width="114px" height="114px">
+                        <!-- <img src="./image/oAo.svg" alt="" width="114px" height="114px">
+                        <img src="./image/oAoGo.svg" alt="" width="114px" height="114px">
+                        <img src="./image/oAoGoGo.svg" alt="" width="114px" height="114px"> -->
+                        <h2>5월 요약 <br> "나한테 왜그래..수술 2트?"</h2>
+                    </div>
+                    <ul class="underline-list">
+                        <li>💊 <span id="healing-time" class="bold"></span> 수술 회복기 (5/4)</li>
+                        <li>🚩 <span id="engineer-info-test" class="bold"></span> 정처기 필기 (6/1)</li>
+                        <li>🚩 <span id="sqld-test" class="bold" ></span> SQLD (6/10) </li>
                     </ul>
+
                 </div>
             </section>
             <section class="card scroll-pretty" id="studyList">
@@ -62,89 +69,97 @@
                 <div id="engineer-information-processing" class="card-container study-item">
                     <details class="details2 scroll-pretty" open>
                         <summary>정보처리기사 - 필기</summary>
-                        <p class="description bg-point">공부시작일 : 11월 중..<br>
-                            1회독 완료 목표일 : <span class="Dday"></span><br>
-                            2회독 완료 목표일 : 1/31 (화) (가능하면 더 빨리!)<br>
-                            <span class="red">원서접수 1.10~1.13</span><br>
-                            3회독 완료 목표일 : 2/12 (일)<br>
-                            <span class="red">필기 제1회 시험 2.13~2.28</span><br>
-                            총 페이지 : 560p + 328p = <span class="totalPage"></span></p>
+                        <p class="description bg-point">
+                            <span class="red">필기 시험 일정 : <span class="Dday">6/1(목)</span></span><br>
+                            총 페이지 : 560p + 328p = <span class="totalPage">888p</span></p>
+                    </details>
+                </div>
+                <div id="sqld" class="card-container study-item">
+                    <details class="details2 scroll-pretty" open>
+                        <summary>SQLD</summary>
+                        <p class="description bg-point">
+                            <!-- 임의록 직접 입력함. 강의 기록 스크립트 만들기 -->
+                            <span class="red">시험 일정 : <span class="Dday">6/10(토)</span></span><br>
+                            문제 : <span class="totalPage">146문</span>, 복습 : 5장</p>
                     </details>
                 </div>
             </section>
-            <section class="card scroll-pretty" id="youtube">
-                <div class="title round-bts playlist-tab" role="tablist">
-                    <button id="study" class="round-bt-left current" role="tab" aria-selected="true">STUDY PLAYLIST</button>
-                    <button id="rest" class="round-bt-right" role="tab">REST PLAYLIST</button>
+            <section class="card" id="quick-links">
+                <div class="title-wrapper under-shadow">
+                    <h1 class="title">Link for</h1>
+                    <span class="round-bts quick-links-tab" role="tablist">
+                        <button id="quick-links-dev" class="round-bt-left current" role="tab" aria-selected="true">DEVELOP</button>
+                        <button id="quick-links-des" class="round-bt-right" role="tab">DESIGN</button>
+                    </span>
+                </div>
+                <div class="tab-wrapper bg-point">
+                    <div class="quick-links-dev quick-links-tab card-container scroll-pretty current" role="tabpanel">
+                        <ul id="quick-links-dev-list" class="sub-title-list">
+                            <!-- PrintquickLinksDevList -->
+                        </ul>
+                    </div>
+                    <div class="quick-links-des quick-links-tab card-container scroll-pretty" role="tabpanel">
+                        <ul id="quick-links-des-list" class="sub-title-list">
+                            <!-- PrintquickLinksDesList -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="card bg-point" id="links">
+                <h1 class="title under-shadow">LINKS : 시간내서 봐👀</h1>
+                <div class="card-container scroll-pretty">
+                    <ul id="to-do-reading-list" class="round-block-list">
+                        <!-- PrintTodoReadingList -->
+                    </ul>
+                    <ul class="round-block-list">
+                        <li><span class="disabled">이 아래는 읽은 글 입니다. 나중에 UI 분리하자..</span></li>
+                        <li><a href="https://velog.io/@gabdol/CDN%EC%9D%98-%EA%B0%9C%EB%85%90">CDN의 개념</a></li>
+                        <li><a href="https://engineering.linecorp.com/ko/blog/the-baseline-for-web-development-in-2022/">2022년 웹 개발에서 고려해야 할 환경</a></li>
+                        <li><a href="https://velog.io/@eunbinn/javascript-data-structures"><span class="velog">[벨로그]</span> 현실 세계 프런트엔드에서 사용되는 자바스크립트 자료구조: 리액트 코드 예시와 함께</a></li>
+                        <li><a href="https://twitter.com/naradesign/status/1547168785140170753?t=ktl79uAzthxa5pOsjR5mSQ&s=09"><span>트위터</span> 그동안 input 요소의 type="number"를 잘못 사용했을 가능성</a></li>
+                        <li><a href="https://www.aitimes.com/news/articleView.html?idxno=149003"><span>뉴스</span> 포토샵처럼 쉬운 코드 편집…깃허브 코파일럿, ‘코드 브러시’ 공개</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- TODO 딱히.. 안쓸거같은데 이건 없애고 하루 공부 기록을 만들까?
+            <section class="card" id="have-todo">
+                <div class="title-wrapper bt-line">
+                    <h1 class="title">have todo</h1>
+                    <span class="round-bts have-todo-tab" role="tablist">
+                        <button id="have-todo-study" class="round-bt-left current" role="tab" aria-selected="true">Study</button>
+                        <button id="have-todo-books" class="round-bt-center" role="tab">Books</button>
+                        <button id="have-todo-tips" class="round-bt-right" role="tab">Tips</button>
+                    </span>
                 </div>
                 <div class="tab-wrapper">
-                    <div class="card-container study playlist-tab current" role="tabpanel">
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sqwiXUv0XkM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        7am이 가장 활기차서 좋고 10pm부터 텐션 떨어짐..!
-                        <br><br>
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_EtHyY2VTGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <br><br>
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sy1eQIB_QaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <br><br>
+                    <div class="have-todo-study have-todo-tab card-container scroll-pretty current" role="tabpanel">
+                        <ul class="underline-list">
+                            <li><a href="https://www.youtube.com/watch?v=L-x1c4PAUOY&list=PLniy99c_7Zfo2WD2mED6jDX4NyHyKLwbF">[강의추천]정처기 흥달쌤 강의</a></li>
+                            <li><a href="https://twitter.com/boyeonihn/status/1533268566514057216?t=6g2VHNblElRiMpuhTSlvQQ&s=09">개발자 영어공부 유익 사이트들 보고 맞는거 찾아보자</a></li>
+                        </ul>
                     </div>
-                    <div class="card-container rest playlist-tab" role="tabpanel">
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6G6ZbIRh_y8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <br><br>
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iTgcp1oDk2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <br><br>
-                        <div class="video-wrapper">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dp8fgSykQZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <br><br>
+                    <div class="have-todo-books have-todo-tab card-container scroll-pretty" role="tabpanel">
+                        <ul class="underline-list">
+                            <li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=300900143&partner=redmist&start=api">일잘러의 노션 100% 활용법 책</a></li>
+                            <li><a href="https://ridibooks.com/books/2773000059">[책추천]알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라</a></li>
+                            <li><a href="http://www.yes24.com/Product/Goods/111102268?fbclid=paaay5jdvffrigq2x5vqpl0kgmfgubxvh5lltoxm11rg2njq8pui-cjlrsdlo">하루 5분 UX 책</a></li>
+                        </ul>
+                    </div>
+                    <div class="have-todo-tips have-todo-tab card-container scroll-pretty" role="tabpanel">
+                        <ul class="underline-list">
+                            <li><a href="https://www.youtube.com/watch?v=3LO8L4Dyx8Y&list=PLEUGW5cJsuGIy5eSaNzAFxEMniBqnSAc6">주말에 휘낭시에 만들까?!</a></li>
+                            <li><a href="https://m.blog.naver.com/bondi_flower/221751726936">나도 귀여운 마우스 커서 갖고싶다</a></li>
+                            <li><a href="https://twitter.com/ccxxnks1/status/1592055195953156097?t=xF6ZGDsQEuBIhxO7BSAafw&s=32">무장아찌 만들기</a></li>
+                            <li><a href="https://jinjja-seoul.com/mytheme/570">진짜서울 | 고양시 최대 아웃풋</a></li>
+                            <li>언젠가 제주도 여행 가겠지 : <a href="https://twitter.com/boromm_/status/1593963626058371074">제주도 3n 방문 단골 맛집</a></li>
+                        </ul>
                     </div>
                 </div>
-            </section>
-            <section class="card bg-point scroll-pretty" id="links">
-                <h1 class="title">LINKS : 시간날때 봐👀</h1>
-                <div class="card-container">
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=gOMljj6K2V0">[유튜브] IPv4주소 체계에 대한 암기사항</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=emGLxi0LvNI">[유튜브] 섬세한 ISFP의 코드 가독성 개선 경험 / if(kakao)2022</a></li>
-                        <li><a href="https://react.vlpt.us/">[강의 문서] 벨로퍼트와 함께하는 모던 리액트</a></li>
-                        <li><a href="https://velog.io/@eunbinn/javascript-data-structures">[벨로그] 현실 세계 프런트엔드에서 사용되는 자바스크립트 자료구조: 리액트 코드 예시와 함께</a></li>
-                        <li><a href="https://yozm.wishket.com/magazine/detail/1593/">[요즘IT] 좋은 개발 스터디를 운영하는 법</a></li>
-                        <li><a href="https://develop-neoguri.notion.site/2022-12-05-Map-Set-4d70e376137a48e3b781a626528fc0d0">[타자치는 너구리님의 노션]Map Set 정리</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=tDZROpAdJ9w">[유튜브] 개발자 면접 단골질문 자바스크립트 this</a></li>
-                        <li><a href="https://medium.com/hcleedev/web-%EB%B2%84%EA%B7%B8-%EB%A6%AC%ED%8F%AC%ED%8C%85%EC%9D%84-%EC%9C%84%ED%95%9C-sentry-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0-react-webpack-b9690b8f5b45">[블로그] 버그 리포팅을 위한 Sentry : React에 적용하기</a></li>
-                    </ul>
-                </div>
-            </section>
-            <section class="card" id="have-todo">
-                <h1 class="title">have todo</h1>
-                <div class="card-container">
-                    <ul>
-                        <li>설거지</li>
-                        <li>스키장준비 : 모자, 내복, 장갑 사기</li>
-                        <li>겨울준비 : 기모바지사기</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="card" id="want-todo">
-                <h1 class="title">want todo</h1>
-                <div class="card-container">
-                    꿈의 집 3D모델링
-                </div>
-            </section>
+            </section> -->
             <!-- <section class="card" id="">
                 <h1 class="title">new title</h1>
                 <div class="card-container">
                     내용을 적어주세요
-                    
                     나중에 만들것
                     1. 운동 기록 : 운동한 날짜 / 운동한 목록 / 강도
                         데이터 : 2023년 운동한 날짜 / 365일 (n%)
@@ -155,12 +170,6 @@
                         월별 + 간단한 후기 + 어떤 내용을 배웠는지
                 </div>
             </section> -->
-            <section class="card-nude" id="baroutine">
-                <h1 class="title"><a href="https://github.com/Ryusoo-h/baroutine">⏰ Baroutine : link to github</a></h1>
-                <div class="card-container">
-                    <iframe src="https://ryusoo-h.github.io/baroutine/" title="내용" width="100%" height="860px"></iframe>
-                </div>
-            </section>
         </div>
     </main>
     <footer>

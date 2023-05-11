@@ -1,0 +1,104 @@
+@import 'reset';
+@import 'custom-reset';
+@import 'style';
+
+a {
+    $border: 3px;
+    $border-color: var(--font-color);
+    $hover-border-color: var(--point);
+    .link-icon {
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        vertical-align: middle;
+        border-width: $border;
+        border-style: solid;
+        border-image: linear-gradient(45deg, $border-color 63%, transparent 63%, transparent 73%, $border-color 73%) 1;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -80%) rotate(-45deg);
+            display: block;
+            width: 0.6em;
+            height: $border;
+            background-color: $border-color;
+        }
+    }
+    &:hover .link-icon {
+        border-image: linear-gradient(45deg, $hover-border-color 63%, transparent 63%, transparent 73%, $hover-border-color 73%) 1;
+        &::after {
+            background-color: $hover-border-color;
+        }
+    }
+}
+
+main > .grid {
+    #study-for {
+        .wrapper {
+            padding: 0.5rem 0;
+            &.flex {
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+        }
+    }
+    #studyList {
+        details[open] {
+            max-height: 500px;
+            overflow: auto;
+        }
+        table {
+            .progress {
+                color: var(--point);
+            }
+        }
+    }
+    #quick-links {
+        grid-area: 1/3/4/4;
+        .tab-wrapper {
+            flex-grow: 1;
+            .card-container {
+                height: -webkit-fill-available;
+            }
+        }
+    }
+    #links {
+        ul a {
+            font-weight: 500;
+        }
+    }
+    #have-todo {
+        .tab-wrapper {
+            flex-grow: 1;
+            .card-container {
+                height: -webkit-fill-available;
+            }
+        }
+    }
+
+    // 메인 그리드 스타일
+    grid-template-rows: repeat(6, 120px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: $padding-base;
+    #study-for {
+        // grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>;
+        grid-area: 1/1/4/2;
+    }
+    #quick-links {
+        grid-area: 4/1/7/2;
+    }
+
+    #studyList {
+        grid-area: 1/2/7/3;
+    }
+
+    #links {
+        grid-area: 1/3/7/4;
+    }
+    // #have-todo {
+    //     grid-area: 4/3/7/4;
+    // }
+}

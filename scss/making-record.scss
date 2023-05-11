@@ -4,7 +4,7 @@
 
 .ic-arrow-left {
     position: relative;
-    $border-color: map-get($color, black-333);
+    $border-color: var(--font-color);
     &::before {
         content: '';
         display: inline-block;

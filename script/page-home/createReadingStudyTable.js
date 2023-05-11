@@ -3,7 +3,6 @@
 class CreateReadingStudyTable {
     constructor(data) {
         this.data = data;
-        
     }
 
     render() {
@@ -64,9 +63,14 @@ class CreateReadingStudyTable {
 const reactVelopert = new CreateReadingStudyTable({
     id : 'react-velopert',
     information : {
-        Dday : '1/7(토)',
+        Dday : '5/14(일)',
         totalPage : 905,
         table : [
+            { date : '5/8(수)', page: 752, Dday: 5},
+            { date : '5/7(일)', page: 714, Dday: 6},
+            { date : '1/3(화)', page: 468, Dday: 5},
+            { date : '1/2(월)', page: 442, Dday: 6},
+            { date : '12/30(금)', page: 412, Dday: 6},
             { date : '12/29(목)', page: 381, Dday: 9},
             { date : '12/28(수)', page: 355, Dday: 10},
             { date : '12/27(화)', page: 317, Dday: 11},
@@ -75,9 +79,9 @@ const reactVelopert = new CreateReadingStudyTable({
             { date : '12/19(월)', page: 180, Dday: 17},
             { date : '12/18(일)', page: 162, Dday: 21},
             { date : '12/15(목)', page: 92, Dday: 23},
-            { date : '2/14(수)', page: 69, Dday: 24}
+            { date : '12/14(수)', page: 69, Dday: 24}
         ],
-        memo : { date : '12/30(금)', current: 383}
+        memo : { date : '5/14(일)', current: 752}
     }
 });
 reactVelopert.render();
@@ -85,18 +89,20 @@ reactVelopert.render();
 const engineerInformationProcessing = new CreateReadingStudyTable({
     id : 'engineer-information-processing',
     information : {
-        Dday : '1/7(토)',
+        Dday : '6/1(목)',
         totalPage : 888,
         table : [
-            { date : '12/29(목)', page: 233, Dday: 9},
+            { date : '1/3(화)', page: 303, Dday: 5},
+            { date : '1/2(월)', page: 270, Dday: 6},
+            { date : '12/29(목)', page: 233, Dday: 6},
             { date : '12/28(수)', page: 184, Dday: 10},
             { date : '12/27(화)', page: 175, Dday: 11},
             { date : '12/19(월)', page: 148, Dday: 13},
             { date : '~11/18(일)', page: 145, Dday: 20},
         ],
-        memo : { date : '12/30(금)', current: 233}
+        memo : { date : '1/3(화)', current: 314}
     }
 });
-engineerInformationProcessing.render();
+// engineerInformationProcessing.render();
 
 

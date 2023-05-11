@@ -7,43 +7,60 @@
 .grid {
     display: grid;
 }
-.red {
-    color: red;
-}
-.bg-point {
-    background-color: map-get($color, bg-point);
-}
 .container {
     margin: 0 auto;
     width: 1520px;
 }
-a:hover {
-    color: map-get($color, point );
+
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
+
+// 색상
+.red {
+    color: var(--red);
+}
+.bg-point {
+    background-color: var(--bg-point);
+}
+
+// 둥근 버튼
 .round-bt {
-    background-color: map-get($color, black-333);
-    color: #87BEFF;
+    background-color: var(--font-color);
+    color: var(--point);
     font-weight: 400;
     border-radius: 25px;
     padding: $padding-base*0.5 $padding-base*0.6;
     margin: 0 $padding-base*0.5;
 }
 @mixin round-bts {
-    background-color: map-get($color, bg-gray);
-    color: map-get($color, gray-b4);
+    background-color: var(--bg-basic);
+    color: var(--line-color);
     font-weight: 700;
     padding: $padding-base*0.5 $padding-base*0.6;
     &.current {
-        background-color: map-get($color, point);
-        color: map-get($color, bg-basic);
+        background-color: var(--point);
+        color: var(--bg-content);
     }
 }
 .round-bts {
     $radius: 7px;
     font-size: 0;
+    button:not(:last-child) {
+        margin-right: 2px;
+    }
     .round-bt-left {
         @include round-bts;
         border-radius: $radius 0 0 $radius;
+    }
+    .round-bt-center {
+        @include round-bts;
     }
     .round-bt-right {
         @include round-bts;
@@ -51,6 +68,7 @@ a:hover {
     }
 }
 
+// 스크롤 예쁘게
 .scroll-pretty {
     overflow-y: auto;
     &::-webkit-scrollbar {
@@ -58,37 +76,20 @@ a:hover {
     }
     &::-webkit-scrollbar-thumb {
         /*스크롤바*/
-    background-color: map-get($color, bg-basic);
+    background-color: var(--bg-content);
     border-radius: 5px;
-    border: solid 2px map-get($color, point-light);
+    border: solid 2px var(--point-sub);
     }
     &::-webkit-scrollbar-track {
     /* 스크롤바 트랙*/
     border-radius: 5px;
-    background-color: map-get($color, point-light);
+    background-color: var(--point-sub);
     }
 }
 
-.tab-wrapper {
-    position: relative;
-}
-.tab-wrapper [role=tabpanel] {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-}
-.tab-wrapper [role=tabpanel].current {
-    z-index: 2;
-    opacity: 1;
-}
-
+// 메인 메뉴
 nav#main-menu {
     height: 86px;
-
     &.flex {
         justify-content: space-between;
     }
@@ -105,7 +106,7 @@ nav#main-menu {
             filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.12));
         }
         & > li.current > a {
-            color: map-get($color, point);
+            color: var(--point);
         }
     }
     .right {
@@ -117,146 +118,115 @@ nav#main-menu {
             font-size: map-get($font-size, small);
             padding: $padding-base*0.5;
             text-decoration: none;
-            color: map-get($color, gray-7b);
+            color: var(--font-color-sub);
             filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.14));
         }
     }
 }
 
-main > .grid {
-    grid-template-rows: repeat(13, 117px);
-    grid-template-columns: repeat(3, 1fr);
-    gap: $padding-base;
-    
-    @mixin card-base {
-        overflow: auto;
-        .card-container {
-            padding: $padding-base*0.4 $padding-base*0.6;
-            flex-grow: 1;
-        }
-        .title {
-            padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
-            a {
-                font-size: map-get($font-size, big);
-                font-weight: 700;
-            }
-        }
+// 카드 디자인
+@mixin card-base {
+    overflow: auto;
+    $title-padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
+    .card-container {
+        padding: $padding-base*0.4 $padding-base*0.6;
+        flex-grow: 1;
     }
-    .card-nude {
-        @include card-base;
-    }
-    .card {
-        @include card-base;
-        background-color: map-get($color, bg-basic);
-        border-radius: $padding-base*0.5;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
-        display: flex;
-        flex-direction: column;
-
-        &.bg-point {
-            background-color: map-get($color, bg-point);
+    .title{
+        margin: 0;
+        padding: $title-padding;
+        color: var(--point);
+        a {
+            font-size: map-get($font-size, big);
+            font-weight: 700;
         }
-        .title {
-            background-color: map-get($color, bg-basic);
-            position: relative;
-            display: block;
-            &.bt-line::after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: 2px;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 2px;
-                width: calc(100% - $padding-base*1.2);
-                background-color: map-get($color, gray-ddd);
-            }
-        }
-        ul.list-round {
-            li {
-                background-color: map-get($color, bg-basic);
-                padding: $padding-base*0.4 $padding-base*0.5;
-                border-radius: $padding-base*0.5;
-                margin: $padding-base*0.25 0 $padding-base*0.5;
-                box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-                &, a {
-                    font-size: map-get($font-size, small);
-                }
-            }
-        }
-
-    }
-    #study-with {
-        // grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>;
-        grid-area: 1/1/4/2;
-    }
-    #have-todo {
-        grid-area: 4/1/6/2;
-    }
-
-    #studyList {
-        grid-area: 1/2/7/3;
-        details[open] {
-            height: 300px;
-            overflow: auto;
-            &.details2 {
-                height: 380px;
-            }
-        }
-        table {
-            .progress {
-                color: map-get($color, point );
-            }
-        }
-    }
-    #youtube {
-        display: flex;
-        flex-direction: column;
-        grid-area: 1/3/4/4;
-        .tab-wrapper {
-            flex-grow: 1;
-            .card-container {
-                height: -webkit-fill-available;
-            }
-        }
-        .video-wrapper {
-            width: 100%;
-            position: relative;
-            &:before {
-                content: '';
-                display: block;
-                padding-top: 55%;
-            }
-            iframe {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
-    }
-    #links {
-        .title {
+        &.under-shadow {
+            z-index: 9;
             box-shadow: 0 0 20px #9eadc948;
         }
-        grid-area: 4/3/7/4;
-        ul a {
-            font-weight: 500;
-            .youtube {
-                color: #d12121;
-            }
-            .velog {
-                color: #068b5f;
-            }
-            .wishket {
-                color: #0d5dbe;
-            }
+    }
+    .title-wrapper {
+        padding: $title-padding;
+        display: flex;
+        align-items: center;
+        .title {
+            padding: 0 $padding-base*0.6 0 0;
+        }
+        &.under-shadow {
+            z-index: 9;
+            box-shadow: 0 0 20px #9eadc948;
         }
     }
-    #baroutine {
-        grid-area: 7/1/14/4;
-        overflow: hidden;
+}
+.card-nude {
+    @include card-base;
+}
+.card {
+    @include card-base;
+    background-color: var(--bg-content);
+    border-radius: $padding-base*0.5;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+
+    &.bg-point {
+        background-color: var(--bg-point);
+    }
+    .title, .title-wrapper {
+        background-color: var(--bg-content);
+        position: relative;
+        &.bt-line::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: calc(100% - $padding-base*1.2);
+            background-color: var(--line-color);
+        }
     }
 }
 
+ul {
+    // 타이틀 리스트
+    &.sub-title-list {
+        & > li {
+            margin: 0.5em 0 1em;
+            font-size: map-get($font-size, big);
+            font-weight: bold;
+            color: var(--point);
+            li {
+                font-size: map-get($font-size, basic);
+                font-weight: normal;
+                color: var(--font-color);
+            }
+        }
+    }
 
+    // 밑줄이 있는 리스트
+    &.underline-list {
+        padding: 0 1rem;
+        & > li {
+            padding: 0.5em;
+            border-bottom: solid 1px var(--line-color);
+        }
+    }
+
+    // 둥근 박스 리스트(a태그가 있는)
+    &.round-block-list {
+        & > li {
+            background-color: var(--bg-content);
+            padding: $padding-base*0.4 $padding-base*0.5;
+            border-radius: $padding-base*0.5;
+            margin: $padding-base*0.25 0 $padding-base*0.5;
+            box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
+            font-size: map-get($font-size, small);
+            a {
+                font-size: map-get($font-size, small);
+                font-weight: bold;
+            }
+        }
+    }
+}

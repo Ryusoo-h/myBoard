@@ -1,10 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+html[data-theme=light] {
+  --bg-basic: #F5F5F5;
+  --bg-content: #fff;
+  --bg-point: #F2F8FD;
+  --point: #497CFF;
+  --point-sub: #C7DAFF;
+  --font-color: #333;
+  --font-color-sub: #7B7B7B;
+  --line-color: #B4B4B4;
+  --red: #fb2222;
+}
+html[data-theme=light] #change-theme {
+  background-color: var(--font-color);
+  color: #a7bfff;
+}
+
+html[data-theme=dark] {
+  --bg-basic: #080912;
+  --bg-content: #191d28;
+  --bg-point: #2c303c;
+  --point: #a7bfff;
+  --point-sub: #365085;
+  --font-color: #b3b5c0;
+  --font-color-sub: #a4a6af;
+  --line-color: #525466;
+  --red: #ff7b7b;
+}
+html[data-theme=dark] #change-theme {
+  background-color: var(--point);
+  color: var(--point-sub);
+}
+
 :root {
-  background-color: #F5F5F5;
+  --bg-basic: #F5F5F5;
+  --bg-content: #fff;
+  --bg-point: #F2F8FD;
+  --point: #497CFF;
+  --point-sub: #C7DAFF;
+  --font-color: #333;
+  --font-color-sub: #7B7B7B;
+  --line-color: #B4B4B4;
+  --red: #fb2222;
+  background-color: var(--bg-basic);
 }
 
 :root, a, button {
-  color: #333;
+  color: var(--font-color);
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -12,6 +53,10 @@
 
 a, a[class] {
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--point);
 }
 
 table, details > p {
@@ -23,10 +68,10 @@ table {
   border-collapse: collapse;
 }
 table th:not(:last-child), table td:not(:last-child) {
-  border-right: solid 1px #B4B4B4;
+  border-right: solid 1px var(--line-color);
 }
 table tbody > tr {
-  border-top: solid 1px #B4B4B4;
+  border-top: solid 1px var(--line-color);
 }
 table th, table td, table th[class], table td[class] {
   padding: 8px;
@@ -38,4 +83,8 @@ details summary {
 }
 details p.description {
   padding: 8px;
+}
+
+.bold {
+  font-weight: bold;
 }

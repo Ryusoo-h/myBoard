@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/making-record.css">
+    <link rel="shortcut icon" href="../image/favicon34.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/making-record.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="../image/favicon34.ico" type="image/x-icon">
-    <script src="./util/api.js" defer></script>
     <title>myBoard</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class="container">
             <nav id="main-menu" class="flex">
                 <ul class="flex left">
-                    <li><a class="ic-arrow-left" href="/">back to Home</a></li>
+                    <li><a class="ic-arrow-left" href="/myBoard/">back to Home</a></li>
                 </ul>
             </nav>
         </div>
@@ -89,6 +89,19 @@
                     <h2>당장 쓰고싶어서 만듬!</h2>
                     <ul>
                         <li>나를 관리할 MyBoard가 필요했음</li>
+                        <li>D-day 기능이 필요하고, 자주 쓸 것 같아 util/calculateDday 함수 만듬</li>
+                        <li>문서에 link가 많아 늘어날수록 불편할것 같아 printLinkList와 printQuickLinksList 클래스를 만들어 분리함</li>
+                    </ul>
+                    <h2>재정비: 2023-05-09~10</h2>
+                    <ul>
+                        <li>블로그 글을 작성하다가 불편해서 깃블로그를 만들어 쓰고자 함!</li>
+                        <li>그런 김에 이전에 만들던 것 수정해서 사용하려고 코드를 수정함
+                            <ul>
+                                <li>페이지가 늘어날거라 폴더 정리를 함</li>
+                                <li>D-day 기능 추가 : 자주 쓸 것 같아 util/calculateDday 함수 만듬</li>
+                                <li>링크 리스트를 문서에서 분리 : 문서에 link가 늘어날 수록 복잡해져서 printLinkList와 printQuickLinksList 클래스를 만들어 출력하도록하고 문서로부터 분리함</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </section>

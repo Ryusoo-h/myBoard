@@ -1,6 +1,7 @@
 
-// tab메뉴 안내
+// 탭메뉴 안내
 // 
+// tabMenu.style.css를 함께 불러와야합니다.
 // 탭메뉴는 같은 [className]으로 메뉴와 내용이 연결되기 때문에 class이름이 겹치지 않게 해주세요
 // ex) list-tab 처럼 구분을 위해 -tab을 붙여주길 바랍니다
 
@@ -70,7 +71,8 @@ const tabMenu = (className) => {
     }
 }
 
-tabMenu('playlist-tab');
+tabMenu('quick-links-tab');
+tabMenu('have-todo-tab');
 // 1. class가 일치하는 DOM 가져오기 (여럿일 수 있음)
 // 2. 가져온 DOM에서 role="tablist" 안의 role="tab" DOM 과
 //    role="tabpanel" 가져오기

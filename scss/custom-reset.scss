@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-$color: (
-    bg-basic: #fff,
-    bg-gray: #F5F5F5,
-    bg-point: #F2F8FD,
-    point: #497CFF,
-    point-light: #C7DAFF,
-    black-333: #333,
-    gray-7b: #7B7B7B,
-    gray-b4: #B4B4B4,
-    gray-ddd: #DDD
-);
+html[data-theme="light"] {
+    --bg-basic: #F5F5F5;
+    --bg-content: #fff;
+    --bg-point: #F2F8FD;
+    --point: #497CFF;
+    --point-sub: #C7DAFF;
+    --font-color: #333;
+    --font-color-sub: #7B7B7B;
+    --line-color: #B4B4B4;
+    --red: #fb2222;
+    #change-theme {
+        background-color: var(--font-color);
+        color: #a7bfff;
+    }
+}
+
+html[data-theme="dark"] {
+    --bg-basic: #080912;
+    --bg-content: #191d28;
+    --bg-point: #2c303c;
+    --point: #a7bfff;
+    --point-sub: #365085;
+    --font-color: #b3b5c0;
+    --font-color-sub: #a4a6af;
+    --line-color: #525466;
+    --red: #ff7b7b;
+    #change-theme {
+        background-color: var(--point);
+        color: var(--point-sub);
+    }
+}
 
 $font-size: (
     big: 20px,
@@ -21,10 +41,19 @@ $font-size: (
 $padding-base: 20px;
 
 :root {
-    background-color: map-get($color, bg-gray);
+    --bg-basic: #F5F5F5;
+    --bg-content: #fff;
+    --bg-point: #F2F8FD;
+    --point: #497CFF;
+    --point-sub: #C7DAFF;
+    --font-color: #333;
+    --font-color-sub: #7B7B7B;
+    --line-color: #B4B4B4;
+    --red: #fb2222;
+    background-color: var(--bg-basic);
 }
 :root, a, button {
-    color: map-get($color, black-333);
+    color: var(--font-color);
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: map-get($font-size , basic);
@@ -32,6 +61,11 @@ $padding-base: 20px;
 a, a[class] {
     text-decoration: none;
 }
+
+a:hover {
+    color: var(--point);
+}
+
 table, details > p {
     font-size: map-get($font-size, small);
 }
@@ -40,10 +74,10 @@ table {
     margin: $padding-base*0.4 auto;
     border-collapse: collapse;
     th:not(:last-child), td:not(:last-child) {
-        border-right: solid 1px map-get($color, gray-b4);
+        border-right: solid 1px var(--line-color);
     }
     tbody > tr {
-        border-top: solid 1px map-get($color, gray-b4);
+        border-top: solid 1px var(--line-color);
     }
     th, td, th[class], td[class] {
         padding: $padding-base*0.4;
@@ -58,4 +92,8 @@ details {
     p.description {
         padding: $padding-base*0.4;
     }
+}
+
+.bold {
+    font-weight: bold;
 }
