@@ -14,14 +14,14 @@ const button = document.querySelector('#change-theme');
 // localStorage에 따라 테마를 바꿔줌
 window.addEventListener('load', function() {
     switch (localStorage.getItem('myBoardTheme')) {
-        case "light":
-            toLight();
-            button.innerText = "Dark Mode";
-            break;
         case "dark":
-        default:
             toDark();
             button.innerText = "Light Mode";
+            break;
+        case "light":
+        default:
+            toLight();
+            button.innerText = "Dark Mode";
             break;
     }
     this.setTimeout(function() { // 버튼 클릭시에는 부드럽게 봐뀌지만, 페이지에 처음 들어왔을때는 즉각 바뀌도록 하기 위함
