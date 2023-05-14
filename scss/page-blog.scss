@@ -14,6 +14,9 @@ html[data-theme="light"] {
     --mark-sub: #fdf5d8;
     --exam: #0fb0c5;
     --exam-sub: #f1f9f9;
+    --table-th: #f0f5fb;
+    --table-th-odd: #e9f0f7;
+    --table-td-odd: #f9f9f9;
     #change-theme {
         background-color: var(--font-color);
         color: #8198d5;
@@ -25,6 +28,9 @@ html[data-theme="dark"] {
     --mark-sub: #100f0e;
     --exam: #649fad;
     --exam-sub: #000b0e;
+    --table-th: #030c20;
+    --table-th-odd: #0a112a;
+    --table-td-odd: #12151e;
     #change-theme {
         background-color: var(--point);
         color: var(--point-sub);
@@ -121,6 +127,36 @@ html[data-theme="dark"] {
         img {
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
             margin: $padding-base*0.5;
+        }
+        table {
+            border-collapse: collapse;
+            border: none;
+            font-size: 16px;
+            line-height: 1.5em;
+            tr, th, td {
+                border: none;
+            }
+            th {
+                background-color: var(--table-th);
+                text-align: center;
+            }
+            td {
+                vertical-align: top;
+            }
+            tbody tr {
+                border-top: solid 1px var(--point-sub);
+                &:nth-child(2n - 1) {
+                    th {
+                        background-color: var(--table-th-odd);
+                    }
+                    td {
+                        background-color: var(--table-td-odd);
+                    }
+                }
+            }
+            th + th, th + td, td + td {
+                border-left: solid 1px var(--bg-content);
+            }
         }
         .title {
             color: var(--font-color);

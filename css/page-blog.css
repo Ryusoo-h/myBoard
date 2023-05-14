@@ -534,6 +534,9 @@ html[data-theme=light] {
   --mark-sub: #fdf5d8;
   --exam: #0fb0c5;
   --exam-sub: #f1f9f9;
+  --table-th: #f0f5fb;
+  --table-th-odd: #e9f0f7;
+  --table-td-odd: #f9f9f9;
 }
 html[data-theme=light] #change-theme {
   background-color: var(--font-color);
@@ -545,6 +548,9 @@ html[data-theme=dark] {
   --mark-sub: #100f0e;
   --exam: #649fad;
   --exam-sub: #000b0e;
+  --table-th: #030c20;
+  --table-th-odd: #0a112a;
+  --table-td-odd: #12151e;
 }
 html[data-theme=dark] #change-theme {
   background-color: var(--point);
@@ -641,6 +647,34 @@ html[data-theme=dark] #change-theme {
 #post > article img, .record > article img {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
   margin: 10px;
+}
+#post > article table, .record > article table {
+  border-collapse: collapse;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+#post > article table tr, #post > article table th, #post > article table td, .record > article table tr, .record > article table th, .record > article table td {
+  border: none;
+}
+#post > article table th, .record > article table th {
+  background-color: var(--table-th);
+  text-align: center;
+}
+#post > article table td, .record > article table td {
+  vertical-align: top;
+}
+#post > article table tbody tr, .record > article table tbody tr {
+  border-top: solid 1px var(--point-sub);
+}
+#post > article table tbody tr:nth-child(2n-1) th, .record > article table tbody tr:nth-child(2n-1) th {
+  background-color: var(--table-th-odd);
+}
+#post > article table tbody tr:nth-child(2n-1) td, .record > article table tbody tr:nth-child(2n-1) td {
+  background-color: var(--table-td-odd);
+}
+#post > article table th + th, #post > article table th + td, #post > article table td + td, .record > article table th + th, .record > article table th + td, .record > article table td + td {
+  border-left: solid 1px var(--bg-content);
 }
 #post > article .title, .record > article .title {
   color: var(--font-color);
