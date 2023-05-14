@@ -1,7 +1,7 @@
 export const post1 = `
     <h1 class="title">[React] 프론트엔드 비지니스 로직 관리</h1>
     <p class="post-date">
-        <span class="creation-date">작성일 : 2023-05-07</span><span class="modification-date">수정일 : 2023-05-07</span>
+        <span class="creation-date">작성일 : 2023-05-06</span><span class="modification-date">수정일 : 2023-05-07</span>
     </p>
     <p class="top-fixed-guide">
         <span class="red font-size-s">* 이 글은 개인적인 학습을 위해 정리한 내용입니다. 보다 자세한 설명과 예시, 코드 등은 원본 글을 보시길 바랍니다!</span>
