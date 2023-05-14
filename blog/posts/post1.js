@@ -1,7 +1,7 @@
 export const post1 = `
     <h1 class="title">[React] 프론트엔드 비지니스 로직 관리</h1>
     <p class="post-date">
-        <span class="creation-date">작성일 : 2023-05-06</span><span class="modification-date">수정일 : 2023-05-07</span>
+        <span class="creation-date">작성일 : 2023-05-06</span><span class="modification-date">수정일 : 2023-05-15</span>
     </p>
     <p class="top-fixed-guide">
         <span class="red font-size-s">* 이 글은 개인적인 학습을 위해 정리한 내용입니다. 보다 자세한 설명과 예시, 코드 등은 원본 글을 보시길 바랍니다!</span>
@@ -12,7 +12,7 @@ export const post1 = `
         </a>
     </blockquote>
     <p>
-        후기: 리액트로 앱을 만들면서 어떤 기준으로, 어떻게 뷰와 로직을 분리 하는것이 좋을지 고민이었는데 그에 대한 예시들과 코드를 볼 수 있어 좋았습니다. 앞으로 코드를 적으며 고민이 될때, 고려하면 좋을 기준과 예시를 다시 참고하고 싶어 요약했습니다.
+        후기: 리액트로 앱을 만들면서 어떤 기준으로, 어떻게 뷰와 로직을 분리 하는것이 좋을지 고민이었는데 그에 대한 예시들과 코드를 볼 수 있어 좋았다. 앞으로 코드를 적으며 고민이 될때, 고려하면 좋을 기준과 예시를 다시 참고하고 싶어 요약했음.
     </p>
 
     <hr>
@@ -51,13 +51,12 @@ export const post1 = `
                     </span>
                 </li>
                 <li>
-                    <b>👍 예시 1</b>
-                    <br>input을 다룰 때 컴포넌트를 분리하면, 상태 변화시 분리된 컴포넌트만 리렌더링될 뿐 전체 Page가 렌더링 되지 않음.
+                    <b>👍 컴포넌트 분리로 리렌더링을 줄임</b>
+                    <br><span class="exam">input을 다룰 때 컴포넌트를 분리하면, 상태 변화시 분리된 컴포넌트만 리렌더링될 뿐 전체 Page가 렌더링 되지 않음.</span>
                 </li>
                 <li>
-                    <b>👍 예시 2</b>
-                    <br>언제든 로직을 편하게 수정할 수 있도록 함
-                    <br><span class="exam">ex) '비밀번호는 8자 이상' 조건에서 '비밀번호는 8자이상 12자 이하'로 조건이 바뀌더라도 수정이 용이하도록</span>        
+                    <b>👍 언제든 로직을 편하게 수정할 수 있도록 함</b>
+                    <br><span class="exam">ex) '비밀번호는 8자 이상' 조건에서 '비밀번호는 8자이상 12자 이하'로 조건이 바뀌더라도 수정이 용이하도록</span>
                 </li>
             </ul>
         </article>
