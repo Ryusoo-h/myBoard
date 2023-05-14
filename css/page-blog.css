@@ -58,39 +58,38 @@ html[data-theme=light] {
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
-  --red: #fb2222;
+  --red: #e72e2e;
 }
 html[data-theme=light] #change-theme {
   background-color: var(--font-color);
-  color: #a7bfff;
+  color: #8198d5;
+}
+html[data-theme=light] ::selection {
+  background: var(--point-sub);
+  color: var(--font-color);
 }
 
 html[data-theme=dark] {
-  --bg-basic: #080912;
-  --bg-content: #191d28;
-  --bg-point: #2c303c;
-  --point: #a7bfff;
+  --bg-basic: #07080e;
+  --bg-content: #0e111c;
+  --bg-point: #191c28;
+  --point: #8198d5;
   --point-sub: #365085;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;
-  --red: #ff7b7b;
+  --red: #c96262;
 }
 html[data-theme=dark] #change-theme {
   background-color: var(--point);
   color: var(--point-sub);
 }
+html[data-theme=dark] ::selection {
+  background: var(--point);
+  color: var(--bg-content);
+}
 
 :root {
-  --bg-basic: #F5F5F5;
-  --bg-content: #fff;
-  --bg-point: #F2F8FD;
-  --point: #497CFF;
-  --point-sub: #C7DAFF;
-  --font-color: #333;
-  --font-color-sub: #7B7B7B;
-  --line-color: #B4B4B4;
-  --red: #fb2222;
   background-color: var(--bg-basic);
 }
 
@@ -196,39 +195,38 @@ html[data-theme=light] {
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
-  --red: #fb2222;
+  --red: #e72e2e;
 }
 html[data-theme=light] #change-theme {
   background-color: var(--font-color);
-  color: #a7bfff;
+  color: #8198d5;
+}
+html[data-theme=light] ::selection {
+  background: var(--point-sub);
+  color: var(--font-color);
 }
 
 html[data-theme=dark] {
-  --bg-basic: #080912;
-  --bg-content: #191d28;
-  --bg-point: #2c303c;
-  --point: #a7bfff;
+  --bg-basic: #07080e;
+  --bg-content: #0e111c;
+  --bg-point: #191c28;
+  --point: #8198d5;
   --point-sub: #365085;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;
-  --red: #ff7b7b;
+  --red: #c96262;
 }
 html[data-theme=dark] #change-theme {
   background-color: var(--point);
   color: var(--point-sub);
 }
+html[data-theme=dark] ::selection {
+  background: var(--point);
+  color: var(--bg-content);
+}
 
 :root {
-  --bg-basic: #F5F5F5;
-  --bg-content: #fff;
-  --bg-point: #F2F8FD;
-  --point: #497CFF;
-  --point-sub: #C7DAFF;
-  --font-color: #333;
-  --font-color-sub: #7B7B7B;
-  --line-color: #B4B4B4;
-  --red: #fb2222;
   background-color: var(--bg-basic);
 }
 
@@ -526,6 +524,33 @@ ul.round-block-list > li a {
   font-weight: bold;
 }
 
+:root {
+  font-size: 18px;
+}
+
+html[data-theme=light] {
+  --point: #4479ff;
+  --mark: #fddc84;
+  --mark-sub: #fdf5d8;
+  --exam: #0fb0c5;
+  --exam-sub: #f1f9f9;
+}
+html[data-theme=light] #change-theme {
+  background-color: var(--font-color);
+  color: #8198d5;
+}
+
+html[data-theme=dark] {
+  --mark: #604f12;
+  --mark-sub: #100f0e;
+  --exam: #649fad;
+  --exam-sub: #000b0e;
+}
+html[data-theme=dark] #change-theme {
+  background-color: var(--point);
+  color: var(--point-sub);
+}
+
 .flex {
   gap: 20px;
 }
@@ -535,9 +560,13 @@ ul.round-block-list > li a {
   flex-grow: 0;
   width: 320px;
 }
+#sub-menu a.current {
+  color: var(--point);
+}
 
 #post {
   padding: 20px;
+  margin-bottom: 80px;
   flex-direction: row;
   flex-shrink: 1;
   flex-grow: 1;
@@ -546,17 +575,132 @@ ul.round-block-list > li a {
 #post > article {
   flex-shrink: 1;
   flex-grow: 1;
+  padding: 0 20px 40px;
+  line-height: 1.8em;
+}
+#post > article > * {
+  padding: 0;
+  margin: 10px 0;
+  text-align: justify;
+}
+#post > article article > *:not(h2, h3, h4, h5, h6) {
+  padding-left: 2em;
+}
+#post > article hr {
+  margin: 40px 0;
+  background: var(--point-sub);
+  height: 1px;
+  border: 0;
+}
+#post > article h2, #post > article h3, #post > article h4 {
+  color: var(--point);
+}
+#post > article h2 {
+  font-size: 24px;
+  margin: 40px 0 20px;
+}
+#post > article h3 {
+  font-size: 20px;
+  margin: 30px 0 10px;
+}
+#post > article h4 {
+  font-size: 18px;
+  margin: 24px 0 6px;
+}
+#post > article a {
+  font-size: 18px;
+  color: var(--point);
+}
+#post > article a:hover {
+  color: var(--point-hover);
+}
+#post > article mark {
+  color: var(--font-color);
+  padding: 0.2em;
+  background-color: var(--mark-sub);
+  border: solid 1px var(--mark);
+  border-radius: 4px;
+}
+#post > article blockquote {
+  padding: 15px 20px;
+  background-color: var(--bg-point);
+}
+#post > article ul, #post > article ol {
+  margin: 0;
+  padding-left: 1.5em;
+}
+#post > article ul li:not(li li), #post > article ol li:not(li li) {
+  margin-bottom: 0.5em;
+}
+#post > article code {
+  color: var(--red);
+  background-color: var(--bg-basic);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+#post > article .title {
+  color: var(--font-color);
+}
+#post > article .post-date {
+  font-size: 14px;
+  color: var(--font-color-sub);
+  text-align: right;
+}
+#post > article .post-date .creation-date {
+  padding-right: 1em;
+}
+#post > article .block {
+  display: block;
+  margin: 6px 0;
+  padding: 0.7em 1em;
+  border-radius: 7px;
+}
+#post > article .exam {
+  background-color: var(--exam-sub);
+  color: var(--exam);
+  padding: 0.2em 0.5em;
+  font-size: 0.9375em;
+}
+#post > article .exam.block {
+  padding: 0.7em 1em;
+  position: relative;
+}
+#post > article .exam.block.exam-tag {
+  padding-left: 2.7em;
+}
+#post > article .exam.block.exam-tag::before {
+  content: "ex)";
+  position: absolute;
+  top: 0.7em;
+  left: 1em;
 }
 #post > aside {
   flex-shrink: 0;
   flex-grow: 0;
   width: 240px;
   border-left: solid 1px var(--font-color-sub);
+  position: relative;
 }
-#post p {
-  padding: 20px;
+#post > aside ol {
+  list-style: none;
+  padding-left: 0.5em;
 }
-#post blockquote {
-  padding: 15px 20px;
-  background-color: --bg-point;
+#post > aside ol li {
+  margin-bottom: 0.5em;
+}
+#post > aside ol a {
+  display: inline-block;
+  padding: 0.2em;
+  font-size: 15px;
+  color: var(--font-color-sub);
+}
+#post > aside ol a:hover {
+  color: var(--point);
+}
+#post > aside ol ol {
+  padding-left: 1.5em;
+}
+#post > aside #quick-side-menu {
+  position: fixed;
+  width: 240px;
 }

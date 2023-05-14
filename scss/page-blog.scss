@@ -2,6 +2,36 @@
 @import 'custom-reset';
 @import 'style';
 
+:root {
+    font-size: 18px;
+}
+
+// --mark : mark태그에 사용
+// --exam : .exam 에 사용
+html[data-theme="light"] {
+    --point: #4479ff;
+    --mark: #fddc84;
+    --mark-sub: #fdf5d8;
+    --exam: #0fb0c5;
+    --exam-sub: #f1f9f9;
+    #change-theme {
+        background-color: var(--font-color);
+        color: #8198d5;
+    }
+}
+
+html[data-theme="dark"] {
+    --mark: #604f12;
+    --mark-sub: #100f0e;
+    --exam: #649fad;
+    --exam-sub: #000b0e;
+    #change-theme {
+        background-color: var(--point);
+        color: var(--point-sub);
+    }
+}
+
+
 .flex {
     gap: $padding-base;
 }
@@ -9,9 +39,15 @@
     flex-shrink: 0;
     flex-grow: 0;
     width: 320px;
+    a {
+        &.current {
+            color: var(--point);
+        }
+    }
 }
 #post {
     padding: $padding-base;
+    margin-bottom: $padding-base*4;
     flex-direction: row;
     flex-shrink: 1;
     flex-grow: 1;
@@ -19,19 +55,137 @@
     & > article {
         flex-shrink: 1;
         flex-grow: 1;
+        padding: 0 $padding-base $padding-base*2;
+        line-height: 1.8em;
+        & > * {
+            padding: 0;
+            margin: $padding-base*0.5 0;
+            text-align: justify;
+        }
+        article > *:not(h2, h3, h4, h5, h6) {
+            padding-left: 2em;
+        }
+        hr {
+            margin: $padding-base*2 0;
+            background: var(--point-sub);
+            height: 1px;
+            border: 0;
+        }
+        h2, h3, h4 {
+            color: var(--point);
+        }
+        h2 {
+            font-size: 24px;
+            margin: $padding-base*2 0 $padding-base;
+        }
+        h3 {
+            font-size: 20px;
+            margin: $padding-base*1.5 0 $padding-base*0.5;
+        }
+        h4 {
+            font-size: 18px;
+            margin: $padding-base*1.2 0 $padding-base*0.3;
+        }
+
+        a {
+            font-size: 18px;
+            color: var(--point);
+            &:hover {
+                color: var(--point-hover);
+            }
+        }
+        mark {
+            color: var(--font-color);
+            padding: 0.2em;
+            background-color: var(--mark-sub);
+            border: solid 1px var(--mark);
+            border-radius: 4px;
+        }
+        blockquote { // 인용
+            padding: $padding-base*0.75 $padding-base;
+            background-color: var(--bg-point);
+        }
+        ul, ol {
+            margin: 0;
+            padding-left: 1.5em;
+            li:not(li li) {
+                margin-bottom: 0.5em;
+            }
+        }
+        code {
+            color: var(--red);
+            background-color: var(--bg-basic);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
+        .title {
+            color: var(--font-color);
+        }
+        .post-date {
+            font-size: map-get($font-size, small);
+            color: var(--font-color-sub);
+            text-align: right;
+            .creation-date {
+                padding-right: 1em;
+            }
+        }
+        $block-top-padding: 0.7em;
+        $block-left-padding: 1em;
+        .block {
+            display: block;
+            margin: $padding-base*0.3 0;
+            padding: $block-top-padding $block-left-padding;
+            border-radius: 7px;
+        }
+        .exam {
+            background-color: var(--exam-sub);
+            color: var(--exam);
+            padding: 0.2em 0.5em;
+            font-size: 0.9375em;
+            &.block {
+                padding: $block-top-padding $block-left-padding;
+                position: relative;
+                &.exam-tag {
+                    padding-left: 2.7em;
+                    &::before {
+                        content: 'ex)';
+                        position: absolute;
+                        top: $block-top-padding;
+                        left: $block-left-padding;
+                    }
+                }
+            }
+        }
     }
     & > aside {
+        $width: 240px;
         flex-shrink: 0;
         flex-grow: 0;
-        width: 240px;
+        width: $width;
         border-left: solid 1px var(--font-color-sub);
-    }
-    p {
-        padding: $padding-base;
-    }
-    // 인용
-    blockquote {
-        padding: $padding-base*0.75 $padding-base;
-        background-color: --bg-point;
+        position: relative;
+        ol {
+            list-style: none;
+            padding-left: 0.5em;
+            li {
+                margin-bottom: 0.5em;
+            }
+            a {
+                display: inline-block;
+                padding: 0.2em;
+                font-size: 15px;
+                color: var(--font-color-sub);
+                &:hover {
+                    color: var(--point);
+                }
+            }
+        }
+        ol ol {
+            padding-left: 1.5em;
+        }
+        #quick-side-menu {
+            position: fixed;
+            width: $width;
+        }
     }
 }

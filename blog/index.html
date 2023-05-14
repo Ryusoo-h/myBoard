@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/page-blog.css">
     <script type="module" src="../util/changeTheme.js" defer></script>
+    <script type="module" src="./posts.js" defer></script>
     <title>Blog</title>
 </head>
 <body>
@@ -30,109 +31,18 @@
             <h1 class="title">주섬주섬 정보모으기</h1>
             <nav class="card-container">
                 <img src="../image/ICANDOIT.png" alt="" width="114px" height="114px">
-                <ul class="underline-list">
-                    <li>목록1</li>
-                    <li>목록2</li>
+                <ul id="post-title-list" class="underline-list">
+                    <!-- printTitleList -->
                 </ul>
             </nav>
         </section>
         <main class="card flex" id="post">
             <article>
-                <h1 class="title">[React] 프론트엔드 비지니스 로직 관리</h1>
-                <p>
-                    <span>작성일 : 2023-05-07</span><br>
-                    <span>수정일 : 2023-05-07</span>
-                </p>
-                <p class="top-fixed-guide">
-                    * 이 글은 개인적인 학습을 위해 정리한 내용입니다. 보다 자세한 설명과 예시, 코드 등은 원본 글을 보시길 바랍니다!
-                </p>
-                <blockquote>
-                    읽은 글 : [React] 프론트엔드 아키텍처 비지니스 로직과 사례
-                </blockquote>
-                <p>
-                    후기 : 리액트로 앱을 만들면서 어떤 기준으로, 어떻게 뷰와 로직을 분리 하는것이 좋을지 고민이었는데 그에 대한 예시들과 코드를 볼 수 있어 좋았습니다. 메모해 두고, 앞으로 코드를 적으며 고민이 될때, 고려하면 좋을 기준과 예시를 다시 참고하고 싶어 요약했습니다.
-                </p>
-                <h2 class="sub-title">🍋좋은 습관들이기</h2>
-                <h3>습관1 : 휴리스틱 끄기</h3>
-                <p>
-                    우리는 문제를 풀때 휴리스틱을 사용해서 푸는데 좋지못한 습관이 될 수도 있다. 상황에 맞는 판단을 하기 위해선 종종 휴리스틱을 꺼야한다.
-                    ❓ 단어 검색 | 휴리스틱(heuristic) : 경험적인, 스스로 발견하게 하는
-                </p>
-                <p>
-                    문제를 해결하거나 불확실한 사항에 대해 판단을 내릴 필요가 있지만, 명확한 실마리가 없을 경우에 사용하는 편의적 발견적인 방법
-                    습관은 대부분의 도움이 되지만 전혀 예상하지 못한 문제를 만들어 낼 수 있다.
-                    상태관리에서 나타날 수 있는 문제
-                    유지보수 하기 어려운 코드 ←가장 큰 문제
-                    렌더링 성능이나 가독성 이슈 ex) 습관적인 useState 사용으로 불필요한 리렌더 발생
-                </p>
-                    습관2 : 비지니스 로직(=도메인 로직) 분리하기
-                    🖍도메인 로직 : 우리가 만드는 애플리케이션 서비스가 사용되고 적용되는 영역
-                    ⇒ 어떻게 보여줄지 논의하는 것 제외
-                    ex) B비지니스 로직과 V뷰로 나눈 예
-                    B : 추가 상품을 3개 이상 구매하면 최종 결제 금액에서 1,000원을 제(할인)한다.
-                    V : 할인 전 가격과 할인 후 가격을 노출하고, 할인 전 가격은 작고 흐릿하게, 할인 후 가격은 크고 굵게 노출한다.
-                    👍 예시 1
-                    input을 다룰 때 컴포넌트를 분리하면, 상태 변화시 분리된 컴포넌트만 리렌더링될 뿐 전체 Page가 렌더링 되지 않음.
-                    👍 예시 2
-
-                    언제든 로직을 편하게 수정할 수 있도록 함
-                    ex) '비밀번호는 8자 이상' 조건에서 '비밀번호는 8자이상 12자 이하'로 조건이 바뀌더라도 수정이 용이하도록
-
-                    🔧비지니스 로직 관리 수준
-                    비지니스 로직은 하위 컴포넌트의 변경에 영향을 받지 않는 수준에서 관리되어야한다.
-
-                    ‘.’ 한 페이지에서 다루는 비지니스 로직은 컴포넌트 단위로 움직이지 않기 때문
-                    👌 단, 비지니스 로직의 규모가 작고 특정 컴포넌트 영역에만 영향을 준다면 구축 비용 절감을 위해 페이지 단위의 비지니스 로직을 구축하는 것도 효과적이다
-                    방법1 : Context API, 커스텀 훅 활용
-                    비지니스 로직을 언제 초기화하고 어떻게 관리할지, 비지니스 로직의 상태를 유지하기위해 Context API 또는 커스텀 훅 활용하기
-                    Context API 환경에서 비지니스 로직과 관계가 있는 훅을 관리할 때 좋은 방법들
-                    방법1 : 필요한 훅을 가져오지 않았을 때 에러 던지기
-                    방법2 : 인자로 받도록 하기 ( 이 경우, 다른 로직으로 변경할 수도 있어 유연성이 높다)
-                    방법2 : refresher 사용
-                    Context API를 비지니스 로직을 관리하기 위해 사용한 경우 발생하는 문제
-                    : 이벤트가 발생한 컴포넌트를 제외하고, 로직 상태를 업데이트 해도 페이지가 렌더링 되지 않음
-                    ⇒ 조금 억지스럽긴 하지만 refresher와 같은 상태를 관리하는 것도 방법
-                    ⇒ refresher를 사용할 경우, 비지니스 상태의 업데이트와 View 상태의 업데이트 결합을 피할 수 있다.
-
-                    // 활용 예시
-                    const RefresherContext = createContext({
-                    refreshCount: 0,
-                    refresh: () => {},
-                    });
-
-                    export default function Page() {
-                    const [refreshCount, setRefreshCount] = useState(0);
-
-                    return (
-                        <ContextA.Provider value={{
-                            refreshCount,
-                            refresh: () => setRefreshCount(refreshCount + 1)
-                        }}>
-                        ...
-                        </ContextA.Provider>
-                    );
-                    reF}
-                        
-                    참고 : 로직의 분리는 환경을 구분하지 않는다
-                    목적 : 장수할 수 있는 프로젝트를 만들고, 손쉽게 문제를 해결할 수 있는 방법을 갖는다
-                    방법 : 우리 서비스만을 위한 npm 패키지를 만든다는 이미지를 그려보자
-
-                    ✨관심사의 분리의 효과
-                    소통에 명확함이 생김
-                    뷰와 비지니스 로직을 따로 적용하고 결합하는 작업을 단계적으로 진행할 수 있음
-                    간단한 요청을 개발자가 간단하게 유지보수를 해결할 수 있음
-                    ex) 관심사가 분리되어 있지 않은 경우 : 관련 로직이 어느 컴포넌트에, 어떻게 적용됐는지, View에 어떻게 결합되어있는지 고려해야함
-                    관심사가 분리되어 있는 경우 : 간단한 수정으로 끝남
-                    재사용, 유연성 증가
-                    OOP, FP등 특정 프레임워크에 구애받지 않음
-                    뷰와 로직을 독립적으로 테스트할 수 있고, 참고 레퍼런스가 많음
-
-                    원본 글 보러가기 → [React] 프론트엔드 아키텍처 비지니스 로직과 사례
-                </blockquote>
+                <!-- printPost -->
             </article>
             <aside>
-                <ol>
-                    <li><a href="">🍋좋은 습관들이기</a></li>
+                <ol id="quick-side-menu">
+                    <!-- printPost -->
                 </ol>
             </aside>
         </main>

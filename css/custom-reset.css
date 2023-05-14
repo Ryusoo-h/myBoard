@@ -8,39 +8,38 @@ html[data-theme=light] {
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
-  --red: #fb2222;
+  --red: #e72e2e;
 }
 html[data-theme=light] #change-theme {
   background-color: var(--font-color);
-  color: #a7bfff;
+  color: #8198d5;
+}
+html[data-theme=light] ::selection {
+  background: var(--point-sub);
+  color: var(--font-color);
 }
 
 html[data-theme=dark] {
-  --bg-basic: #080912;
-  --bg-content: #191d28;
-  --bg-point: #2c303c;
-  --point: #a7bfff;
+  --bg-basic: #07080e;
+  --bg-content: #0e111c;
+  --bg-point: #191c28;
+  --point: #8198d5;
   --point-sub: #365085;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;
-  --red: #ff7b7b;
+  --red: #c96262;
 }
 html[data-theme=dark] #change-theme {
   background-color: var(--point);
   color: var(--point-sub);
 }
+html[data-theme=dark] ::selection {
+  background: var(--point);
+  color: var(--bg-content);
+}
 
 :root {
-  --bg-basic: #F5F5F5;
-  --bg-content: #fff;
-  --bg-point: #F2F8FD;
-  --point: #497CFF;
-  --point-sub: #C7DAFF;
-  --font-color: #333;
-  --font-color-sub: #7B7B7B;
-  --line-color: #B4B4B4;
-  --red: #fb2222;
   background-color: var(--bg-basic);
 }
 
