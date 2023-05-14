@@ -1,6 +1,11 @@
 @import 'reset';
 @import 'custom-reset';
+@import 'page-blog';
 @import 'style';
+
+:root {
+    font-size: 18px;
+}
 
 .ic-arrow-left {
     position: relative;

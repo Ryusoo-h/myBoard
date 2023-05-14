@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="../image/favicon34.ico" type="image/x-icon">
-    <title>myBoard</title>
+    <title>Making Record</title>
 </head>
 <body>
     <header>
@@ -23,94 +23,167 @@
     </header>
     <main>
         <div class="container grid">
-            <section class="card scroll-pretty" id="design">
-                <h1 class="title bt-line">Design
-                </h1>
-                <div class="card-container">
-                    <h2>컨셉</h2>
-                    <ul>
-                        <li>나한테 필요한것을 모은 MyBoard
+            <section class="record card scroll-pretty" id="design">
+                <article>
+                    <h1 class="title bt-line">Design
+                    </h1>
+                    <article class="card-container">
+                        <h2>컨셉</h2>
+                        <article>
+                            <h3>나한테 필요한것을 모은 MyBoard</h3>
+                            <img src="myboard-page.png"  alt="MyBoard 페이지" width="600px">
                             <ul>
-                                <li>공부 진척도 관리</li>
-                                <li>자주쓰는 링크 모음</li>
-                                <li>공부 플레이리스트</li>
-                            </ul>
-                        </li>
-                        <li>당장 사용할 수 있는
-                            <ul>
-                                <li>당장 만드려고 예전에 만들다 덮어놓은 <b>대시보드 디자인</b> 가져옴</li>
-                            </ul>
-                        </li>
-                        <li>편한 깔끔한 명료하게 보기쉬운
-                            <ul>
-                                <li>컬러파레트 : 시원 뚜렷한 파랑!<br>
-                                    <span style="color: #497CFF">●</span> #497CFF
-                                    <span style="color: #C7DAFF">●</span> #C7DAFF
-                                    <span style="color: #F2F8FD">●</span> #F2F8FD
-                                    <br>
-                                    <span style="color: #333">●</span> #333333
-                                    <span style="color: #7B7B7B">●</span> #7B7B7B
-                                    <span style="color: #B4B4B4">●</span> #B4B4B4
-                                    <span style="color: #DDD">●</span> #DDDDDD
-                                    <span style="color: #F5F5F5">●</span> #F5F5F5
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <h2>파비콘</h2>
-                    <img src="../image/Frame 34.svg" alt="" width="114px" height="114px">
-                    <ul>
-                        <li>파비콘은 <b>버블밀크티</b>입니다
-                            <br>(최애음료 : 공차블랙밀크티펄추가당도100%)
-                        </li>
-                        <li>원래는 <b>밀크티에 물든 고양이</b>로 할랬는데 16x16은 너무 작아서 고양이 형체가 잘보이지 않더군요..ㅠ<br>
-                            <img src="../image/owo.svg" alt="" width="16px" height="16px">
-                            <img src="../image/oAo.svg" alt="" width="16px" height="16px">
-                            <img src="../image/oAoGoGo.svg" alt="" width="16px" height="16px">
-                            <img src="../image/oAoGo.svg" alt="" width="16px" height="16px">
-                            <br>
-                            <img src="../image/owo.svg" alt="" width="90px" height="90px">
-                            <img src="../image/oAo.svg" alt="" width="90px" height="90px">
-                            <img src="../image/oAoGoGo.svg" alt="" width="90px" height="90px">
-                            <img src="../image/oAoGo.svg" alt="" width="90px" height="90px">
-                            <br>나름 귀여웠는데.. 1분만에 탄생한 밀크티 고영..
-                            <br>컬러팔레트 : <span style="color: #497CFF">●</span> #497CFF
-                            <span style="color: #F4E2C8">●</span> #F4E2C8
-                            <span style="color: #371717">●</span> #371717
-                            <span style="color: #FF3838">●</span> #FF3838
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="card scroll-pretty" id="development">
-                <h1 class="title bt-line">Development
-                </h1>
-                <div class="card-container">
-                    <h2>당장 쓰고싶어서 만듬!</h2>
-                    <ul>
-                        <li>나를 관리할 MyBoard가 필요했음</li>
-                    </ul>
-                    <h2>재정비: 2023-05-09~10</h2>
-                    <ul>
-                        <li>블로그 글을 작성하다가 불편해서 깃블로그를 만들어 쓰고자 함!</li>
-                        <li>그런 김에 이전에 만들던 것 수정해서 사용하려고 코드를 수정함
-                            <ul>
-                                <li>페이지가 늘어날거라 폴더 정리를 함</li>
-                                <li>D-day 기능 추가 : 자주 쓸 것 같아 util/calculateDday 함수 만듬</li>
-                                <li>링크 리스트를 문서에서 분리 : 문서에 link가 늘어날 수록 복잡해져서 printLinkList와 printQuickLinksList 클래스를 만들어 출력하도록함</li>
-                                <li>다크모드/라이트모드 두가지 테마 추가 : localStorage에 값을 저장해서 선택했던 테마를 기억하도록함</li>
-                                <li>해야할 것 : 
+                                <li><b>제작 동기</b>
                                     <ul>
-                                        <li>Study List에 책 말고 강의 일경우도 표를 적용할 수 있도록 수정</li>
-                                        <li>지금 이페이지(making-record)의 좌측 상단 버튼에 호버시 아이콘도 색이 바뀌도록 수정</li>
+                                        <li>공부 기록 및 진척도 관리 보드가 필요함</li>
                                     </ul>
                                 </li>
+                                <li><b>조건</b>
+                                    <ol>
+                                        <li>자주 찾게되는 링크를 모아둔 즐겨찾기가 필요함</li>
+                                        <li>다음에 보려고 미뤄둔 링크를 보여주는 링크 리스트가 필요함</li>
+                                        <li>추가/삭제가 편한 구조
+                                            <ul>
+                                                <li>한눈에 보고싶어서 대시보드를 택함</li>
+                                                <li>당장은 조금 불편하더라도 사용하면서 조금씩 고칠듯 함</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-                </div>
+                        </article>
+                        <article>
+                            <h3>내가 쓰고 보기 편한 블로그(추가 : 2023-05-10~)</h3>
+                            <img src="blog-page.png"  alt="Blog 페이지" width="600px">
+                            <ul>
+                                <li><b>제작 동기</b>
+                                    <ul>
+                                        <li>notion엔 너무 많은 글이 쌓여 폴더가 깊어지니 글 찾기가 어려워짐<br> .'.글 정리도 할겸, 찾아봤던 글들은 블로그로 분리하려고 추가함</li>
+                                        <li>velog 쓰려다 안되는게 많아서 불편해서 따로 만들어보자 함</li>
+                                    </ul>
+                                </li>
+                                <li><b>조건</b>
+                                    <ol>
+                                        <li>좌측에 글 목록 메뉴가 있어야함</li>
+                                        <li>우측에 게시글이 있어야함</li>
+                                        <li>게시글 우측에 velog처럼 제목 앵커 메뉴가 있어야함</li>
+                                        <li>글 작성이 편해야함</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </article>
+                        <h2>컬러</h2>
+                        <ul>
+                            <li>기본 컬러파레트 : 시원 뚜렷한 파랑!<br>
+                                <span style="color: #497CFF">●</span> #497CFF
+                                <span style="color: #C7DAFF">●</span> #C7DAFF
+                                <span style="color: #F2F8FD">●</span> #F2F8FD
+                                <br>
+                                <span style="color: #333">●</span> #333333
+                                <span style="color: #7B7B7B">●</span> #7B7B7B
+                                <span style="color: #B4B4B4">●</span> #B4B4B4
+                                <span style="color: #DDD">●</span> #DDDDDD
+                                <span style="color: #F5F5F5">●</span> #F5F5F5
+                            </li>
+                            <li>블로그 컬러파레트<br>
+                                <span style="color: #fddc84">●</span> #fddc84
+                                <span style="color: #fdf5d8">●</span> #fdf5d8
+                                <span style="color: #0fb0c5">●</span> #0fb0c5
+                                <span style="color: #f1f9f9">●</span> #f1f9f9
+                                <span style="color: #4479ff">●</span> #4479ff
+                            </li>
+                        </ul>
+                        <h2>파비콘</h2>
+                        <ul>
+                            <li>파비콘은 <b>버블밀크티</b>입니다
+                                <br>(최애음료 : 공차블랙밀크티펄추가당도100%)
+                                <br><img src="../image/Frame 34.svg" alt="" width="80px" height="80px">
+                            </li>
+                            <li>원래는 <b>밀크티에 물든 고양이</b>였으나 16x16은 너무 작아서 형체가 잘보이지 않더군요..ㅠ<br>
+                                <img src="../image/owo.svg" alt="" width="16px" height="16px">
+                                <img src="../image/oAo.svg" alt="" width="16px" height="16px">
+                                <img src="../image/oAoGoGo.svg" alt="" width="16px" height="16px">
+                                <img src="../image/oAoGo.svg" alt="" width="16px" height="16px">
+                            </li>
+                            <li>아쉬운대로 월별 프로필로 사용할 예정
+                                <br>
+                                <ul class="flex">
+                                    <li><img src="../image/owo.svg" alt="" width="80px" height="80px"><br>힘듬</li>
+                                    <li><img src="../image/oAo.svg" alt="" width="80px" height="80px"><br>무난함</li>
+                                    <li><img src="../image/oAoGoGo.svg" alt="" width="80px" height="80px"><br>바쁨</li>
+                                    <li><img src="../image/oAoGo.svg" alt="" width="80px" height="80px"><br>신남</li>
+                                </ul>
+                                1분만에 탄생한 밀크티 고영..
+                                <br>컬러팔레트 : <span style="color: #497CFF">●</span> #497CFF
+                                <span style="color: #F4E2C8">●</span> #F4E2C8
+                                <span style="color: #371717">●</span> #371717
+                                <span style="color: #FF3838">●</span> #FF3838
+                            </li>
+                        </ul>
+                    </article>
+                </article>
             </section>
-        </div>
+            <section class="record card scroll-pretty" id="development">
+                <article>
+                    <h1 class="title bt-line">Development
+                    </h1>
+                    <article class="card-container">
+                        <h2>MyBoard</h2>
+                        <ul>
+                            <li>SCSS로 디자인 틀잡고 학습 진척도 기능만 추가한채로, 하드코딩으로 사용함(공부하기 바빴음) : 2022-12
+                                <ul>
+                                    <li><b>도서 학습 진척도 기능 :</b> <code>CreateReadingStudyTable</code>클래스<br>
+                                        <img src="CreateReadingStudyTable.png"  alt="도서 학습 진척도 적용 예시" width="400px">
+                                        <ul>
+                                            <li>책 전체 페이지에 대한 총 진행률을 보여줌</li>
+                                            <li>남은 페이지 수와 목표까지 남은 일수를 계산해 1일 최소 할당량을 계산해줌</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>블로그 추가로 인한 코드 수정 및 정리 : 2023-05-09 ~ 10
+                                <ul>
+                                    <li>페이지가 늘어날거라 폴더 정리를 함</li>
+                                    <li><b>D-day 기능 추가 :</b>자주 쓸 것 같아 <code>calculateDday</code>함수로 만듬
+                                        <br><img src="calculateDday.png"  alt="D-day 기능이 적용된 리스트" width="200px">
+                                    </li>
+                                    <li><b>링크 리스트를 문서에서 분리 :</b> 문서에 link가 늘어날 수록 복잡해지기에, <code>printLinkList</code>와 <code>printQuickLinksList</code>클래스를 만들어 출력하도록함</li>
+                                    <li><b>다크/라이트 모드로 두가지 테마 추가 :</b> localStorage에 값을 저장해서 선택했던 테마를 기억하도록함
+                                        <br><img src="myboard-page.png"  alt="MyBoard 페이지-light모드" width="300px">
+                                        <img src="dark-mode.png"  alt="MyBoard 페이지-dark모드" width="300px">
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="exam"><b>TODO : </b>
+                                <ul>
+                                    <li>강의 학습 진척도 기능 추가 : 도서 학습은 쪽수였다면 강의는 시간으로 계산하자</li>
+                                    <li>making-record 페이지의 좌측 상단 버튼에 hover시 아이콘도 색이 바뀌도록 수정</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h2>Blog</h2>
+                        <ul>
+                            <li>블로그 추가 : 2023-05-14
+                                <ul>
+                                    <li><b>좌측에 전체 글 목록 출력, 파라미터에 따라 현재 글 표시 :</b><br> <code>printSubMenuList</code>함수</li>
+                                    <li><b>파라미터에 따라 현재 글 출력 : </b><code>printPost</code>함수</li>
+                                    <li><b>현재 글의 제목에 따라 제목 앵커 출력 : </b><code>printAsideList</code>함수
+                                        <br><img src="printAsideList.png"  alt="제목 앵커 출력 예시" width="500px">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="exam"><b>TODO :</b>
+                                <ul>
+                                    <li>로딩 대기 UI 추가</li>
+                                    <li>검색 기능 추가</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </article>
+        </section>
     </main>
     <footer>
 

@@ -45,7 +45,7 @@ html[data-theme="dark"] {
         }
     }
 }
-#post {
+#post, .record {
     padding: $padding-base;
     margin-bottom: $padding-base*4;
     flex-direction: row;
@@ -62,7 +62,7 @@ html[data-theme="dark"] {
             margin: $padding-base*0.5 0;
             text-align: justify;
         }
-        article > *:not(h2, h3, h4, h5, h6) {
+        article > *:not(h2, h3, h4, h5, h6, img) {
             padding-left: 2em;
         }
         hr {
@@ -117,6 +117,10 @@ html[data-theme="dark"] {
             background-color: var(--bg-basic);
             padding: 0.2em 0.4em;
             border-radius: 4px;
+        }
+        img {
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+            margin: $padding-base*0.5;
         }
         .title {
             color: var(--font-color);
