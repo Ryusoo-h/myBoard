@@ -58,7 +58,7 @@ const printPost = (postKey) => {
                 articleNumber[currentHeadingLevel - 2]++;
                 newArticleId[newArticleId.length - 1] = articleNumber[currentHeadingLevel - 2];
                 articleId = newArticleId.join('-');
-                headingTagElement += `</ol></li><li><a href="#sub${articleId}">${title}</a>`;
+                headingTagElement += `</li></ol></li><li><a href="#sub${articleId}">${title}</a>`;
                 prevHeadingLevel = currentHeadingLevel;
             }
         });
