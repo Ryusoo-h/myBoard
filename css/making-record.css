@@ -705,6 +705,9 @@ html[data-theme=dark] #change-theme {
   flex-grow: 0;
   width: 320px;
 }
+#sub-menu #profile p {
+  font-size: 14px;
+}
 #sub-menu a.current {
   color: var(--point);
 }
