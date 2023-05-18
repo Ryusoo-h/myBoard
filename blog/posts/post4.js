@@ -163,7 +163,7 @@ export const post4 = `
     <hr>
     <article id="sub4">
         <h2 class="sub-title">🔧추상화와 API 코드 관리</h2>
-        <article class="sub4-1">
+        <article id="sub4-1">
             <h3>인터페이스를 사용해 요청 추상화하기</h3>
             <ul>
                 <li><b>개념</b>
@@ -188,7 +188,7 @@ export const post4 = `
                 </li>
             </ul>
         </article>
-        <article class="sub4-2">
+        <article id="sub4-2">
             <h3>추상화와 도구가 강하게 의존하지 않아야함</h3>
             <ul>
                 <li>
