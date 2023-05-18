@@ -1,5 +1,5 @@
 export const post1 = `
-    <h1 class="title">[React] 프론트엔드 비지니스 로직 관리</h1>
+    <h1 class="title">[프론트엔드 아키텍처] [React] 비지니스 로직 관리</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-05-06</span><span class="modification-date">수정일 : 2023-05-15</span>
     </p>
