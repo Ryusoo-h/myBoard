@@ -41,9 +41,18 @@ export const postTemplate = `
 
     <hr>
 
-    <article id="sub1">
+    <article id="sub1💛">
         <h2 class="sub-title">💛</h2>
-        <article id="sub1-1">
+        <article id="sub1-1💛">
+            <h3>💛</h3>
+            <ul>
+                <li>💛</li>
+            </ul>
+        </article>
+    </article>
+    <article id="sub2💛">
+        <h2 class="sub-title">💛구현된 UI 복사해서 써!</h2>
+        <article id="sub2-1💛">
             <h3>💛</h3>
             <ul>
                 <li>
