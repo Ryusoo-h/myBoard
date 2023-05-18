@@ -43,5 +43,14 @@ main > .grid {
     }
     #development {
         grid-area: 1/2/7/3;
+        article {
+            position: relative;
+        }
+        #github-link {
+            position: absolute;
+            top: 0;
+            right: $padding-base;
+            font-size: map-get($font-size, basic);
+        }
     }
 }
