@@ -53,7 +53,7 @@ html[data-theme="dark"] {
             height: 114px;
         }
         p {
-            font-size: 16px;
+            font-size: map-get($font-size, basic);
         }
     }
     a {
@@ -142,7 +142,7 @@ html[data-theme="dark"] {
         table {
             border-collapse: collapse;
             border: none;
-            font-size: 16px;
+            font-size: map-get($font-size, basic);
             line-height: 1.5em;
             tr, th, td {
                 border: none;
