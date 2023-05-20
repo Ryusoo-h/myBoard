@@ -215,18 +215,25 @@ ul {
     }
 
     // 둥근 박스 리스트(a태그가 있는)
+    @mixin round-block {
+        background-color: var(--bg-content);
+        padding: $padding-base*0.4 $padding-base*0.5;
+        border-radius: $padding-base*0.5;
+        margin: $padding-base*0.25 0 $padding-base*0.5;
+        box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
+        font-size: map-get($font-size, small);
+    }
     &.round-block-list {
         & > li {
-            background-color: var(--bg-content);
-            padding: $padding-base*0.4 $padding-base*0.5;
-            border-radius: $padding-base*0.5;
-            margin: $padding-base*0.25 0 $padding-base*0.5;
-            box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-            font-size: map-get($font-size, small);
+            @include round-block;
             a {
                 font-size: map-get($font-size, small);
                 font-weight: bold;
             }
         }
+    }
+    a.round-block {
+        @include round-block;
+        display: inline-block;
     }
 }

@@ -15,7 +15,7 @@ const quickLinksDevListCategory = new Map([
 const quickLinksDevList = {
     bookmark : [
         {
-            title: ["Ryusoo-h github"],
+            title: ["github/Ryusoo-h"],
             url: ["https://github.com/Ryusoo-h"]
         },
         {
@@ -29,7 +29,7 @@ const quickLinksDevList = {
         {
             title: ["CSS Flex", "CSS Grid"],
             url: ["https://heropy.blog/2018/11/24/css-flexible-box/", "https://heropy.blog/2019/08/17/css-grid/"],
-            text: ["", " / ", "완벽가이드"]
+            text: ["완벽가이드 : ", " / ", ""]
         },
         {
             title: ["[CSS] 드래그/마우스 우클릭 금지"],
@@ -116,12 +116,12 @@ const quickLinksDesList = {
         {
             title: ["FLAT UI COLORS", "명도, 대비에 따른 색 추천", "Open-color"],
             url: ["https://flatuicolors.com/", "https://www.learnui.design/tools/accessible-color-generator.html", "https://yeun.github.io/open-color/"],
-            text: ["🎨컬러칩 : ", ", ", ""]
+            text: ["🎨컬러칩<br>", ", ", ""]
         },
         {
             title: ["오프린트미", "성원애드피아", "디티피아"],
             url: ["https://www.ohprint.me/", "https://www.swadpia.co.kr/", "https://dtpia.co.kr/"],
-            text: ["굿즈 홍보물 인쇄소 : ", ", ", ""]
+            text: ["굿즈 홍보물 인쇄소<br>", ", ", ""]
         },
     ],
     // sample : [
@@ -148,16 +148,16 @@ class PrintQuickLinksList {
         const list = listCategory.map(category => {
             const listToLi = this.listData[category].map(link => {
                 if(link.title.length === 1) {
-                    return `<li><a href="${link.url[0]}">${link.title[0]}</a></li>`;
+                    return `<li><a class="round-block" href="${link.url[0]}">${link.title[0]}</a></li>`;
                 } else {
                     let linkLi = link.title.reduce((itemList, title, index) => {
                         const [firstText, connectText ,lastText] = link.text ? link.text : ["","",""];
                         if (index === 0) { // li 태그 열음
-                            return `<li>${firstText}<a href="${link.url[index]}">${title}</a>${connectText}`;
+                            return `<li>${firstText}<a class="round-block" href="${link.url[index]}">${title}</a>${connectText}`;
                         } else if (index === link.title.length - 1) { // li 태그 닫음
-                            return `${itemList}<a href="${link.url[index]}">${title}</a>${lastText}</li>`;
+                            return `${itemList}<a class="round-block" href="${link.url[index]}">${title}</a>${lastText}</li>`;
                         } else { //  a태그 + 구분자
-                            return `${itemList}<a href="${link.url[index]}">${title}</a>${connectText}`;
+                            return `${itemList}<a class="round-block" href="${link.url[index]}">${title}</a>${connectText}`;
                         }
                     },[]);
                     return linkLi;
@@ -166,7 +166,7 @@ class PrintQuickLinksList {
             `);
             return `
                 <li>${this.listCategoryInfo.get(category)}
-                    <ul class="round-block-list">
+                    <ul>
                         ${listToLi}
                     </ul>
                 </li>
