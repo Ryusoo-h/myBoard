@@ -279,7 +279,7 @@ const todoReadingList = [
     },
 ];
 
-class PrintQuickLinksList {
+class PrintLinksList {
     constructor(ulId, listData) {
         this.ulId = ulId; // ul(출력할 element)의 id
         this.listData = listData; // 리스트 정보
@@ -295,7 +295,7 @@ class PrintQuickLinksList {
     }
 }
 
-const PrintTodoReadingList = new PrintQuickLinksList(
+const PrintTodoReadingList = new PrintLinksList(
     "to-do-reading-list",
     todoReadingList
 )
