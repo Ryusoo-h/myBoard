@@ -4,7 +4,7 @@ html[data-theme=light] {
   --bg-content: #fff;
   --bg-point: #F2F8FD;
   --point: #497CFF;
-  --point-sub: #C7DAFF;
+  --point-sub: #e3ecff;
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
@@ -24,7 +24,7 @@ html[data-theme=dark] {
   --bg-content: #0e111c;
   --bg-point: #191c28;
   --point: #8198d5;
-  --point-sub: #365085;
+  --point-sub: #1e2744;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;

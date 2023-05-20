@@ -54,7 +54,7 @@ html[data-theme=light] {
   --bg-content: #fff;
   --bg-point: #F2F8FD;
   --point: #497CFF;
-  --point-sub: #C7DAFF;
+  --point-sub: #e3ecff;
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
@@ -74,7 +74,7 @@ html[data-theme=dark] {
   --bg-content: #0e111c;
   --bg-point: #191c28;
   --point: #8198d5;
-  --point-sub: #365085;
+  --point-sub: #1e2744;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;
@@ -191,7 +191,7 @@ html[data-theme=light] {
   --bg-content: #fff;
   --bg-point: #F2F8FD;
   --point: #497CFF;
-  --point-sub: #C7DAFF;
+  --point-sub: #e3ecff;
   --font-color: #333;
   --font-color-sub: #7B7B7B;
   --line-color: #B4B4B4;
@@ -211,7 +211,7 @@ html[data-theme=dark] {
   --bg-content: #0e111c;
   --bg-point: #191c28;
   --point: #8198d5;
-  --point-sub: #365085;
+  --point-sub: #1e2744;
   --font-color: #b3b5c0;
   --font-color-sub: #a4a6af;
   --line-color: #525466;
@@ -405,6 +405,8 @@ nav#main-menu .right a {
 }
 
 .card-nude {
+  display: flex;
+  flex-direction: column;
   overflow: auto;
 }
 .card-nude .card-container {
@@ -438,12 +440,12 @@ nav#main-menu .right a {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   overflow: auto;
   background-color: var(--bg-content);
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
 }
 .card .card-container {
   padding: 8px 12px;
@@ -566,12 +568,111 @@ main > .grid {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+main > .grid #study-for {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+main > .grid #study-for::-webkit-scrollbar {
+  display: none;
+}
 main > .grid #study-for .wrapper {
   padding: 0.5rem 0;
+}
+main > .grid #study-for .wrapper h2 {
+  margin: 0;
 }
 main > .grid #study-for .wrapper.flex {
   gap: 1rem;
   padding: 0.5rem 0;
+}
+main > .grid #time-line article {
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+main > .grid #time-line article div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--font-color);
+  border-radius: 7px;
+  position: relative;
+}
+main > .grid #time-line article div::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--font-color);
+  position: absolute;
+  top: 16px;
+  left: -8px;
+  transform: rotateZ(45deg);
+}
+main > .grid #time-line article h2, main > .grid #time-line article p, main > .grid #time-line article span, main > .grid #time-line article button {
+  color: var(--bg-content);
+  line-height: 1.5em;
+}
+main > .grid #time-line article button {
+  color: var(--point);
+}
+main > .grid #time-line article span {
+  opacity: 0.6;
+}
+main > .grid #time-line article .thumb {
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 50%;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../image/oAo.svg);
+  background-size: 102%;
+  background-position: right;
+}
+main > .grid #time-line article .thumb.tired {
+  background-image: url(../image/owo.svg);
+}
+main > .grid #time-line article .thumb.fun {
+  background-image: url(../image/oAoGo.svg);
+}
+main > .grid #time-line article .thumb.busy {
+  background-image: url(../image/oAoGoGo.svg);
+}
+main > .grid #time-line article .content-title {
+  width: 100%;
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+main > .grid #time-line article .content {
+  margin: 4px 0;
+  word-break: break-all;
+  width: 100%;
+}
+main > .grid #time-line article .content.hidden {
+  max-height: 5em;
+  overflow: hidden; /* 넘치는건 보이지 않게 해주지!*/
+  white-space: normal; /* 줄바뀜이 일어남*/
+  text-overflow: ellipsis; /* 생략기호 ... 를 나타나게해줌*/
+  display: -webkit-box; /* display를 이렇게해줘야 가능해짐, 대신 ie에선 안먹겠지..ㅠ*/
+  -webkit-line-clamp: 3; /* 몇줄까지 보여줄건지*/
+  -webkit-box-orient: vertical; /*비표준이라 함 확인 잘못했으니 살펴보고 쓸것*/
+}
+main > .grid #time-line article .date {
+  font-size: 14px;
+}
+main > .grid #time-line article .more {
+  font-size: 14px;
+  padding: 4px;
+}
+main > .grid #time-line article .more.hidden {
+  display: none;
+}
+main > .grid #time-line article .hidden + .more {
+  display: inline-block;
 }
 main > .grid #studyList details[open] {
   max-height: 280px;
@@ -599,7 +700,13 @@ main > .grid #have-todo .tab-wrapper .card-container {
   height: -webkit-fill-available;
 }
 main > .grid #study-for {
-  grid-area: 1/1/4/2;
+  grid-area: 1/1/3/2;
+}
+main > .grid #time-line {
+  grid-area: 3/1/6/2;
+}
+main > .grid #wish-list {
+  grid-area: 6/1/7/2;
 }
 main > .grid #studyList {
   grid-area: 1/2/5/3;

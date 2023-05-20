@@ -14,6 +14,7 @@
     <script type="module" src="./script/page-home/createReadingStudyTable.js" defer></script>
     <script type="module" src="./script/page-home/printQuickLinksList.js" defer></script>
     <script type="module" src="./script/page-home/printLinksList.js" defer></script>
+    <script type="module" src="./script/page-home/printTimeLine.js" defer></script>
     <script type="module" src="./util/calculateDday.js" defer></script>
     <script type="module" src="./util/changeTheme.js" defer></script>
     <title>myBoard</title>
@@ -38,14 +39,10 @@
     <main>
         <div class="container grid">
             <section class="card-nude" id="study-for">
-                <h1 class="title">STUDY with
-                </h1>
+                <h1 class="title">STUDY for</h1>
                 <div class="card-container">
                     <div class="wrapper flex">
-                        <img src="./image/owo.svg" alt="" width="114px" height="114px">
-                        <!-- <img src="./image/oAo.svg" alt="" width="114px" height="114px">
-                        <img src="./image/oAoGo.svg" alt="" width="114px" height="114px">
-                        <img src="./image/oAoGoGo.svg" alt="" width="114px" height="114px"> -->
+                        <img src="./image/owo.svg" alt="" width="70px" height="70px">
                         <h2>5월 요약 <br> "나한테 왜그래..수술 2트?"</h2>
                     </div>
                     <ul class="underline-list">
@@ -53,7 +50,21 @@
                         <li>🚩 <span id="engineer-info-test" class="bold"></span> 정처기 필기 (6/1)</li>
                         <li>🚩 <span id="sqld-test" class="bold" ></span> SQLD (6/10) </li>
                     </ul>
-
+                </div>
+            </section>
+            <section class="card-nude" id="time-line">
+                <h1 class="title bt-line">TIMELINE</h1>
+                <div class="card-container scroll-pretty">
+                    <!-- printTimeLine -->
+                </div>
+            </section>
+            <section class="card-node" id="wish-list">
+                <h1 class="title bt-line">WISHLIST</h1>
+                <div class="card-container">
+                    <ul class="underline-list">
+                        <li><a href="https://www.youtube.com/watch?v=3LO8L4Dyx8Y&list=PLEUGW5cJsuGIy5eSaNzAFxEMniBqnSAc6">주말에 휘낭시에 만들까?!</a></li>
+                        <li><a href="https://m.blog.naver.com/bondi_flower/221751726936">나도 귀여운 마우스 커서 갖고싶다</a></li>
+                    </ul>
                 </div>
             </section>
             <section class="card scroll-pretty" id="studyList">
@@ -122,41 +133,6 @@
                     </ul>
                 </div>
             </section>
-            <!-- TODO 딱히.. 안쓸거같은데 이건 없애고 하루 공부 기록을 만들까?
-            <section class="card" id="have-todo">
-                <div class="title-wrapper bt-line">
-                    <h1 class="title">have todo</h1>
-                    <span class="round-bts have-todo-tab" role="tablist">
-                        <button id="have-todo-study" class="round-bt-left current" role="tab" aria-selected="true">Study</button>
-                        <button id="have-todo-books" class="round-bt-center" role="tab">Books</button>
-                        <button id="have-todo-tips" class="round-bt-right" role="tab">Tips</button>
-                    </span>
-                </div>
-                <div class="tab-wrapper">
-                    <div class="have-todo-study have-todo-tab card-container scroll-pretty current" role="tabpanel">
-                        <ul class="underline-list">
-                            <li><a href="https://www.youtube.com/watch?v=L-x1c4PAUOY&list=PLniy99c_7Zfo2WD2mED6jDX4NyHyKLwbF">[강의추천]정처기 흥달쌤 강의</a></li>
-                            <li><a href="https://twitter.com/boyeonihn/status/1533268566514057216?t=6g2VHNblElRiMpuhTSlvQQ&s=09">개발자 영어공부 유익 사이트들 보고 맞는거 찾아보자</a></li>
-                        </ul>
-                    </div>
-                    <div class="have-todo-books have-todo-tab card-container scroll-pretty" role="tabpanel">
-                        <ul class="underline-list">
-                            <li><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=300900143&partner=redmist&start=api">일잘러의 노션 100% 활용법 책</a></li>
-                            <li><a href="https://ridibooks.com/books/2773000059">[책추천]알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라</a></li>
-                            <li><a href="http://www.yes24.com/Product/Goods/111102268?fbclid=paaay5jdvffrigq2x5vqpl0kgmfgubxvh5lltoxm11rg2njq8pui-cjlrsdlo">하루 5분 UX 책</a></li>
-                        </ul>
-                    </div>
-                    <div class="have-todo-tips have-todo-tab card-container scroll-pretty" role="tabpanel">
-                        <ul class="underline-list">
-                            <li><a href="https://www.youtube.com/watch?v=3LO8L4Dyx8Y&list=PLEUGW5cJsuGIy5eSaNzAFxEMniBqnSAc6">주말에 휘낭시에 만들까?!</a></li>
-                            <li><a href="https://m.blog.naver.com/bondi_flower/221751726936">나도 귀여운 마우스 커서 갖고싶다</a></li>
-                            <li><a href="https://twitter.com/ccxxnks1/status/1592055195953156097?t=xF6ZGDsQEuBIhxO7BSAafw&s=32">무장아찌 만들기</a></li>
-                            <li><a href="https://jinjja-seoul.com/mytheme/570">진짜서울 | 고양시 최대 아웃풋</a></li>
-                            <li>언젠가 제주도 여행 가겠지 : <a href="https://twitter.com/boromm_/status/1593963626058371074">제주도 3n 방문 단골 맛집</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section> -->
             <!-- <section class="card" id="">
                 <h1 class="title">new title</h1>
                 <div class="card-container">

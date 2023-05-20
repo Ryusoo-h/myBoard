@@ -76,14 +76,14 @@
     }
     &::-webkit-scrollbar-thumb {
         /*스크롤바*/
-    background-color: var(--bg-content);
-    border-radius: 5px;
-    border: solid 2px var(--point-sub);
+        background-color: var(--bg-content);
+        border-radius: 5px;
+        border: solid 2px var(--point-sub);
     }
     &::-webkit-scrollbar-track {
-    /* 스크롤바 트랙*/
-    border-radius: 5px;
-    background-color: var(--point-sub);
+        /* 스크롤바 트랙*/
+        border-radius: 5px;
+        background-color: var(--point-sub);
     }
 }
 
@@ -126,6 +126,8 @@ nav#main-menu {
 
 // 카드 디자인
 @mixin card-base {
+    display: flex;
+    flex-direction: column;
     overflow: auto;
     $title-padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
     .card-container {
@@ -166,8 +168,6 @@ nav#main-menu {
     background-color: var(--bg-content);
     border-radius: $padding-base*0.5;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: column;
 
     &.bg-point {
         background-color: var(--bg-point);
