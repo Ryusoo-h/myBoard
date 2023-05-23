@@ -661,6 +661,12 @@ main > .grid #time-line article .content.hidden {
   -webkit-line-clamp: 3; /* 몇줄까지 보여줄건지*/
   -webkit-box-orient: vertical; /*비표준이라 함 확인 잘못했으니 살펴보고 쓸것*/
 }
+main > .grid #time-line article .content a {
+  color: var(--point-sub);
+}
+main > .grid #time-line article .content a:hover {
+  color: var(--point);
+}
 main > .grid #time-line article .date {
   font-size: 14px;
 }
@@ -709,11 +715,11 @@ main > .grid #wish-list {
   grid-area: 6/1/7/2;
 }
 main > .grid #studyList {
-  grid-area: 1/2/5/3;
+  grid-area: 1/2/7/3;
 }
 main > .grid #links {
-  grid-area: 5/2/7/3;
+  grid-area: 1/3/3/4;
 }
 main > .grid #quick-links {
-  grid-area: 1/3/7/4;
+  grid-area: 3/3/7/4;
 }
