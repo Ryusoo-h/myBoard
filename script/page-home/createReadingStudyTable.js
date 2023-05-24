@@ -123,9 +123,9 @@ const engineerInformationProcessing = new CreateReadingStudyTable({
     information : {
         Dday : '2023-06-01',
         totalPage : 888,
-        currentPage: 282,
+        currentPage: 303,
         table : [
-            // { date : '5/23(화)', page: 278, Dday: 9},
+            { date : '5/23(화)', page: 303, Dday: '-9'},
             { date : '5/22(월)', page: 264, Dday: '-10'},
             { date : '5/21(일)', page: 256, Dday: '-11'},
             { date : '5/20(토)', page: 236, Dday: '-12'},
