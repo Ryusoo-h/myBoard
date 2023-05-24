@@ -17,8 +17,9 @@ export const calculateDday = (date) => {
 
     const today = new Date();
     const Dday = new Date(date);
-
-    let result = Math.ceil((today.getTime() - Dday.getTime()) / (1000*60*60*24)) - 1;    
+    const todayCount = Math.floor(today.getTime() / (24*60*60*1000));
+    const DdayCount = Math.floor(Dday.getTime() / (24*60*60*1000));
+    let result = (todayCount - DdayCount);
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
         return 'D-day Error'
