@@ -1,6 +1,6 @@
 
-import * as posts from "./posts/index.js";
-import noPost from "./posts/noPost.js";
+import * as posts from "../../blog/posts/index.js";
+import noPost from "../../blog/posts/noPost.js";
 
 // 단순히 제목출력, 내용 출력 기능만 구현함
 
