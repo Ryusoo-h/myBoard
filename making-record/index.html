@@ -131,34 +131,78 @@
                         <h2>MyBoard</h2>
                         <a id="github-link" href="https://github.com/Ryusoo-h/myBoard">go to github</a>
                         <ul>
-                            <li>SCSS로 디자인 틀잡고 학습 진척도 기능만 추가한채로, 하드코딩으로 사용함(공부하기 바빴음) : 2022-12
+                            <li><span class="point">2022-12</span> SCSS로 디자인 틀잡고 학습 진척도 기능만 추가한채로, 하드코딩으로 사용함(공부하기 바빠서.. 당장 사용하기 위해 필요한것만 만듬)
+                            </li>
+                            <li><span class="point">2022-12</span> <b>도서 학습 진척도 기능 추가 :</b> <code>CreateReadingStudyTable</code>클래스<br>
+                                <img src="CreateReadingStudyTable.png"  alt="도서 학습 진척도 적용 예시" width="400px">
                                 <ul>
-                                    <li><b>도서 학습 진척도 기능 :</b> <code>CreateReadingStudyTable</code>클래스<br>
-                                        <img src="CreateReadingStudyTable.png"  alt="도서 학습 진척도 적용 예시" width="400px">
+                                    <li>책 전체 페이지에 대한 총 진행률을 보여줌</li>
+                                    <li>남은 페이지 수와 목표까지 남은 일수를 계산해 1일 최소 할당량을 계산해줌</li>
+                                    <li><span class="point">2023-05-24</span> 사용하면서 불편했던 <b>UI 수정&추가</b> 
+                                        <br><img src="CreateReadingStudyTable2.png"  alt="도서 학습 진척도 적용 예시" width="400px">
                                         <ul>
-                                            <li>책 전체 페이지에 대한 총 진행률을 보여줌</li>
-                                            <li>남은 페이지 수와 목표까지 남은 일수를 계산해 1일 최소 할당량을 계산해줌</li>
+                                            <li><b>D-day 추가</b>
+                                                <ul>
+                                                    <li>다른 section에서 찾아봐야하는 불편함을 없앰. <br>-> 눈에 띄도록 배경색을 줌 (목표일 전 : 파랑, 목표일 후 : 빨강)</li>
+                                                    <li>목표 달성시 완료일을 표시함</li>
+                                                </ul>
+                                            </li>
+                                            <li><b>오늘 할당량 UI 수정</b> : <br>다른 표와 UI차이를 줌. 진행률 100% 시 할당량 표시하지 않음</li>
                                         </ul>
+                                    </li>
+                                    <li><span class="point">2023-06-04</span> <b>단위 별 출력 추가 :</b><br>페이지 -> p, 문제 -> 문, 강의 -> 시간
+                                        <br><img src="CreateStudyTable.png"  alt="도서 학습 진척도 적용 예시" width="400px">
                                     </li>
                                 </ul>
                             </li>
-                            <li>블로그 추가로 인한 코드 수정 및 정리 : 2023-05-09 ~ 10
+                            <li><span class="point">2023-05-09 ~ 10</span> : <b>블로그 추가로 인한 코드 수정&정리</b>
                                 <ul>
-                                    <li>페이지가 늘어날거라 폴더 정리를 함</li>
+                                    <li>페이지가 늘어나면 현재 구조로는 복잡해질것 같아 폴더를 나눠 정리를 함
+                                        <ul>
+                                            <li><span class="point">/blog</span> : blog 페이지 문서
+                                                <ul>
+                                                    <li><span class="point">/posts</span> : 페이지 별 문서</li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="point">/making-record</span> : making-record 페이지 문서, 이미지들</li>
+                                            <li><span class="point">/script</span> : js 파일들
+                                                <ul>
+                                                    <li><span class="point">/util</span> : 두루 쓰일 스크립트들</li>
+                                                    <li><span class="point">/page-blog</span> : blog 페이지에서 사용될 스크립트들</li>
+                                                    <li><span class="point">/page-home</span> : home 페이지에서 사용될 스크립트들 </li>
+                                                </ul>
+                                            </li>
+                                            <li><span class="point">/scss</span> : scss 파일들</li>
+                                            <li><span class="point">/css</span> : scss 파일이 css로 변환되어 저장됨</li>
+                                            <li><span class="point">/image</span> : 두루 쓸 이미지들(파비콘, 프로필이미지)</li>
+                                        </ul>
+                                    </li>
                                     <li><b>D-day 기능 추가 :</b>자주 쓸 것 같아 <code>calculateDday</code>함수로 만듬
                                         <br><img src="calculateDday.png"  alt="D-day 기능이 적용된 리스트" width="200px">
+                                        <!-- <ul>
+                                            <li><span class="point">2023-06-01</span> <b>오류 수정중</b> 오전과 오후 D-day가 다르게 나타나는 오류가 있어서 수정중</li>
+                                        </ul> -->
                                     </li>
                                     <li><b>링크 리스트를 문서에서 분리 :</b> 문서에 link가 늘어날 수록 복잡해지기에, <code>printLinkList</code>와 <code>printQuickLinksList</code>클래스를 만들어 출력하도록함</li>
                                     <li><b>다크/라이트 모드로 두가지 테마 추가 :</b> localStorage에 값을 저장해서 선택했던 테마를 기억하도록함
-                                        <br><img src="myboard-page.png"  alt="MyBoard 페이지-light모드" width="300px">
-                                        <img src="dark-mode.png"  alt="MyBoard 페이지-dark모드" width="300px">
-                                        
+                                        <br><img src="myboard-page.png"  alt="MyBoard 페이지-light모드" width="500px">
+                                        <img src="dark-mode.png"  alt="MyBoard 페이지-dark모드" width="500px">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="point">2023-05-23</span> : <b>timeLine 추가</b>
+                                <ul>
+                                    <li>공부나 일하면서 있었던 일들 SNS처럼 짧은 글로 남기기 위함. 한 줄 일기 같은 느낌으로..!</li>
+                                    <li>프로필 이미지를 기분따라 선택할 수 있음 : <br><code>'' | 'tired' | 'fun' | 'busy'</code></li>
+                                    <li>세줄 이하로 보여주고, '+더보기'버튼 클릭 시 가려진 내용을 볼 수 있음</li>
+                                    <li>
+                                        최신 메세지를 5개씩 보여주고, 스크롤의 남은 높이가 마지막 메세지 높이의 1.5배 이하일 때, 새 메세지를 5개를 추가로 출력해서 보여줌(무한 스크롤 방식 참고)
+                                        <br><img src="timeline-scroll.gif"  alt="제목 앵커 출력 예시" width="500px">
                                     </li>
                                 </ul>
                             </li>
                             <li class="exam"><b>TODO : </b>
                                 <ul>
-                                    <li>강의 학습 진척도 기능 추가 : 도서 학습은 쪽수였다면 강의는 시간으로 계산하자</li>
                                     <li>making-record 페이지의 좌측 상단 버튼에 hover시 아이콘도 색이 바뀌도록 수정</li>
                                 </ul>
                             </li>
@@ -179,6 +223,7 @@
                                     <li>로딩 대기 UI 추가</li>
                                     <li>검색 기능 추가</li>
                                     <li>포스트 내부에 코드 추가 방식 찾아보기</li>
+                                    <li>메타 태그를 바꿔줄 방법 고민?</li>
                                 </ul>
                             </li>
                         </ul>
