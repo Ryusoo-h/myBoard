@@ -58,8 +58,9 @@ class CreateStudyTable {
 
     render() {
         const Card = document.querySelector(`#studyList #${this.data.id}`);
-        const { Dday, type, totalPage, currentPage } = this.data.information;
 
+        const { Dday, type, totalPage, currentPage } = this.data.information;
+        const unit = this.getTypeUnit(type);
         const calculatedDday = calculateDday(Dday);
         let DdayNum = calculatedDday.split('-')[1];
         DdayNum = DdayNum !== undefined ? Number(DdayNum) : 1;
@@ -67,7 +68,7 @@ class CreateStudyTable {
         // Dday 출력
         Card.querySelector('.Dday').innerHTML= this.printDate(Dday);
         // totalPage 출력
-        Card.querySelector('.totalPage').innerHTML= totalPage + 'p';
+        Card.querySelector('.totalPage').innerHTML= totalPage + unit;
         
         // table 출력을 위한 데이터 처리
         const tableTemplate = `
@@ -100,7 +101,7 @@ class CreateStudyTable {
                         <th class="date">날짜</th>
                         <th width="18%" class="page">진행된<br> ${type} 수</th>
                         <th width="18%" class="progress">총 진행률<br>(%)</th>
-                        <th class="quota">목표까지 1일 최소 할당량<br>(남은 쪽수 / 남은 일수)</th>
+                        <th class="quota">목표까지 1일 최소 할당량<br>(남은 ${type} 수 / 남은 일수)</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -117,9 +118,9 @@ class CreateStudyTable {
                 return `
                         <tr>
                             <td class="date">${item.date}</td>
-                            <td class="page">${item.page + this.getTypeUnit(type)}</td>
+                            <td class="page">${item.page + unit}</td>
                             <td class="progress">${progress}%</td>
-                            <td class="quota">${quota + this.getTypeUnit(type)} (${remainingPages}/ D${item.Dday})</td>
+                            <td class="quota">${quota + unit} (${remainingPages}/ D${item.Dday})</td>
                         </tr>
                     `
             }).join('')
@@ -138,9 +139,9 @@ class CreateStudyTable {
             trMemo = `
                 <tr style="background-color: var(--bg-basic);">
                     <td style="border-right: none;" class="date">${this.printDate(today)}</td>
-                    <td style="border-right: none;" class="page">${currentPage + this.getTypeUnit(type)}</td>
+                    <td style="border-right: none;" class="page">${currentPage + unit}</td>
                     <td style="border-right: none;" class="progress"></td>
-                    <td class="quota">할당량 : ${quotaPage + this.getTypeUnit(type)}까지 ${remainingQuota + this.getTypeUnit(type)}남음</td>
+                    <td class="quota">할당량 : ${quotaPage + unit}까지 ${remainingQuota + unit}남음</td>
                 </tr>
             `;
         }
@@ -163,7 +164,7 @@ const sqld = new CreateStudyTable({
         currentPage: 0,
         table : [
             // { date : '6/4(일)', page: 0, Dday: '-6'},
-            // { date : '6/3(토)', page: 0, Dday: '-7'},
+            { date : '6/3(토)', page: 0, Dday: '-7'},
         ],
     }
 });
