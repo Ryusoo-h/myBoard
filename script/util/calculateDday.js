@@ -19,7 +19,8 @@ export const calculateDday = (date) => {
     const Dday = new Date(date);
     const todayCount = Math.floor(today.getTime() / (24*60*60*1000));
     const DdayCount = Math.floor(Dday.getTime() / (24*60*60*1000));
-    let result = (todayCount - DdayCount);
+    let result = (todayCount - DdayCount) + 1; // 오류 테스트중 : 오후에도 D-6, D+21이면 정상
+    console.log(`today : ${todayCount}, ${today.getTime()}\n`, `Dday : ${DdayCount}, ${Dday.getTime()}\n`, result);
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
         return 'D-day Error'
@@ -38,8 +39,11 @@ const renderDday = (id, date) => {
     const Dday = calculateDday(date);
     document.querySelector(`#${id}`).innerText = Dday;
 }
-renderDday("healing-time", "2023-05-03"); // 회복중
-renderDday("engineer-info-test", "2023-06-01"); // 정처기
+
+renderDday("engineer-info-test2", "2023-07-22"); // 정처기 실기
+renderDday("engineer-info-test2-receipt", "2023-06-27"); // 정처기 실기 접수
 renderDday("sqld-test", "2023-06-10"); // sqld
+renderDday("engineer-info-test", "2023-06-01"); // 정처기 필기
+renderDday("healing-time", "2023-05-03"); // 회복중
 
 
