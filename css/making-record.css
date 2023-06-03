@@ -441,6 +441,10 @@ details p.description {
   color: var(--red);
 }
 
+.point {
+  color: var(--point);
+}
+
 .bg-point {
   background-color: var(--bg-point);
 }
@@ -1066,6 +1070,10 @@ details p.description {
 
 .red {
   color: var(--red);
+}
+
+.point {
+  color: var(--point);
 }
 
 .bg-point {
