@@ -17,10 +17,9 @@ export const calculateDday = (date) => {
 
     const today = new Date();
     const Dday = new Date(date);
-    const todayCount = Math.floor(today.getTime() / (24*60*60*1000));
-    const DdayCount = Math.floor(Dday.getTime() / (24*60*60*1000));
-    let result = (todayCount - DdayCount) + 1; // 오류 테스트중 : 오후에도 D-6, D+21이면 정상
-    console.log(`today : ${todayCount}, ${today.getTime()}\n`, `Dday : ${DdayCount}, ${Dday.getTime()}\n`, result);
+    const todayCount = today.getTime() / (24*60*60*1000);
+    const DdayCount = Dday.getTime() / (24*60*60*1000);
+    let result = Math.floor(todayCount - DdayCount);
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
         return 'D-day Error'

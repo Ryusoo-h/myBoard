@@ -46,7 +46,7 @@ const tabMenu = (className) => {
                     tabButton.forEach(button => {
                         button.classList.remove('current');
                         for(let i = 0; i < tabPanel.length; i++) {
-                            console.log(button.id);
+                            // console.log(button.id);
                             if (tabPanel[i].classList.contains(button.id)) {
                                 tabPanel[i].classList.remove('current');
                                 break;
