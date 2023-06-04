@@ -15,30 +15,27 @@ const quickLinksDevListCategory = new Map([
 const quickLinksDevList = {
     bookmark : [
         {
-            title: ["github/Ryusoo-h"],
-            url: ["https://github.com/Ryusoo-h"]
+            title: ["GitHub", "CodePen"],
+            url: ["https://github.com/Ryusoo-h", "https://codepen.io/your-work/"],
+            text: ["내 저장소 : ", " / ", ""]
         },
         {
-            title: ["codepen : Your Work"],
-            url: ["https://codepen.io/your-work/"]
+            title: ["Flex", "Grid"],
+            url: ["https://heropy.blog/2018/11/24/css-flexible-box/", "https://heropy.blog/2019/08/17/css-grid/"],
+            text: ["CSS 완벽가이드 : ", " / ", ""]
         },
         {
             title: ["내 설정 VSCode 단축키"],
             url: ["https://ryu-soohyeon.notion.site/VSCode-1dc7b5361f1e40b49f509709c5b34747"]
         },
         {
-            title: ["CSS Flex", "CSS Grid"],
-            url: ["https://heropy.blog/2018/11/24/css-flexible-box/", "https://heropy.blog/2019/08/17/css-grid/"],
-            text: ["완벽가이드 : ", " / ", ""]
+            title: ["코드 서랍"],
+            url: ["./code-drawer"],
         },
         {
-            title: ["[CSS] 드래그/마우스 우클릭 금지"],
-            url: ["https://eunyoe.tistory.com/33"],
+            title: ["변수명 짓기"],
+            url: ["https://www.curioustore.com/#!/"]
         },
-        {
-            title: ["[CSS] border에 그라데이션 적용하기"],
-            url: ["https://codyhouse.co/nuggets/css-gradient-borders"],
-        }
     ],
     study : [
         {
