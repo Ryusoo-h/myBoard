@@ -145,16 +145,16 @@ class PrintQuickLinksList {
         const list = listCategory.map(category => {
             const listToLi = this.listData[category].map(link => {
                 if(link.title.length === 1) {
-                    return `<li><a class="round-block" href="${link.url[0]}">${link.title[0]}</a></li>`;
+                    return `<li><a class="round-block" target="_blank" href="${link.url[0]}">${link.title[0]}</a></li>`;
                 } else {
                     let linkLi = link.title.reduce((itemList, title, index) => {
                         const [firstText, connectText ,lastText] = link.text ? link.text : ["","",""];
                         if (index === 0) { // li 태그 열음
-                            return `<li>${firstText}<a class="round-block" href="${link.url[index]}">${title}</a>${connectText}`;
+                            return `<li>${firstText}<a class="round-block" target="_blank" href="${link.url[index]}">${title}</a>${connectText}`;
                         } else if (index === link.title.length - 1) { // li 태그 닫음
-                            return `${itemList}<a class="round-block" href="${link.url[index]}">${title}</a>${lastText}</li>`;
+                            return `${itemList}<a class="round-block" target="_blank" href="${link.url[index]}">${title}</a>${lastText}</li>`;
                         } else { //  a태그 + 구분자
-                            return `${itemList}<a class="round-block" href="${link.url[index]}">${title}</a>${connectText}`;
+                            return `${itemList}<a class="round-block" target="_blank" href="${link.url[index]}">${title}</a>${connectText}`;
                         }
                     },[]);
                     return linkLi;
