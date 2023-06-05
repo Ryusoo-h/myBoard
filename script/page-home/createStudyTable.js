@@ -154,17 +154,17 @@ class CreateStudyTable {
     
 }
 
-//
+// SQLD
 const sqld = new CreateStudyTable({
     id : 'sqld',
     information : {
         Dday : '2023-06-10',
         type : '문제',
         totalPage : 146,
-        currentPage: 0,
+        currentPage: 50,
         table : [
-            // { date : '6/4(일)', page: 0, Dday: '-6'},
-            { date : '6/3(토)', page: 0, Dday: '-7'},
+            { date : '6/5(월)', page: 50, Dday: '-5'},
+            { date : '6/4(일)', page: 30, Dday: '-6'}
         ],
     }
 });
@@ -210,7 +210,7 @@ const reactVelopert = new CreateStudyTable({
         Dday : '2023-05-14',
         type : '페이지',
         totalPage : 905,
-        currentPage: 760,
+        currentPage: 776,
         table : [
             { date : '5/19(금)', page: 776, Dday: '+5'},
             { date : '5/12(금)', page: 770, Dday: '-2'},
