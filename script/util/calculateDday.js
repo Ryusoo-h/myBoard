@@ -15,10 +15,10 @@ export const calculateDday = (date) => {
         return 'D-day Error'
     }
 
-    const today = new Date();
-    const Dday = new Date(date);
-    const todayCount = today.getTime() / (24*60*60*1000);
-    const DdayCount = Dday.getTime() / (24*60*60*1000);
+    const timeZoneOffset = new Date().getTimezoneOffset();
+    const Dday = new Date(date).getTime() + (timeZoneOffset*60*1000);
+    const todayCount = Date.now() / (24*60*60*1000);
+    const DdayCount = Dday / (24*60*60*1000);
     let result = Math.floor(todayCount - DdayCount);
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
