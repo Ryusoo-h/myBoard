@@ -4,8 +4,8 @@
 
 // - 인자 date : 기준 날짜. 형식 'yyyy-mm-dd'
 
-// - 반환값 Dday : 형식
-// ex) date와 오늘 날짜와 동일한 경우 : D-0, 
+// - 반환값 Dday : D-day. 형식 'D-n'
+// ex) date와 오늘 날짜와 동일한 경우 : D-day, 
 // ex) date가 오늘 날짜보다 작은 경우 : D+1
 // ex) date가 오늘 날짜보다 큰 경우 : D-1
 export const calculateDday = (date) => {
@@ -15,25 +15,23 @@ export const calculateDday = (date) => {
         return 'D-day Error'
     }
 
-    const timeZoneOffset = new Date().getTimezoneOffset();
-    const Dday = new Date(date).getTime() + (timeZoneOffset*60*1000);
-    const todayCount = Date.now() / (24*60*60*1000);
-    const DdayCount = Dday / (24*60*60*1000);
-    let result = Math.floor(todayCount - DdayCount);
+    const timezoneOffset = new Date().getTimezoneOffset()*60*1000;
+    const today = Date.now();
+    const Dday = (Date.parse(date) + timezoneOffset);
+    const result = Math.floor((today - Dday) / (24*60*60*1000));
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
-        return 'D-day Error'
+        return 'D-day Error';
     }
     if (result === 0) {
-        return 'D-0';
+        return 'D-day';
     } else if (result > 0) {
         return 'D+' + result;
     }
     return 'D' + result;
 };
-// const Dday = calculateDday('2023-05-10');
 
-
+// id를 가진 Element에 Dday를 출력해줌
 const renderDday = (id, date) => {
     const Dday = calculateDday(date);
     document.querySelector(`#${id}`).innerText = Dday;
@@ -44,5 +42,3 @@ renderDday("engineer-info-test2-receipt", "2023-06-27"); // 정처기 실기 접
 renderDday("sqld-test", "2023-06-10"); // sqld
 renderDday("engineer-info-test", "2023-06-01"); // 정처기 필기
 renderDday("healing-time", "2023-05-03"); // 회복중
-
-
