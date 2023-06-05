@@ -111,7 +111,7 @@ class CreateStudyTable {
         const trList = this.data.information.table?.map((item, index) => {
                 const progress = ((item.page / totalPage)*100).toFixed(2);
                 const remainingPages = totalPage - item.page;
-                let quota = Math.ceil(remainingPages / Math.abs(item.Dday));
+                let quota = Math.ceil(remainingPages / Math.abs(item.Dday < 0 ? item.Dday : 1));
                 if(index === 0) { // 가장 최근 날짜일 경우 할당량을 구함
                     quotaPage = item.page + quota;
                 }
