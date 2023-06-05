@@ -6,11 +6,13 @@ import noPost from "../../blog/posts/noPost.js";
 // 단순히 제목출력, 내용 출력 기능만 구현함
 
 class PrintPost {
-    constructor(posts) {
+    constructor(posts, page) {
         this.posts = posts;
         this.postKeys = Object.keys(this.posts); // ['post1', 'post2', 'post3']
         this.recentPostKey = this.postKeys[this.postKeys.length - 1]; // 최신글 키 (처음 보여줄 글)
         
+        this.page = page;
+
         this.postTitleListElement = document.querySelector('#post-title-list'); // PostTitle 목록을 출력할 위치
         this.postElement = document.querySelector('#post > article'); // Post를 출력할 위치
         this.quickSideMenu = document.querySelector('#quick-side-menu'); // AsideList를 출력할 위치
@@ -89,9 +91,9 @@ class PrintPost {
     printSubMenuList(postKey) { // 좌측 PostTitle 목록 출력
         const titles = this.getTitles();
 
-        let pathname = '/myBoard/blog/'; // location.host가 'ryusoo-h.github.io'일 때
+        let pathname = `/myBoard/${this.page}/`; // location.host가 'ryusoo-h.github.io'일 때
         if (location.host === 'localhost:8080') { // local 테스트를 위해
-            pathname = '/blog/index.html'
+            pathname = `/${this.page}/index.html`
         }
 
         let postTitleList = ``;
@@ -117,10 +119,10 @@ class PrintPost {
 }
 
 // blog 포스트
-const printBlogPost = new PrintPost(blogPosts);
+const printBlogPost = new PrintPost(blogPosts, 'blog');
 
 // code-Drawer 포스트
-const printCodeDrawerPost = new PrintPost(codeDrawerPosts);
+const printCodeDrawerPost = new PrintPost(codeDrawerPosts, 'code-drawer');
 
 const urlPathname = new URL(location.href).pathname;
 if (urlPathname.includes('blog')) {
