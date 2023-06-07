@@ -1372,3 +1372,39 @@ a.ic-arrow-left:hover.ic-arrow-left::after {
   border-left: solid 3px var(--point);
   border-bottom: solid 3px var(--point);
 }
+
+#post #button-count {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  flex-direction: row;
+  padding: 1em 1.5em;
+  border-radius: 2em;
+  background-color: var(--font-color);
+  color: var(--bg-content);
+  gap: 0.4em;
+}
+#post button {
+  background-color: var(--point);
+  color: var(--point);
+  border: none;
+  border-radius: 7px;
+  padding: 0.5em;
+  margin: 0.1em;
+  font-weight: bold;
+  line-height: 1em;
+}
+#post button.red {
+  background-color: var(--red);
+  color: var(--red);
+}
+#post button.not-hidden {
+  background-color: var(--font-color);
+  color: var(--bg-content);
+}
+#post button.show {
+  color: var(--bg-content);
+}
+#post mark.block, #post span.exam.block {
+  display: inline-block;
+}

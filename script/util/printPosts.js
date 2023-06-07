@@ -1,6 +1,7 @@
 
 import * as blogPosts from "../../blog/posts/index.js";
 import * as codeDrawerPosts from "../../code-drawer/posts/index.js";
+import * as wordMemorizationPosts from "../../word-memorization/posts/index.js";
 import noPost from "../../blog/posts/noPost.js";
 
 // 단순히 제목출력, 내용 출력 기능만 구현함
@@ -65,7 +66,7 @@ class PrintPost {
         this.quickSideMenu.insertAdjacentHTML('afterbegin', asideList); // asideList 출력
     };
 
-    printPost(postKey) {
+    printPost(postKey, isprintAsideList) {
         // article 출력
         if (!this.postKeys.includes(postKey)) { // 포스트가 없다면 404 출력, 탈출
             this.postElement.insertAdjacentHTML('afterbegin', noPost);
@@ -75,7 +76,9 @@ class PrintPost {
         this.postElement.insertAdjacentHTML('afterbegin', currentPost); // article 출력
 
         // asideList 출력
-        this.printAsideList(currentPost);
+        if (isprintAsideList) {
+            this.printAsideList(currentPost);
+        }
     };
     
     getTitles() {
@@ -105,28 +108,30 @@ class PrintPost {
         this.postTitleListElement.insertAdjacentHTML('afterbegin', postTitleList); // PostTitle 목록 출력
     };
 
-    render() {
+    render(isprintAsideList) {
         const urlParams = new URL(location.href).searchParams;
         const currentPostKey = urlParams.get('post');
         if (!currentPostKey) { // 만약 파라미터가 없다면 최신글(recentPostKey와 일치하는 글) 출력
             this.printSubMenuList(this.recentPostKey);
-            this.printPost(this.recentPostKey);
+            this.printPost(this.recentPostKey, isprintAsideList);
             return;
         }
         this.printSubMenuList(currentPostKey);
-        this.printPost(currentPostKey);
+        this.printPost(currentPostKey, isprintAsideList);
     };
 }
 
-// blog 포스트
+// blog 페이지 포스트
 const printBlogPost = new PrintPost(blogPosts, 'blog');
 
-// code-Drawer 포스트
+// code-Drawer 페이지 포스트
 const printCodeDrawerPost = new PrintPost(codeDrawerPosts, 'code-drawer');
 
+// word-Memorization 페이지 포스트
+const printWordMemorization = new PrintPost(wordMemorizationPosts, 'word-memorization');
+
 const urlPathname = new URL(location.href).pathname;
-if (urlPathname.includes('blog')) {
-    printBlogPost.render();
-} else if (urlPathname.includes('code-drawer')) {
-    printCodeDrawerPost.render();
-}
+
+if (urlPathname.includes('blog')) printBlogPost.render(true)
+else if (urlPathname.includes('code-drawer')) printCodeDrawerPost.render(true)
+else if (urlPathname.includes('word-memorization')) printWordMemorization.render();

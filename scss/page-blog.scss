@@ -79,7 +79,7 @@ html[data-theme="dark"] {
             margin: $padding-base*0.5 0;
             text-align: justify;
         }
-        article > *:not(h2, h3, h4, h5, h6, img) {
+        article > *:not(h2, h3, h4, h5, h6, img, button) {
             padding-left: 2em;
         }
         hr {

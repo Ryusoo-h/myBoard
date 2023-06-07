@@ -1,0 +1,42 @@
+@import 'reset';
+@import 'custom-reset';
+@import 'page-blog';
+@import 'style';
+
+#post {
+    #button-count {
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        flex-direction: row;
+        padding: 1em 1.5em;
+        border-radius: 2em;
+        background-color: var(--font-color);
+        color: var(--bg-content);
+        gap: 0.4em;
+    }
+    button {
+        background-color: var(--point);
+        color: var(--point);
+        border: none;
+        border-radius: 7px;
+        padding: 0.5em;
+        margin: 0.1em;
+        font-weight: bold;
+        line-height: 1em;
+        &.red {
+            background-color: var(--red);
+            color: var(--red);
+        }
+        &.not-hidden {
+            background-color: var(--font-color);
+            color: var(--bg-content);
+        }
+        &.show {
+            color: var(--bg-content);
+        }
+    }
+    mark.block, span.exam.block {
+        display: inline-block;
+    }
+}

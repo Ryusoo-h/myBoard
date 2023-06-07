@@ -33,6 +33,10 @@ const quickLinksDevList = {
             url: ["./code-drawer"],
         },
         {
+            title: ["단어 암기장"],
+            url: ["./word-memorization"],
+        },
+        {
             title: ["변수명 짓기"],
             url: ["https://www.curioustore.com/#!/"]
         },
