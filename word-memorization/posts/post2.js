@@ -1,5 +1,5 @@
 export const post2 = `
-<h1 class="title">SQLD 2. 데이터 모델과 성능(62문)</h1>
+<h1 class="title">SQLD 2. 데이터 모델과 성능(60문)</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-08</span>
     <span class="modification-date">수정일 : 2023-06-08</span>

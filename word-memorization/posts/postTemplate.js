@@ -41,6 +41,10 @@ export const postTemplate = `
     <button type="button">💛단어</button>
     <button type="button" class="red">💛단어</button>
     <button type="button" class="not-hidden">💛단어</button>
+    <button class="code">
+        <span class="comment">/* 주석 */</span>
+        <br>code <span class="text">텍스트</span> <span class="point">강조</span>
+    </button>
 </article>
 <hr>
 

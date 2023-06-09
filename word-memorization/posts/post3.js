@@ -1,5 +1,5 @@
 export const post3 = `
-<h1 class="title">SQLD 3-1. SQL 기본(79문)</h1>
+<h1 class="title">SQLD 3-1. SQL 기본(69문)</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-08</span>
     <span class="modification-date">수정일 : 2023-06-08</span>
