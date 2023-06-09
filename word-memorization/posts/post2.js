@@ -155,9 +155,6 @@ export const post2 = `
             </ul>
         </li>
     </ul>
-    <button type="button">💛단어</button>
-    <button type="button" class="red">💛단어</button>
-    <button type="button" class="not-hidden">💛단어</button>
 </article>
 <hr>
 
