@@ -62,14 +62,14 @@ class CreateStudyTable {
         const { Dday, type, totalPage, currentPage } = this.data.information;
         const unit = this.getTypeUnit(type);
         const calculatedDday = calculateDday(Dday);
-        let DdayNum = calculatedDday.split('-')[1];
-        DdayNum = DdayNum !== undefined ? Number(DdayNum) : 1;
+        let DdayNum = Number(calculatedDday.split('D')[1]);
+        DdayNum = calculatedDday === 'D-day' ? 0 
+        : DdayNum !== undefined ? DdayNum : 1;
 
         // Dday 출력
         Card.querySelector('.Dday').innerHTML= this.printDate(Dday);
         // totalPage 출력
         Card.querySelector('.totalPage').innerHTML= totalPage + unit;
-        
         // table 출력을 위한 데이터 처리
         const tableTemplate = `
             <table>
@@ -81,7 +81,7 @@ class CreateStudyTable {
                                 </th>
                             </tr>
                         ` : `
-                            ${DdayNum === 1 ? `
+                            ${DdayNum > 0 ? `
                                 <tr>
                                     <th colspan="4" style="border-right: none; background-color: var(--red); color: var(--bg-content)" class="date">
                                         목표일이 지났어요😥 ${calculatedDday}
