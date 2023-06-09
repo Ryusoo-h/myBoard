@@ -2,7 +2,7 @@ export const post1 = `
 <h1 class="title">SQLD 1. 데이터 모델의 이해(48문)</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-08</span>
-    <span class="modification-date">수정일 : 2023-06-08</span>
+    <span class="modification-date">수정일 : 2023-06-10</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
@@ -271,7 +271,7 @@ export const post1 = `
                 <li><button type="button" class="not-hidden">엔터티 구성방식</button>에 따른 분류
                     <ul>
                         <li><button type="button">PK(Primary Key)속성</button> : 엔터티를 식별할 수 있는 속성</li>
-                        <li><button type="button">FK(Foregin Key)속성</button> : 타 엔터티와의 관계에서 포함된 속성</li>
+                        <li><button type="button">FK(Foreign Key)속성</button> : 타 엔터티와의 관계에서 포함된 속성</li>
                         <li><button type="button">일반속성</button> : PK, FK외 속성</li>
                     </ul>
                 </li>

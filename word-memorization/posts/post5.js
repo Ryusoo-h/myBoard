@@ -2,7 +2,7 @@ export const post5 = `
 <h1 class="title">SQLD 4. SQL 활용(84문)</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-09</span>
-    <span class="modification-date">수정일 : 2023-06-09</span>
+    <span class="modification-date">수정일 : 2023-06-10</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
@@ -161,7 +161,7 @@ export const post5 = `
                 <li><button type="button" class="red">LEVEL</button> : 루트데이터 = 1, 하위 데이터 1씩 증가</li>
                 <li><button type="button" class="red">CONNECT_BY_ISLEAF</button> : 리프데이터 = 1, 아니면 0</li>
                 <li><button type="button" class="red">CONNECT_BY_ISCYCLE</button> : 조상으로서 존재하면 = 1, 아니면 0</li>
-                <li><b><button type="button" class="red">CONNECT_BY_ROOT</button>칼럼</b> : </li>
+                <li><b><button type="button" class="red">CONNECT_BY_ROOT</button>칼럼</b> : 최상위 관리자 출력</li>
                 <li><b><button type="button" class="red">SYS_CONNECT_BY_PATH</button>(원하는 칼럼을 문자열로 연결)</b> : </li>
             </ul>
         </li>
@@ -264,7 +264,7 @@ export const post5 = `
         </li>
         <li>
             <button type="button" class="red">GROUPING SETS</button> : <b>특정 항목에 대한 소계</b>
-            <br><span class="exam">ex) <b>GROUP BY GROUPING SETS</b>(부서칼럼, 성별칼럼) => <b>2개</b>(부서별, 부서성별별)</span>
+            <br><span class="exam">ex) <b>GROUP BY GROUPING SETS</b>(부서칼럼, 성별칼럼) => <b>2개</b>(부서별, 성별별)</span>
         </li>
         <li><button type="button" class="red">GROUPING(칼럼)</button> : 칼럼이 NULL인경우 1반환, 아닌경우 0반환</li>
     </ul>
