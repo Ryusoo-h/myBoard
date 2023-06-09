@@ -35,6 +35,31 @@
         &.show {
             color: var(--bg-content);
         }
+        &.code {
+            text-align: left;
+            line-height: 1.5em;
+            background-color: var(--bg-basic);
+            color: var(--bg-basic);
+            pre {
+                margin: 0;
+            }
+            .point {
+                color: var(--bg-basic);
+            }
+            &.show {
+                color: var(--red);
+                .text {
+                    color: var(--font-color);
+                }
+                .comment {
+                    color: var(--font-color);
+                    opacity: 0.5;
+                }
+                .point {
+                    color: var(--point);
+                }
+            }
+        }
     }
     mark.block, span.exam.block {
         display: inline-block;

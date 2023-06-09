@@ -1405,6 +1405,31 @@ a.ic-arrow-left:hover.ic-arrow-left::after {
 #post button.show {
   color: var(--bg-content);
 }
+#post button.code {
+  text-align: left;
+  line-height: 1.5em;
+  background-color: var(--bg-basic);
+  color: var(--bg-basic);
+}
+#post button.code pre {
+  margin: 0;
+}
+#post button.code .point {
+  color: var(--bg-basic);
+}
+#post button.code.show {
+  color: var(--red);
+}
+#post button.code.show .text {
+  color: var(--font-color);
+}
+#post button.code.show .comment {
+  color: var(--font-color);
+  opacity: 0.5;
+}
+#post button.code.show .point {
+  color: var(--point);
+}
 #post mark.block, #post span.exam.block {
   display: inline-block;
 }
