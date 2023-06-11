@@ -94,10 +94,7 @@ class PrintPost {
     printSubMenuList(postKey) { // 좌측 PostTitle 목록 출력
         const titles = this.getTitles();
 
-        let pathname = `/myBoard/${this.page}/`; // location.host가 'ryusoo-h.github.io'일 때
-        if (location.host === 'localhost:8080') { // local 테스트를 위해
-            pathname = `/${this.page}/index.html`
-        }
+        let pathname = `/myBoard/${this.page}/`;
 
         let postTitleList = ``;
         titles.forEach((value, key) => {
