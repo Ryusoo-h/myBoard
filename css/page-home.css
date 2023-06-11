@@ -411,11 +411,11 @@ nav#main-menu .right a {
 .card-nude {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
 }
 .card-nude .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card-nude .title {
   margin: 0;
@@ -446,6 +446,7 @@ nav#main-menu .right a {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
   background-color: var(--bg-content);
   border-radius: 10px;
@@ -453,7 +454,6 @@ nav#main-menu .right a {
 }
 .card .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card .title {
   margin: 0;
@@ -734,12 +734,6 @@ main > .grid #quick-links .tab-wrapper .card-container {
 }
 main > .grid #links ul a {
   font-weight: 500;
-}
-main > .grid #have-todo .tab-wrapper {
-  flex-grow: 1;
-}
-main > .grid #have-todo .tab-wrapper .card-container {
-  height: -webkit-fill-available;
 }
 main > .grid #study-for {
   grid-area: 1/1/3/2;

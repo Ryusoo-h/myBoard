@@ -175,14 +175,6 @@ main > .grid {
             font-weight: 500;
         }
     }
-    #have-todo {
-        .tab-wrapper {
-            flex-grow: 1;
-            .card-container {
-                height: -webkit-fill-available;
-            }
-        }
-    }
 
     // 메인 그리드 스타일
     grid-template-rows: repeat(6, 120px);

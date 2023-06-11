@@ -131,11 +131,11 @@ nav#main-menu {
 @mixin card-base {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     overflow: auto;
     $title-padding: $padding-base*0.8 $padding-base*0.6 $padding-base*0.6;
     .card-container {
         padding: $padding-base*0.4 $padding-base*0.6;
-        flex-grow: 1;
     }
     .title{
         margin: 0;

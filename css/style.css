@@ -273,11 +273,11 @@ nav#main-menu .right a {
 .card-nude {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
 }
 .card-nude .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card-nude .title {
   margin: 0;
@@ -308,6 +308,7 @@ nav#main-menu .right a {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
   background-color: var(--bg-content);
   border-radius: 10px;
@@ -315,7 +316,6 @@ nav#main-menu .right a {
 }
 .card .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card .title {
   margin: 0;

@@ -786,7 +786,7 @@ html[data-theme=dark] #change-theme {
   margin: 10px 0;
   text-align: justify;
 }
-#post > article article > *:not(h2, h3, h4, h5, h6, img), .record > article article > *:not(h2, h3, h4, h5, h6, img) {
+#post > article article > *:not(h2, h3, h4, h5, h6, img, button), .record > article article > *:not(h2, h3, h4, h5, h6, img, button) {
   padding-left: 2em;
 }
 #post > article hr, .record > article hr {
