@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 body {
   margin: 0;
   overflow-wrap: break-word;
@@ -49,6 +47,12 @@ img {
   appearance: none;
 }
 
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 html[data-theme=light] {
   --bg-basic: #F5F5F5;
   --bg-content: #fff;
@@ -95,7 +99,7 @@ html[data-theme=dark] ::selection {
 
 :root, a, button {
   color: var(--font-color);
-  font-family: "Roboto", sans-serif;
+  font-family: "Pretendard-Regular", sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -109,144 +113,7 @@ a:hover {
 }
 
 table, details > p {
-  font-size: 14px;
-}
-
-table {
-  margin: 8px auto;
-  border-collapse: collapse;
-}
-table th:not(:last-child), table td:not(:last-child) {
-  border-right: solid 1px var(--line-color);
-}
-table tbody > tr {
-  border-top: solid 1px var(--line-color);
-}
-table th, table td, table th[class], table td[class] {
-  padding: 8px;
-}
-
-details summary {
-  font-weight: 700;
-  padding: 4px;
-}
-details p.description {
-  padding: 8px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-body {
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-:lang(ko) {
-  word-break: keep-all;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-[class] {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-[class]::before,
-[class]::after {
-  box-sizing: border-box;
-}
-
-[class]:where(ol, ul) {
-  list-style: none;
-}
-
-[class]:where(button, fieldset, iframe, input, select, textarea) {
-  border: 0;
-}
-
-[class]:where(button, dialog, input, mark, meter, progress) {
-  background-color: transparent;
-}
-
-[class]:where(table) {
-  border: 0;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-[class]:where(button, input, meter, progress, select, textarea) {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-html[data-theme=light] {
-  --bg-basic: #F5F5F5;
-  --bg-content: #fff;
-  --bg-point: #F2F8FD;
-  --point: #497CFF;
-  --point-sub: #e3ecff;
-  --font-color: #333;
-  --font-color-sub: #7B7B7B;
-  --line-color: #B4B4B4;
-  --red: #e72e2e;
-}
-html[data-theme=light] #change-theme {
-  background-color: var(--font-color);
-  color: #8198d5;
-}
-html[data-theme=light] ::selection {
-  background: var(--point-sub);
-  color: var(--font-color);
-}
-
-html[data-theme=dark] {
-  --bg-basic: #07080e;
-  --bg-content: #0e111c;
-  --bg-point: #191c28;
-  --point: #8198d5;
-  --point-sub: #1e2744;
-  --font-color: #b3b5c0;
-  --font-color-sub: #a4a6af;
-  --line-color: #525466;
-  --red: #c96262;
-}
-html[data-theme=dark] #change-theme {
-  background-color: var(--point);
-  color: var(--point-sub);
-}
-html[data-theme=dark] ::selection {
-  background: var(--point);
-  color: var(--bg-content);
-}
-
-:root {
-  background-color: var(--bg-basic);
-}
-
-:root, a, button {
-  color: var(--font-color);
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-}
-
-a, a[class] {
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--point);
-}
-
-table, details > p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 table {
@@ -401,7 +268,7 @@ nav#main-menu .right.flex {
   align-content: center;
 }
 nav#main-menu .right a {
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px;
   text-decoration: none;
   color: var(--font-color-sub);
@@ -411,11 +278,11 @@ nav#main-menu .right a {
 .card-nude {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
 }
 .card-nude .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card-nude .title {
   margin: 0;
@@ -446,6 +313,7 @@ nav#main-menu .right a {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   overflow: auto;
   background-color: var(--bg-content);
   border-radius: 10px;
@@ -453,7 +321,6 @@ nav#main-menu .right a {
 }
 .card .card-container {
   padding: 8px 12px;
-  flex-grow: 1;
 }
 .card .title {
   margin: 0;
@@ -523,10 +390,10 @@ ul.round-block-list > li {
   border-radius: 10px;
   margin: 5px 0 10px;
   box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-  font-size: 14px;
+  font-size: 15px;
 }
 ul.round-block-list > li a {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 ul a.round-block {
@@ -535,7 +402,7 @@ ul a.round-block {
   border-radius: 10px;
   margin: 5px 0 10px;
   box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-  font-size: 14px;
+  font-size: 15px;
   display: inline-block;
 }
 
@@ -738,7 +605,7 @@ html[data-theme=dark] #change-theme {
   color: var(--font-color);
 }
 #post > article .post-date, .record > article .post-date {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--font-color-sub);
   text-align: right;
 }

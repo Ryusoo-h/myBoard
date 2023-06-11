@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 html[data-theme=light] {
   --bg-basic: #F5F5F5;
   --bg-content: #fff;
@@ -45,7 +50,7 @@ html[data-theme=dark] ::selection {
 
 :root, a, button {
   color: var(--font-color);
-  font-family: "Roboto", sans-serif;
+  font-family: "Pretendard-Regular", sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -59,7 +64,7 @@ a:hover {
 }
 
 table, details > p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 table {

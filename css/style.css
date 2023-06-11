@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 body {
   margin: 0;
   overflow-wrap: break-word;
@@ -48,6 +47,12 @@ img {
   appearance: none;
 }
 
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 html[data-theme=light] {
   --bg-basic: #F5F5F5;
   --bg-content: #fff;
@@ -94,7 +99,7 @@ html[data-theme=dark] ::selection {
 
 :root, a, button {
   color: var(--font-color);
-  font-family: "Roboto", sans-serif;
+  font-family: "Pretendard-Regular", sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -108,7 +113,7 @@ a:hover {
 }
 
 table, details > p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 table {
@@ -263,7 +268,7 @@ nav#main-menu .right.flex {
   align-content: center;
 }
 nav#main-menu .right a {
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px;
   text-decoration: none;
   color: var(--font-color-sub);
@@ -385,10 +390,10 @@ ul.round-block-list > li {
   border-radius: 10px;
   margin: 5px 0 10px;
   box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-  font-size: 14px;
+  font-size: 15px;
 }
 ul.round-block-list > li a {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 ul a.round-block {
@@ -397,7 +402,7 @@ ul a.round-block {
   border-radius: 10px;
   margin: 5px 0 10px;
   box-shadow: 2px 2px 6px rgba(8, 76, 172, 0.12);
-  font-size: 14px;
+  font-size: 15px;
   display: inline-block;
 }
 
