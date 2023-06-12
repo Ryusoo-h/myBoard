@@ -583,12 +583,140 @@ main > .grid #time-line article .more.hidden {
 main > .grid #time-line article .hidden + .more {
   display: inline-block;
 }
-main > .grid #studyList details[open] {
-  max-height: 280px;
-  overflow: auto;
+main > .grid #studyList #studyList-wrapper {
+  gap: 1rem;
+  padding: 0 1rem;
+  flex-direction: column;
 }
-main > .grid #studyList table .progress {
+main > .grid #studyList #studyList-wrapper .study-item {
+  background-color: var(--bg-point);
+  border-radius: 7px;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day {
+  justify-content: space-between;
+  align-items: end;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress {
+  gap: 0.5rem;
+  align-items: center;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress .d-day {
+  font-weight: bold;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress .percent {
+  font-weight: bold;
   color: var(--point);
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress progress {
+  appearance: none;
+  position: relative;
+  width: 70px;
+  height: 16px;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress progress::-webkit-progress-bar {
+  box-sizing: border-box;
+  background: var(--bg-content);
+  border: solid 2px var(--bg-content);
+  border-radius: 8px;
+  overflow: hidden;
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress progress::-webkit-progress-value {
+  background: var(--point);
+}
+main > .grid #studyList #studyList-wrapper .study-item .title-and-d-day .d-day-and-progress progress::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 16px;
+  border: solid 1px var(--point-sub);
+  border-radius: 8px;
+  background: linear-gradient(to right, transparent 19%, var(--point-sub) 19% 21%, transparent 21% 39%, var(--point-sub) 39% 41%, transparent 41% 59%, var(--point-sub) 59% 61%, transparent 61% 79%, var(--point-sub) 79% 81%, transparent 81%);
+}
+main > .grid #studyList #studyList-wrapper .study-item .detail {
+  margin-top: 0.5rem;
+  justify-content: space-between;
+  align-items: end;
+}
+main > .grid #studyList #studyList-wrapper .study-item .detail p {
+  font-size: 15px;
+  color: var(--font-color-sub);
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table {
+  background-color: var(--bg-content);
+  color: var(--font-color);
+  margin: 1rem 0;
+  border-radius: 4px;
+  max-height: 230px;
+  overflow: auto;
+  transition: all 0.2s ease-in-out;
+  -ms-overflow-style: none; /* 인터넷 익스플로러 스크롤 숨기기*/
+  scrollbar-width: none; /* 파이어폭스 스크롤 숨기기*/
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table::-webkit-scrollbar { /* ( 크롬, 사파리, 오페라, 엣지 ) 동작 : 스크롤 숨기기*/
+  display: none;
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table.hidden {
+  margin: 0;
+  height: 0;
+  opacity: 0;
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table table {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table table thead th {
+  border: none;
+}
+main > .grid #studyList #studyList-wrapper .study-item .amount-table table .progress {
+  color: var(--point);
+}
+main > .grid #studyList #studyList-wrapper .study-item:hover {
+  background-color: var(--point-sub);
+}
+main > .grid #studyList #studyList-wrapper .study-item.complete {
+  background-color: var(--point);
+  color: var(--bg-content);
+}
+main > .grid #studyList #studyList-wrapper .study-item.complete progress {
+  display: none;
+}
+main > .grid #studyList #studyList-wrapper .study-item.complete .detail p {
+  color: var(--point-sub);
+}
+main > .grid #studyList #studyList-wrapper .study-item.complete .detail p a {
+  color: var(--bg-content);
+}
+main > .grid #studyList #studyList-wrapper .study-item.complete .d-day-and-progress .percent {
+  color: var(--bg-content);
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete {
+  background-color: var(--red);
+  color: var(--bg-content);
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete progress {
+  display: none;
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete .detail p {
+  color: var(--point-sub);
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete .detail p a {
+  color: var(--bg-content);
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete .detail p a:hover {
+  color: var(--point-sub);
+}
+main > .grid #studyList #studyList-wrapper .study-item.incomplete .d-day-and-progress .percent {
+  color: var(--bg-content);
 }
 main > .grid #quick-links {
   grid-area: 1/3/4/4;
