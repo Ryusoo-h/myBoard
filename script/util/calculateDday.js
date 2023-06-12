@@ -38,7 +38,9 @@ const renderDday = (id, date) => {
 }
 
 renderDday("engineer-info-test2", "2023-07-22"); // 정처기 실기
+renderDday("sqld-test-result", "2023-07-07"); // sqld 결과
 renderDday("engineer-info-test2-receipt", "2023-06-27"); // 정처기 실기 접수
+renderDday("engineer-info-test-result", "2023-06-14"); // 정처기 필기 결과
 renderDday("sqld-test", "2023-06-10"); // sqld
 renderDday("engineer-info-test", "2023-06-01"); // 정처기 필기
 renderDday("healing-time", "2023-05-03"); // 회복중
