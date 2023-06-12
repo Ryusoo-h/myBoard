@@ -1,10 +1,10 @@
 
-const postButtonElements = document.querySelectorAll('#post button');
+const postButtonElements = document.querySelectorAll('#post button:not(.not-hidden)');
 
 const printButtonCount = () => {
     const buttonCountElement = document.querySelector('#button-count');
     
-    const totalCount = postButtonElements.length - document.querySelectorAll('#post button.not-hidden').length;
+    const totalCount = postButtonElements.length;
     let currentCount = 0; // 현재 클릭된 버튼수
 
     const updateCurrentCount = (isShowed) => {
