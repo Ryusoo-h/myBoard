@@ -13,31 +13,31 @@ class PrintTimeLine {
         const list = this.listData.slice(this.printedStartNum, this.printedStartNum + this.printMinLength)
             .map(({icon, title, content, date}) => {
                 // 글이 4줄이상일 경우 true => '+더보기'버튼 추가됨
-                let isHiddenContent = false; 
-                const reg = new RegExp(/\<br\>/);
-                if (content.length > 100 || (content.match(reg, 'g') && content.split(reg).length >=4)) {
-                    isHiddenContent = true;
-                }
-
-                const moreButton = `<button type="button" class="more" onclick="
-                    this.parentNode.querySelector('.content').classList.remove('hidden');
-                    this.classList.add('hidden');
-                ">+더보기</button>`;
-
                 return `<article class="flex">
-                            <i class="thumb ${icon}"></i>
-                            <div>
-                                <h2 class="content-title">${title}</h2>
-                                <p class="content ${isHiddenContent ? 'hidden' : ''}">${content}</p>
-                                ${isHiddenContent ? moreButton : ''}
-                                <span class="date">${date}</span>
-                            </div>
-                        </article>`;
+                    <i class="thumb ${icon}"></i>
+                    <div>
+                        <h2 class="content-title">${title}</h2>
+                        <p class="content forCheck hidden">${content}</p>
+                        <span class="date">${date}</span>
+                    </div>
+                </article>`;
             })
             .join(`
         `);
         this.printedStartNum += this.printMinLength;
         this.rootEl.insertAdjacentHTML('beforeend', list);
+        const listForCheck = this.rootEl.querySelectorAll('p.hidden.forCheck');
+        const moreButton = `<button type="button" class="more" onclick="
+            this.parentNode.querySelector('.content').classList.remove('hidden');
+            this.classList.add('hidden');
+        ">+더보기</button>`;
+        for(let i = 0; i < listForCheck.length; i++) {
+            listForCheck[i].classList.remove('forCheck');
+            if (listForCheck[i].offsetHeight < listForCheck[i].scrollHeight) {
+                listForCheck[i].insertAdjacentHTML('afterend', moreButton);
+            }
+        }
+
     }
 };
 
