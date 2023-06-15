@@ -10,6 +10,30 @@
 
 const timeLine = [
     {
+        icon: "tired",
+        title: "타임라인 오류 수정! 새로운걸 알게 됨!",
+        content: "3줄 안넘쳐도 '+더보기'버튼 생기는 오류 수정. 100자 넘으면 3줄이하로 줄이라고 해놔서 2줄이어도 더보기가 생기는 문제가 있었다. 내가 아는 방법중엔 없어서 찾다가 발견했다. text-overflow: ellipsis;를 했을때 offsetHeight와 scrollHeight의 차이를 이용하면 된다고 한다! 아니 scrollHeight가 줄이지 않은 크기 그대로 일줄 몰랐어! 덕분에 쉽게 고쳤다. 👉 <a href='https://velog.io/@rkio/Javascript-text-overflow-ellipsis-%ED%99%9C%EC%84%B1-%EC%97%AC%EB%B6%80%EB%A5%BC-JS%EB%A1%9C-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95'>참고 블로그</a>",
+        date: "2023-06-16 화 2AM"
+    },
+    {
+        icon: "fun",
+        title: "아니 경로가 맞는데 없다고 해서",
+        content: "원인을 찾고있었는데 react-router-dom 6.5에서 @가 들어가는 형태의 파마리터 지원이 없어졌다고 한다.. <a href='https://github.com/velopert/learning-react/issues/382'>이슈 설명</a> 못 봤으면 한참 찾았을듯..!",
+        date: "2023-06-16 금 1AM"
+    },
+    {
+        icon: "fun",
+        title: "정보처리기사 실기 책 삼!",
+        content: "두근두근. 빨리 와랏",
+        date: "2023-06-15 목 10PM"
+    },
+    {
+        icon: "tired",
+        title: "아이고 복습",
+        content: "자격증 시험친다고 멈췄던 공부를 다시하려니 복습부터 다시 해야하네.. 진도 언제 빼냥!",
+        date: "2023-06-15 목 5PM"
+    },
+    {
         icon: "fun",
         title: "스타일 리팩토링 가자~",
         content: "CSS 설계법 적용해보자!<br>아무래도 SMACSS가 적절한거같은데?",
@@ -36,7 +60,7 @@ const timeLine = [
     {
         icon: "tired",
         title: "앗.. 5시..이러면 또 밤낮 바뀌는데ㅠ",
-        content: "오류고치고 찾고 잠이 안와서 SQLD 공부하다가.. <a href='/myBoard/code-drawer/?post=post2#sub1'>D-day 계산 (지역 시간 오차 해결하기)</a> 글 썻는데 시간 훌쩍이네..! 11시엔 일어나야지.. 오.. 오류 발견! a 태그를 추가하면 +더보기가 생기네 정규표현식에 문제있는듯",
+        content: "오류고치고 찾고 잠이 안와서 SQLD 공부하다가.. <a href='/myBoard/code-drawer/?post=post2#sub1'>D-day 계산 (지역 시간 오차 해결하기)</a> 글 썻는데 시간 훌쩍이네..! 11시엔 일어나야지..",
         date: "2023-06-06 화 5AM"
     },
     {
