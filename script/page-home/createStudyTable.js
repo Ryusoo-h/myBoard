@@ -194,6 +194,45 @@ class CreateStudyTable {
 // }, true); // true이면 카드 열림
 // test.render();
 
+
+// 정보처리기사 실기
+const engineerInformationProcessing2 = new CreateStudyTable({
+    id : 'engineer-information-processing2',
+    title : '정보처리기사 실기 ',
+    memo : '강의 찾아보기',
+    complete: false,
+    information : {
+        startDay : '2023-06-19',
+        Dday : '2023-07-22',
+        type : '페이지',
+        totalAmount : 0,
+        currentAmount: 0,
+        table : [
+            // { date : '6/12(월)', amount: 2, Dday: '-2'}
+        ],
+    }
+});
+engineerInformationProcessing2.render();
+
+// 리액트 쿼리 강의
+const reactQuery = new CreateStudyTable({
+    id : 'react-query',
+    title : '리액트 쿼리 학습',
+    memo : '강의 찾아보기',
+    complete: false,
+    information : {
+        startDay : '2023-06-17',
+        Dday : '2023-07-31',
+        type : '강의',
+        totalAmount : 0,
+        currentAmount: 0,
+        table : [
+            // { date : '6/12(월)', amount: 2, Dday: '-2'}
+        ],
+    }
+});
+reactQuery.render();
+
 // 리액트를 다루는 기술
 const reactVelopert = new CreateStudyTable({
     id : 'react-velopert',
@@ -205,9 +244,10 @@ const reactVelopert = new CreateStudyTable({
         Dday : '2023-06-18',
         type : '페이지',
         totalAmount : 905,
-        currentAmount: 794,
+        currentAmount: 836,
         table : [
-            { date : '6/14(화)', amount: 794, Dday: '-5'},
+            { date : '6/15(목)', amount: 836, Dday: '-3'},
+            { date : '6/13(화)', amount: 794, Dday: '-5'},
             { date : '5/19(금)', amount: 776, Dday: '+5'},
             { date : '5/12(금)', amount: 770, Dday: '-2'},
             { date : '5/11(목)', amount: 763, Dday: '-3'},
