@@ -152,7 +152,7 @@ main > .grid {
     #studyList {
         #studyList-wrapper {
             gap: 1rem;
-            padding: 0 1rem;
+            padding: 0 1rem 1.5rem;
             flex-direction: column;
             .study-item {
                 background-color: var(--bg-point);
@@ -219,6 +219,18 @@ main > .grid {
                     p {
                         font-size: map-get($font-size, small);
                         color: var(--font-color-sub);
+                        .coming-soon {
+                            display: inline-block;
+                            background-color: var(--point-sub);
+                            color: var(--point);
+                            font-size: 0.85em;
+                            font-weight: normal;
+                            padding: 0.2rem 0.3rem;
+                            border-radius: 4px;
+                            vertical-align: top;
+                            line-height: 1.1em;
+                            margin-top: -0.125em;
+                        }
                     }
                 }
                 .amount-table {

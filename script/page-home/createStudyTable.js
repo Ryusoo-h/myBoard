@@ -60,21 +60,22 @@ class CreateStudyTable {
     render() {
         const Card = document.querySelector(`#studyList #${this.data.id}`);
 
-        const { startDay, Dday, type, totalAmount, currentAmount } = this.data.information;
+        const { startDay, Dday, type, totalAmount, currentAmount, table } = this.data.information;
         const unit = this.getTypeUnit(type);
         const calculatedDday = calculateDday(Dday);
         let DdayNum = Number(calculatedDday.split('D')[1]);
-        DdayNum = calculatedDday === 'D-day' ? 0 
+        DdayNum = calculatedDday === 'D-day' ? 0
         : DdayNum !== undefined ? DdayNum : 1;
+        const isComingSoon = Date.now() - (Date.parse(startDay) + new Date().getTimezoneOffset()*60*1000) < 0 ? true : false;
 
-        const progressPercent = Math.round((currentAmount / totalAmount * 100));
+        const progressPercent = currentAmount === 0 ? 0 : Math.round((currentAmount / totalAmount * 100));
         // main 출력
         const mainTemplate = `
             <div class="main">
                 <div class="title-and-d-day flex">
                     <h2>${this.data.title}</h2>
                     <div class="d-day-and-progress flex">
-                        <span class="d-day">${this.data.complete ? `목표달성🎉 (완료일 : D${this.data.information.table[0].Dday})` : calculatedDday}</span>
+                        <span class="d-day">${this.data.complete ? `목표달성🎉 (완료일 : D${table[0].Dday})` : calculatedDday}</span>
                         <progress value="${progressPercent}" min="0" max="100"></progress>
                         <span class="percent">${progressPercent}%</span>
                     </div>
@@ -83,7 +84,7 @@ class CreateStudyTable {
                     <p class="memo">
                         ${this.data.memo} ${type + ': ' + totalAmount + unit}
                     </p>
-                    <p class="date"> ${DdayNum > 0 ? `${startDay} ~ ${Dday}` : `시작일 ${startDay}`}</p>
+                    <p class="date"> ${DdayNum > 0 ? `${startDay} ~ ${Dday}` : `${isComingSoon ? '<span class="coming-soon">준비중</span>' : ''} 시작일 ${startDay}`}</p>
                 </div>
             </div>
         `;
@@ -126,7 +127,7 @@ class CreateStudyTable {
             </div>
         `;
         let quotaAmount = 0;
-        const trList = this.data.information.table?.map((item, index) => {
+        const trList = table?.map((item, index) => {
                 const progress = ((item.amount / totalAmount)*100).toFixed(2);
                 const remainingAmount = totalAmount - item.amount;
                 let quota = Math.ceil(remainingAmount / Math.abs(item.Dday < 0 ? item.Dday : 1));
@@ -142,22 +143,20 @@ class CreateStudyTable {
                         </tr>
                     `
             }).join('')
-            || '';
-            
-            // <th class="date">날짜</th>
-            // <th width="18%" class="amount">총 ${type} 수</th>
-            // <th width="25%" class="day-amount">하루 ${type} 수</th>
-            // <th class="d-day">D-day</th>
-            // <th width="18%" class="progress">총 진행률(%)</th>
+            || `
+            <tr>
+                <td colspan=4>아직 기록이 없어요😙 </td>
+            </tr>
+        `;
         const today = new Date();
-        const recentAmount = this.data.information.table[0]?.amount || 0;
+        const recentAmount = table[0]?.amount || 0;
 
         // table 출력
         Card.insertAdjacentHTML('beforeend',tableTemplate);
         Card.querySelector('table tbody').innerHTML = trList;
 
         // table 상단에 할당량 출력
-        if (totalAmount !== recentAmount) {
+        if (table.length !== 0 && totalAmount !== recentAmount) {
             let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum));
             quotaAmount = recentAmount + quota;
             const remainingQuota = quotaAmount - (currentAmount || 0);
@@ -192,7 +191,7 @@ class CreateStudyTable {
 //             { date : '6/12(월)', amount: 2, Dday: '-2'}
 //         ],
 //     }
-// });
+// }, true); // true이면 카드 열림
 // test.render();
 
 // 리액트를 다루는 기술
