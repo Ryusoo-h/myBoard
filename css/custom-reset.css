@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap");
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
@@ -53,6 +54,11 @@ html[data-theme=dark] ::selection {
   font-family: "Pretendard-Regular", sans-serif;
   font-weight: 300;
   font-size: 16px;
+}
+
+code {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
 }
 
 a, a[class] {

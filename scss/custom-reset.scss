@@ -6,6 +6,8 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
 html[data-theme="light"] {
     --bg-basic: #F5F5F5;
     --bg-content: #fff;
@@ -63,6 +65,11 @@ $padding-base: 20px;
     font-weight: 300;
     font-size: map-get($font-size , basic);
 }
+code {
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 400;
+}
+
 a, a[class] {
     text-decoration: none;
 }

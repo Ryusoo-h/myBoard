@@ -133,6 +133,10 @@ html[data-theme="dark"] {
             background-color: var(--bg-basic);
             padding: 0.2em 0.4em;
             border-radius: 4px;
+            .comment {
+                color: var(--font-color);
+                opacity: 0.5;
+            }
         }
         img {
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
