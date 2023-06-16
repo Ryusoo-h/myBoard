@@ -17,7 +17,12 @@ const quickLinksDevList = {
         {
             title: ["GitHub", "CodePen"],
             url: ["https://github.com/Ryusoo-h", "https://codepen.io/your-work/"],
-            text: ["내 저장소 : ", " / ", ""]
+            text: ["내 저장소 : ", " ", ""]
+        },
+        {
+            title: ["코드 서랍", "단어 암기장"],
+            url: ["./code-drawer", "./word-memorization"],
+            text: ["내 메모장 : ", " ", ""]
         },
         {
             title: ["Flex", "Grid"],
@@ -27,14 +32,6 @@ const quickLinksDevList = {
         {
             title: ["내 설정 VSCode 단축키"],
             url: ["https://ryu-soohyeon.notion.site/VSCode-1dc7b5361f1e40b49f509709c5b34747"]
-        },
-        {
-            title: ["코드 서랍"],
-            url: ["./code-drawer"],
-        },
-        {
-            title: ["단어 암기장"],
-            url: ["./word-memorization"],
         },
         {
             title: ["변수명 짓기"],
@@ -47,17 +44,10 @@ const quickLinksDevList = {
             url: ["https://fan-satellite-458.notion.site/2ef4769cbc7e4f83aa31bcc1ebd38506"]
         },
         {
-            title: ["이력서 팁"],
-            url: ["https://twitter.com/jinuskr/status/1604180719416139776?t=JjsVz79EWEFuvP8lFCUtYQ&s=32"]
+            title: ["Flexbox Froggy", "CSS grid 퍼즐"],
+            url: ["https://flexboxfroggy.com/#ko", "https://codingfantasy.com/games/css-grid-attack/play"],
+            text: ["게임 : ", " / ", ""]
         },
-        {
-            title: ["[게임] Flexbox Froggy"],
-            url: ["https://flexboxfroggy.com/#ko"]
-        },
-        {
-            title: ["[게임] CSS grid 퍼즐 게임"],
-            url: ["https://codingfantasy.com/games/css-grid-attack/play"]
-        }
     ],
     library : [
         {
@@ -68,6 +58,11 @@ const quickLinksDevList = {
             title: ["FLOATING UI"],
             url: ["https://floating-ui.com/"]
         },
+        {
+            title: ["에디터 라이브러리 : Quill"],
+            url: ["https://quilljs.com/"]
+        },
+
     ],
     // sample : [
     //     {
@@ -84,7 +79,6 @@ const quickLinksDevList = {
 const quickLinksDesListCategory = new Map([
     ["source", "자료"],
     ["service", "서비스/툴"]
-
 ]);
 const quickLinksDesList = {
     source : [
@@ -92,6 +86,17 @@ const quickLinksDesList = {
             title: ["💙자료백업계¹⁴³"],
             url: ["https://twitter.com/data_bu?t=2KWArEhz14yVEDeS7lFh7A&s=32%EC%97%90%EC%84%9C"]
         },
+        {
+            title: ["눈누폰트", "미리캔버스"],
+            url: ["https://noonnu.cc/", "https://www.miricanvas.com/"],
+            text: ["", " ", ""]
+        },
+        {
+            title: ["[google font] Anonymous Pro"],
+            url: ["https://fonts.google.com/specimen/Anonymous+Pro?query=Anonymous+Pro"],
+            text: ["코드 웹폰트 : ", " ", ""]
+        },
+
     ],
     service : [
         {
