@@ -210,14 +210,14 @@ class CreateStudyTable {
 // 정보처리기사 실기
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
-    title : '정보처리기사 실기 ',
-    memo : '강의 찾아보기',
+    title : '정보처리기사 실기 1회독',
+    memo : '1권-479p, 2권-501p 문제-178p<br>시험예정: 7/22~ 총',
     complete: false,
     information : {
         startDay : '2023-06-19',
-        Dday : '2023-07-22',
+        Dday : '2023-07-15',
         type : '페이지',
-        totalAmount : 0,
+        totalAmount : 1158,
         currentAmount: 0,
         table : [
             // { date : '6/12(월)', amount: 2, Dday: '-2'}
