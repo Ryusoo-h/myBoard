@@ -5,7 +5,7 @@ const hasParmas = (href) => { // 파라미터를 가지면 파라미터가 시�
 }
 
 document.querySelectorAll('a').forEach(link => {
-    if (!link.href.includes('localhost')) {
+    if (!link.href.includes('localhost') || link.href.includes('index.html')) {
         return;
     }
     let currentHref = link.href;
