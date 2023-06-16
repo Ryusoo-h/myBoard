@@ -256,8 +256,9 @@ const reactVelopert = new CreateStudyTable({
         Dday : '2023-06-18',
         type : '페이지',
         totalAmount : 905,
-        currentAmount: 836,
+        currentAmount: 872,
         table : [
+            { date : '6/16(금)', amount: 872, Dday: '-2'},
             { date : '6/15(목)', amount: 836, Dday: '-3'},
             { date : '6/13(화)', amount: 794, Dday: '-5'},
             { date : '5/19(금)', amount: 776, Dday: '+5'},
