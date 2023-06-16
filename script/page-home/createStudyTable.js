@@ -168,12 +168,24 @@ class CreateStudyTable {
                 </tr>
             `;
             Card.querySelector('table thead tr:first-child').insertAdjacentHTML('afterend',trMemo);
+        } else if (totalAmount !== 0) {
+            let trMemo = `
+                <tr style="background-color: var(--bg-basic);">
+                    <td colspan="4" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
+                </tr>
+            `;
+            Card.querySelector('table thead tr:first-child').insertAdjacentHTML('afterend',trMemo);
         }
         Card.querySelector('.main').addEventListener('click', function() {
             this.parentNode.querySelector('.amount-table').classList.toggle('hidden');
         })
     }
 }
+
+// TODO 
+// 필요할때마다 추가하다보니 코드가 난잡하다!!
+// 할당량처럼 계산하는 부분도 반복적으로 여러곳에서 쓰니까
+// 로직과 뷰를 분리해서 재사용되어 깔끔하도록 코드 고치자! 오늘공부 끝나면 고쳐!!
 
 // TEST
 // const test = new CreateStudyTable({
