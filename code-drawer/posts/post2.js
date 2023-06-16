@@ -51,11 +51,43 @@ export const post2 = `
     </article>
     <article id="sub1-2">
         <h3>수정된 코드</h3>
-        <iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/ryusoo/embed/GRwKYLj?default-tab=js&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+        <iframe height="500" style="box-sizing:border-box; width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/ryusoo/embed/GRwKYLj?default-tab=js&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
             See the Pen <a href="https://codepen.io/ryusoo/pen/GRwKYLj">
             Untitled</a> by 류수현 (<a href="https://codepen.io/ryusoo">@ryusoo</a>)
             on <a href="https://codepen.io">CodePen</a>.
         </iframe>
+    </article>
+</article>
+
+<article id="sub2">
+    <h2 class="sub-title">✅텍스트 줄 넘침 확인하기</h2>
+    <article id="sub2-3">
+        <p class="post-date">
+            <span class="creation-date">작성일 : 2023-06-16</span>
+            <span class="modification-date">수정일 : 2023-06-16</span>
+        </p>
+        <p>
+            <code>text-overflow: ellipsis;</code> 를 했을 때 <code>offsetHeight</code>와 <code>scrollHeight</code>의 차이를 이용하면 된다고 한다!
+            <br>개발자모드로 봐도 몰랐는데.. 실제로 js로 확인해보니까 값이 다른걸 확인했다!
+            <br>스크롤이 생기진 않지만 전체 길이를 알 수 있다니..!
+<pre><code class="block"><span class="comment">/* textEl가 text-overflow로 인해 줄여진 Element면 
+    더보기 버튼(moreButton) 요소를 추가해주기 위해 사용했다 
+*/</span>
+if (textEl.<b>offsetHeight</b> < textEl.<b>scrollHeight</b>) {
+    textEl.insertAdjacentHTML('afterend', moreButton);
+}
+</code></pre>
+            <blockquote>
+                추가정보 : <a href="/code-drawer/?post=post1#sub3">
+                    📑텍스트 줄이기, 말 줄임, 생략 ... 한 줄 일때, 두 줄 이상 일때
+                </a>
+            </blockquote>
+            <blockquote>
+                읽은 글 : <a href="https://velog.io/@rkio/Javascript-text-overflow-ellipsis-%ED%99%9C%EC%84%B1-%EC%97%AC%EB%B6%80%EB%A5%BC-JS%EB%A1%9C-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">
+                    [Javascript] text-overflow: ellipsis 활성 여부를 JS로 판단하는 방법
+                </a>
+            </blockquote>
+        </p>
     </article>
 </article>
 `;
