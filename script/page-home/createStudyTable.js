@@ -157,7 +157,7 @@ class CreateStudyTable {
 
         // table 상단에 할당량 출력
         if (table.length !== 0 && totalAmount !== recentAmount) {
-            let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum));
+            let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum > 0 ? DdayNum : 1));
             quotaAmount = recentAmount + quota;
             const remainingQuota = quotaAmount - (currentAmount || 0);
             let trMemo = `
