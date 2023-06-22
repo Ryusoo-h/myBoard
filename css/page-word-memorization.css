@@ -678,13 +678,26 @@ html[data-theme=dark] #change-theme {
   width: 240px;
 }
 
-#post #button-count {
+#post #quick-button {
   position: fixed;
   bottom: 1em;
   right: 1em;
-  flex-direction: row;
+  display: flex;
+  gap: 1rem;
+}
+#post #quick-button button, #post #quick-button div {
   padding: 1em 1.5em;
   border-radius: 2em;
+  background-color: var(--bg-content);
+  color: var(--point);
+  box-shadow: 0 0 20px rgba(158, 173, 201, 0.2823529412);
+  transition: all 0.2s ease-in-out;
+}
+#post #quick-button button:hover, #post #quick-button div:hover {
+  box-shadow: 0 0 10px 5px rgba(158, 173, 201, 0.2823529412);
+}
+#post #quick-button #button-count {
+  flex-direction: row;
   background-color: var(--font-color);
   color: var(--bg-content);
   gap: 0.4em;

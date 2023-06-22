@@ -1,5 +1,5 @@
 
-const postButtonElements = document.querySelectorAll('#post button:not(.not-hidden)');
+const postButtonElements = document.querySelectorAll('#post article button:not(.not-hidden)');
 
 const printButtonCount = () => {
     const buttonCountElement = document.querySelector('#button-count');
@@ -19,7 +19,6 @@ const printButtonCount = () => {
 
 const isButtonShowed = printButtonCount();
 isButtonShowed();
-
 const toggleClassOnClick = (element, className) => {
     element.addEventListener('click', function () {
         if (element.classList.contains(className)) {
