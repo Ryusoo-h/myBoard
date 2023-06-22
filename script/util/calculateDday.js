@@ -37,6 +37,7 @@ const renderDday = (id, date) => {
     document.querySelector(`#${id}`).innerText = Dday;
 }
 
+renderDday("pre-onboarding", "2023-06-21"); // 프리온보딩 사전과제
 renderDday("engineer-info-test2", "2023-07-22"); // 정처기 실기
 renderDday("sqld-test-result", "2023-07-07"); // sqld 결과
 renderDday("engineer-info-test2-receipt", "2023-06-27"); // 정처기 실기 접수
