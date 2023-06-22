@@ -36,16 +36,57 @@ export const postTemplate = `
 </p>
 <hr>
 
-<article id="sub1">
-    <h2 class="sub-title">💛중제목</h2>
-    <button type="button">💛단어</button>
-    <button type="button" class="red">💛단어</button>
-    <button type="button" class="not-hidden">💛단어</button>
-    <button class="code">
-        <span class="comment">/* 주석 */</span>
-        <br>code <span class="text">텍스트</span> <span class="point">강조</span>
-    </button>
+<article id="💛sub1">
+    <h2 class="sub-title">003</h2>
+    <ul>
+        <li><button type="button" class="red">💛단어</button>(<button type="button">💛단어</button>)
+            <ul>
+
+            </ul>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </article>
+<hr>
+
+<!-- 아티클 복사 탬플릿 -->
+<article id="💛sub2">
+    <h2 class="sub-title">003</h2>
+    <ul>
+        <li><button type="button" class="red">💛단어</button>(<button type="button">💛단어</button>)
+            <ul>
+
+            </ul>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</article>
+<hr>
+
+<!-- 내부 복사 탬플릿 -->
+<li><button type="button" class="red">💛단어</button>(<button type="button">💛단어</button>)
+    <ul>
+
+    </ul>
+</li>
+
+<!-- 복사 요소 -->
+<button type="button">💛단어</button>
+<button type="button" class="red">💛단어</button>
+<button type="button" class="not-hidden">💛단어</button>
+
+<button class="code">
+    <span class="comment">/* 주석 */</span>
+    <br>code <span class="text">텍스트</span> <span class="point">강조</span>
+</button>
 <hr>
 
 <article id="sub2💛">
