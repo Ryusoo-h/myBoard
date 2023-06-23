@@ -157,7 +157,7 @@ class CreateStudyTable {
 
         // table 상단에 할당량 출력
         if (table.length !== 0 && totalAmount !== recentAmount) {
-            let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum > 0 ? DdayNum : 1));
+            let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum < 0 ? DdayNum : 1));
             quotaAmount = recentAmount + quota;
             const remainingQuota = quotaAmount - (currentAmount || 0);
             let trMemo = `
@@ -214,13 +214,13 @@ const engineerInformationProcessing2 = new CreateStudyTable({
     memo : '1권-479p, 2권-501p 문제-178p<br>시험예정: 7/22~ 총',
     complete: false,
     information : {
-        startDay : '2023-06-19',
+        startDay : '2023-06-22',
         Dday : '2023-07-15',
         type : '페이지',
         totalAmount : 1158,
-        currentAmount: 0,
+        currentAmount: 36,
         table : [
-            // { date : '6/12(월)', amount: 2, Dday: '-2'}
+            { date : '6/22(목)', amount: 36, Dday: '-23'}
         ],
     }
 });
