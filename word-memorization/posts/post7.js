@@ -1,20 +1,20 @@
 
 export const post7 = `
-<h1 class="title">정처기 실기 1. 요구사항 확인</h1>
+<h1 class="title">정처기 실기 1. 요구사항 확인1</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-22</span>
     <span class="modification-date">수정일 : 2023-06-22</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
-    <br><mark>001 소프트웨어 생명 주기</mark>
-    <br><mark>002 스크럼 기법</mark>
-    <br><mark>003 XP 기법</mark>
+    <br><mark>B001 소프트웨어 생명 주기</mark>
+    <br><mark>C002 스크럼 기법</mark>
+    <br><mark>B003 XP 기법</mark>
 </p>
 <hr>
 
 <article id="sub1">
-    <h2 class="sub-title">001</h2>
+    <h2 class="sub-title"><b class="red">001</b></h2>
     <ul>
         <li><button type="button" class="red">소프트웨어 생명주기</button>(<button type="button">Software Life Cycle</button>)
             <ul>
@@ -214,7 +214,7 @@ export const post7 = `
 <hr>
 
 <article id="sub3">
-    <h2 class="sub-title">003</h2>
+    <h2 class="sub-title"><b class="red">003</b></h2>
     <ul>
         <li><button type="button" class="red">XP 기법</button>(<button type="button">eXtreme Programming</button>)
             <ul>

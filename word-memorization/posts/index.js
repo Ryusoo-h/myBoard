@@ -9,8 +9,5 @@ export { default as post6 } from './post6.js';
 
 // 정보처리기사 실기 관련 post7 ~
 export { default as post7 } from './post7.js';
-
-
-
-
-// export { default as post } from './post.js';
+export { default as post8 } from './post8.js';
+export { default as post9 } from './post9.js';
