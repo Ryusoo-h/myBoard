@@ -9,7 +9,10 @@ import noPost from "../../blog/posts/noPost.js";
 class PrintPost {
     constructor(posts, page) {
         this.posts = posts;
-        this.postKeys = Object.keys(this.posts); // ['post1', 'post2', 'post3']
+        this.postKeys = Object.keys(this.posts).sort((a, b) => {
+            const regex = /[^0-9]/g;
+            return Number(a.replace(regex, "")) - Number(b.replace(regex, "")) < 0 ? -1 : 1 ;
+        }); // ['post1', 'post2', 'post3']
         this.recentPostKey = this.postKeys[this.postKeys.length - 1]; // 최신글 키 (처음 보여줄 글)
         
         this.page = page;
