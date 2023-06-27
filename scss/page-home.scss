@@ -310,6 +310,9 @@ main > .grid {
                         }
                     }
                 }
+                &.pass {
+                    border: solid 1px var(--point);
+                }
             }
         }
     }

@@ -736,6 +736,9 @@ main > .grid #studyList #studyList-wrapper .study-item.incomplete .detail p a:ho
 main > .grid #studyList #studyList-wrapper .study-item.incomplete .d-day-and-progress .percent {
   color: var(--bg-content);
 }
+main > .grid #studyList #studyList-wrapper .study-item.pass {
+  border: solid 1px var(--point);
+}
 main > .grid #quick-links {
   grid-area: 1/3/4/4;
 }

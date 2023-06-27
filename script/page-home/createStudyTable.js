@@ -91,6 +91,8 @@ class CreateStudyTable {
         Card.insertAdjacentHTML('afterbegin', mainTemplate);
         if (this.data.complete) {
             Card.classList.add('complete');
+        } else if (this.data.pass) {
+            Card.classList.add('pass');
         } else if (DdayNum > 0) {
             Card.classList.add('incomplete');
         }
@@ -100,7 +102,7 @@ class CreateStudyTable {
             <div class="amount-table ${this.isOpen ? '' : 'hidden'}">
                 <table>
                     <thead>
-                        ${totalAmount === (currentAmount || 0) ? '' : `
+                        ${totalAmount === (currentAmount || 0) || this.data.pass ? '' : `
                             ${DdayNum > 0 ? `
                                 <tr>
                                     <th colspan="4" style="border-right: none; background-color: var(--red); color: var(--bg-content)" class="date">
@@ -292,6 +294,7 @@ const sqld = new CreateStudyTable({
     title : 'SQLD',
     memo : '6/10(토) 시험응시! <br>복습 : <a href="/word-memorization/?post=post1">단어 암기장</a>,',
     complete: false,
+    pass: true,
     information : {
         startDay : '2023-06-04',
         Dday : '2023-06-10',
