@@ -218,8 +218,10 @@ const engineerInformationProcessing2 = new CreateStudyTable({
         Dday : '2023-07-15',
         type : '페이지',
         totalAmount : 1158,
-        currentAmount: 36,
+        currentAmount: 93,
         table : [
+            { date : '6/27(월)', amount: 93, Dday: '-19'},
+            { date : '6/22(금)', amount: 53, Dday: '-22'},
             { date : '6/22(목)', amount: 36, Dday: '-23'}
         ],
     }
@@ -256,8 +258,9 @@ const reactVelopert = new CreateStudyTable({
         Dday : '2023-06-18',
         type : '페이지',
         totalAmount : 905,
-        currentAmount: 872,
+        currentAmount: 880,
         table : [
+            { date : '6/23(금)', amount: 880, Dday: '+5'},
             { date : '6/16(금)', amount: 872, Dday: '-2'},
             { date : '6/15(목)', amount: 836, Dday: '-3'},
             { date : '6/13(화)', amount: 794, Dday: '-5'},
