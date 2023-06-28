@@ -11,3 +11,8 @@ export { default as post6 } from './post6.js';
 export { default as post7 } from './post7.js';
 export { default as post8 } from './post8.js';
 export { default as post9 } from './post9.js';
+
+
+// export { default as post20 } from './post20.js'; 이전 파일과 합쳐야함
+// export { default as post21 } from './post21.js'; 작성 완료
+// export { default as post22 } from './post22.js'; 작성 예정
