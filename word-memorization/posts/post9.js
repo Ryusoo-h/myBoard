@@ -1,6 +1,6 @@
 
 export const post9 = `
-<h1 class="title">정처기 실기1. 요구사항 확인3</h1>
+<h1 class="title">정처기 실기 1. 요구사항 확인3</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-26</span>
     <span class="modification-date">수정일 : 2023-06-26</span>

@@ -1,6 +1,6 @@
 
 export const postTemplate = `
-<h1 class="title">정처기 실기2. 데이터 입·출력 구현1</h1>
+<h1 class="title">정처기 실기 2. 데이터 입·출력 구현1</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-28</span>
     <span class="modification-date">수정일 : 2023-06-28</span>
@@ -29,7 +29,7 @@ export const postTemplate = `
                 <li>여러 사람에 의해 공동으로 사용될 데이터를 중복을 배제하여 통합하고,
                     쉽게 접근하여 처리할 수 있도록 저장장치에 저장하여 항상 사용할 수 있도록 운영하는 운영 데이터임
                 </li>
-                <li>구분 정의
+                <li><b>구분 정의</b>
                     <ul>
                         <li><button type="button" class="red">통합된 데이터</button>(<button type="button">Integrated Data</button>)
                             : 자료의 중복을 배제한 데이터의 모임
@@ -51,7 +51,7 @@ export const postTemplate = `
             <ul>
                 <li>사용자의 요구에 따라 정보를 생성해주고, 데이터베이스를 관리해주는 소프트웨어</li>
                 <li>기존의 파일 시스템이 갖는 데이터의 중복성과 중복성의 문제를 해결하기 위해 제안된 시스템</li>
-                <li>필수 기능 3가지
+                <li><b>필수 기능 3가지</b>
                     <ul>
                         <li><button type="button">정의(Definition) 기능</button> : 데이터의 형(Type)과 구조에 대한 정의, 이용 방식, 제약 조건 등을 명시</li>
                         <li><button type="button">조작(Manipulation) 기능</button> : 데이터 검색, 갱신, 삽입, 삭제 등을 위해 인터페이스 수단을 제공</li>
@@ -62,7 +62,7 @@ export const postTemplate = `
         </li>
         <li><button type="button">데이터의 독립성</button>
             <ul>
-                <li>종속성에 대비되는 말
+                <li><b>종속성에 대비되는 말</b>
                     <ul>
                         <li><button type="button">논리적 독립성</button> : 응용 프로그램과 데이터베이스를 독립시킴으로써, 데이터의 논리적 구조를 변경시키더라도 응용 프로그램은 영향받지 않음</li>
                         <li><button type="button">물리적 독립성</button> : 응용 프로그램과 보조기억장치 같은 물리적 장치를 독립시킴으로써, 디스크를 추가/변경 하더라도 응용 프로그램은 영향받지 않음</li>
@@ -108,12 +108,12 @@ export const postTemplate = `
                 </li>
                 <li>고려사항
                     <ul>
-                        <li><b>무결성</b> : 삽입, 삭제, 갱신 등의 연산 후에도 데이터베이스에 저장된 데이터가 정해진 제약 조건을 항상 만족해야 함</li>
-                        <li><b>일관성</b> : 데이터베이스에 젖아된 데이터들 사이나, 특정 질의에 대한 응답이 처음부터 끝까지 변함없이 일정해야 함</li>
-                        <li><b>회복</b> : 시스템에 장애가 발생했을 때 장애 발생 직전의 상태로 복구할 수 있어야 함</li>
-                        <li><b>보안</b> : 불법적인 데이터의 노출 또는 변경이나 손실로부터 보호할 수 있어야 함</li>
-                        <li><b>효율성</b> : 응답시간의 단축, 시스템의 생산성, 저장 공간의 최적화 등이 가능해야 함</li>
-                        <li><b>데이터베이스 확장</b> : 데이터베이스 운영에 영향을 주지 않으면서 지속적으로 데이터를 추가할 수 있어야 함</li>
+                        <li><button type="button" class="not-hidden">무결성</button> : 삽입, 삭제, 갱신 등의 연산 후에도 데이터베이스에 저장된 데이터가 정해진 제약 조건을 항상 만족해야 함</li>
+                        <li><button type="button" class="not-hidden">일관성</button> : 데이터베이스에 젖아된 데이터들 사이나, 특정 질의에 대한 응답이 처음부터 끝까지 변함없이 일정해야 함</li>
+                        <li><button type="button" class="not-hidden">회복</button> : 시스템에 장애가 발생했을 때 장애 발생 직전의 상태로 복구할 수 있어야 함</li>
+                        <li><button type="button" class="not-hidden">보안</button> : 불법적인 데이터의 노출 또는 변경이나 손실로부터 보호할 수 있어야 함</li>
+                        <li><button type="button" class="not-hidden">효율성</button> : 응답시간의 단축, 시스템의 생산성, 저장 공간의 최적화 등이 가능해야 함</li>
+                        <li><button type="button" class="not-hidden">데이터베이스 확장</button> : 데이터베이스 운영에 영향을 주지 않으면서 지속적으로 데이터를 추가할 수 있어야 함</li>
                     </ul>
                 </li>
                 <li>설계 순서
@@ -173,9 +173,9 @@ export const postTemplate = `
                 <li><b>현실 세계의 정보들을</b> 컴퓨터에 표현하기 위해서 단순화, 추상화하여 <b>체계적으로 표현한 개념적 모델</b></li>
                 <li>데이터, 데이터의 관계, 데이터의 의미 및 일관성, 제약 조건 등을 기술하기 위한 개념적 도구들로 구성됨</li>
                 <li>데이터베이스 설계 과정에서 데이터의 구조(Schema)를 논리적으로 표현하기 위해 지능적 도구로 사용됨</li>
-                <li>구성 요소 : 개체, 속성, 관계</li>
-                <li>종류 : 개념적 데이터 모델, 논리적 데이터 모델, 물리적 데이터 모델</li>
-                <li>표시할 요소
+                <li><b>구성 요소</b> : 개체, 속성, 관계</li>
+                <li><b>종류</b> : 개념적 데이터 모델, 논리적 데이터 모델, 물리적 데이터 모델</li>
+                <li><b>표시할 요소</b>
                     <ul>
                         <li><button type="button">구조(Structure)</button> : 논리적으로 표현된 개체 타입들 간의 관계로서 데이터 구조 및 정적 성질 표현</li>
                         <li><button type="button">연산(Operation)</button> : 데이터베이스에 저장된 실제 데이터를 처리하는 작업에 대한 명세. 데이터베이스를 조작하는 기본 도구</li>
@@ -189,7 +189,7 @@ export const postTemplate = `
                 <li>현실 세계에 대한 인간의 이해를 돕기 위해 현실 세계에 대한 인식을 추상적 개념으로 표현하는 과정</li>
                 <li>속성들로 기술된 개체 타입과, 이 개체 타입들 간의 관계를 이용하여 현실 세계를 표현함</li>
                 <li>현실 세계에 존재하는 개체를 인간이 이해할 수 있는 정보구조로 표현하기 때문에 <b>정보모델</b>이라고도 함</li>
-                <li>대표적인 개념적 데이터 모델 : E-R 모델</li>
+                <li>대표적인 개념적 데이터 모델 : <button type="button" class="not-hidden">E-R 모델</button></li>
             </ul>
         </li>
         <li><button type="button">논리적 데이터 모델</button>
@@ -272,14 +272,14 @@ export const postTemplate = `
             <ul>
                 <li>개체와 개체 사이의 논리적 연결</li>
                 <li>개체 간의 관계와 속성 간의 관계가 있음</li>
-                <li>형태
+                <li><b>형태</b>
                     <ul>
                         <li><button type="button" class="not-hidden">일 대 일(1:1)</button> : 개체 집합 A의 각 원소가 개체 집합 B의 원소 한 개와 대응하는 관계</li>
                         <li><button type="button" class="not-hidden">일 대 다(1:N)</button> : 개체 집합 A의 각 원소는 개체 집합 B의 원소 여러개와 대응하지만, 개체 집합 B의 각 원소는 개체 집합 A의 원소 한 개와 대응하는 관계</li>
                         <li><button type="button" class="not-hidden">다 대 다(N:M)</button> : 개체 집합 A의 각 원소는 개체 집합 B의 원소 여러개와 대응하고, 개체 집합 B의 각 원소도 개체 집합 A의 원소 여러개와 대응하는 관계</li>
                     </ul>
                 </li>
-                <li>종류
+                <li><b>종류</b>
                     <ul>
                         <li>
                             <button type="button" class="red">종속 관계</button>(<button type="button">Dependent Relationship</button>)

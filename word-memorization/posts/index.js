@@ -8,13 +8,12 @@ export { default as post5 } from './post5.js';
 export { default as post6 } from './post6.js';
 
 // 정보처리기사 실기 관련 post7 ~
+// 1.요구사항 확인
 export { default as post7 } from './post7.js';
 export { default as post8 } from './post8.js';
 export { default as post9 } from './post9.js';
 export { default as post10 } from './post10.js';
-// export { default as post11 } from './post11.js'; // post20이랑 합칠 예정임
-
-
-// export { default as post20 } from './post20.js'; 이전 파일과 합쳐야함
-// export { default as post21 } from './post21.js'; 작성 완료
-// export { default as post22 } from './post22.js'; 작성 예정
+export { default as post11 } from './post11.js';
+// 2.데이터 입출력 구현
+export { default as post12 } from './post12.js';
+// export { default as post13 } from './post13.js';

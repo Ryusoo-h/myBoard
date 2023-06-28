@@ -1,6 +1,6 @@
 
 export const postTemplate = `
-<h1 class="title">정처기 실기2. 데이터 입·출력 구현2</h1>
+<h1 class="title">정처기 실기 2. 데이터 입·출력 구현2</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-28</span>
     <span class="modification-date">수정일 : 2023-06-28</span>
