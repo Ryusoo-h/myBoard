@@ -2,8 +2,8 @@
 export const postTemplate = `
 <h1 class="title">모듈이란</h1>
 <p class="post-date">
-    <span class="creation-date">작성일 : 2023-00-00💛</span>
-    <span class="modification-date">수정일 : 2023-00-00💛</span>
+    <span class="creation-date">작성일 : 2023-06-22</span>
+    <span class="modification-date">수정일 : 2023-06-22</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 이 글은 알게된 정보들을 모아 정리한것 입니다. 혹 잘못된 내용이 있거든 언제든 <a href="https://github.com/Ryusoo-h/myBoard/issues" target="_blank">이슈</a>로 알려주세요..! 감사합니다 </span>
