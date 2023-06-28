@@ -11,3 +11,5 @@ export { default as post6 } from './post6.js';
 export { default as post7 } from './post7.js';
 export { default as post8 } from './post8.js';
 export { default as post9 } from './post9.js';
+export { default as post10 } from './post10.js';
+// export { default as post11 } from './post11.js'; // post20이랑 합칠 예정임
