@@ -220,9 +220,10 @@ const engineerInformationProcessing2 = new CreateStudyTable({
         Dday : '2023-07-15',
         type : '페이지',
         totalAmount : 1158,
-        currentAmount: 93,
+        currentAmount: 160,
         table : [
-            { date : '6/27(월)', amount: 93, Dday: '-19'},
+            // { date : '6/28(수)', amount: 160, Dday: '-17'},
+            { date : '6/26(월)', amount: 93, Dday: '-19'},
             { date : '6/22(금)', amount: 53, Dday: '-22'},
             { date : '6/22(목)', amount: 36, Dday: '-23'}
         ],
