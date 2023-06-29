@@ -213,7 +213,7 @@ class CreateStudyTable {
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
     title : '정보처리기사 실기 1회독',
-    memo : '1권-479p, 2권-501p 문제-178p<br>시험예정: 7/22~ 총',
+    memo : '<span class="red">7/22 시험</span> 복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>기본서 2권-980p 문제-178p 총',
     complete: false,
     information : {
         startDay : '2023-06-22',
@@ -222,13 +222,13 @@ const engineerInformationProcessing2 = new CreateStudyTable({
         totalAmount : 1158,
         currentAmount: 160,
         table : [
-            // { date : '6/28(수)', amount: 160, Dday: '-17'},
+            { date : '6/28(수)', amount: 160, Dday: '-17'},
             { date : '6/26(월)', amount: 93, Dday: '-19'},
             { date : '6/22(금)', amount: 53, Dday: '-22'},
             { date : '6/22(목)', amount: 36, Dday: '-23'}
         ],
     }
-});
+}, true);
 engineerInformationProcessing2.render();
 
 // 리액트 쿼리 강의
@@ -255,14 +255,15 @@ const reactVelopert = new CreateStudyTable({
     id : 'react-velopert',
     title : '리액트를 다루는 기술',
     memo : '드디어 프로젝트!',
-    complete: false,
+    complete: true,
     information : {
         startDay : '2022-12-14',
         Dday : '2023-06-18',
         type : '페이지',
         totalAmount : 905,
-        currentAmount: 880,
+        currentAmount: 905,
         table : [
+            { date : '6/29(목)', amount: 905, Dday: '+11'},
             { date : '6/23(금)', amount: 880, Dday: '+5'},
             { date : '6/16(금)', amount: 872, Dday: '-2'},
             { date : '6/15(목)', amount: 836, Dday: '-3'},
@@ -286,7 +287,7 @@ const reactVelopert = new CreateStudyTable({
             { date : '12/14(수)', amount: 69, Dday: '-24'}
         ],
     }
-}, true);
+});
 reactVelopert.render();
 
 // SQLD
