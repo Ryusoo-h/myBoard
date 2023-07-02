@@ -161,7 +161,8 @@ class CreateStudyTable {
         if (table.length !== 0 && totalAmount !== recentAmount) {
             let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum < 0 ? DdayNum : 1));
             quotaAmount = recentAmount + quota;
-            const remainingQuota = quotaAmount - (currentAmount || 0);
+            // const remainingQuota = (quotaAmount - (currentAmount || 0)).toFixed(2);
+            const remainingQuota = Math.round((quotaAmount - (currentAmount || 0))*100)/100;
             let trMemo = `
                 <tr style="background-color: var(--bg-basic);">
                     <td style="border-right: none;" class="date">${this.printDate(today)}</td>
@@ -170,7 +171,7 @@ class CreateStudyTable {
                 </tr>
             `;
             Card.querySelector('table thead tr:first-child').insertAdjacentHTML('afterend',trMemo);
-        } else if (totalAmount !== 0) {
+        } else if (totalAmount !== 0 && this.data.complete === false) {
             let trMemo = `
                 <tr style="background-color: var(--bg-basic);">
                     <td colspan="4" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
@@ -338,14 +339,7 @@ const engineerInformationProcessing = new CreateStudyTable({
             { date : '5/22(월)', amount: 264, Dday: '-10'},
             { date : '5/21(일)', amount: 256, Dday: '-11'},
             { date : '5/20(토)', amount: 236, Dday: '-12'},
-            { date : '5/19(금)', amount: 145, Dday: '-13'},
-            // { date : '1/3(화)', amount: 303, Dday: 5},
-            // { date : '1/2(월)', amount: 270, Dday: 6},
-            // { date : '12/29(목)', amount: 233, Dday: 6},
-            // { date : '12/28(수)', amount: 184, Dday: 10},
-            // { date : '12/27(화)', amount: 175, Dday: 11},
-            // { date : '12/19(월)', amount: 148, Dday: 13},
-            // { date : '~11/18(일)', amount: 145, Dday: 20},
+            { date : '5/19(금)', amount: 145, Dday: '-13'}
         ],
     }
 });
