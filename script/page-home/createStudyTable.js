@@ -231,23 +231,24 @@ const engineerInformationProcessing2 = new CreateStudyTable({
 }, true);
 engineerInformationProcessing2.render();
 
-// 리액트 쿼리 강의
+// 리액트 강의
 const reactQuery = new CreateStudyTable({
     id : 'react-query',
-    title : '리액트 쿼리 학습',
-    memo : '강의 찾아보기',
+    title : 'Slack 클론 코딩 with React',
+    memo : '<a href="https://www.inflearn.com/course/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%B1%84%ED%8C%85#curriculum">인프런 조현영 강의</a>',
     complete: false,
     information : {
-        startDay : '2023-06-17',
-        Dday : '2023-07-31',
+        startDay : '2023-06-30',
+        Dday : '2023-07-09',
         type : '강의',
-        totalAmount : 0,
-        currentAmount: 0,
+        totalAmount : 11,
+        currentAmount: 2.03,
         table : [
-            // { date : '6/12(월)', amount: 2, Dday: '-2'}
+            { date : '7/1(토)', amount: 1.56, Dday: '-8'}
+            { date : '6/30(금)', amount: 0.73, Dday: '-9'}
         ],
     }
-});
+}, true);
 reactQuery.render();
 
 // 리액트를 다루는 기술
