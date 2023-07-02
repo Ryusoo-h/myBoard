@@ -244,7 +244,7 @@ const reactQuery = new CreateStudyTable({
         totalAmount : 11,
         currentAmount: 2.03,
         table : [
-            { date : '7/1(토)', amount: 1.56, Dday: '-8'}
+            { date : '7/1(토)', amount: 1.56, Dday: '-8'},
             { date : '6/30(금)', amount: 0.73, Dday: '-9'}
         ],
     }
