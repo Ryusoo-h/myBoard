@@ -1,8 +1,7 @@
 import { calculateDday } from "../util/calculateDday.js";
 
 // Study List의 표 계산해주는 script
-
-class CreateStudyTable {
+export default class CreateStudyTable {
     constructor(data, isOpen) {
         this.data = data;
         this.isOpen = isOpen; // true | false
@@ -57,66 +56,102 @@ class CreateStudyTable {
         return `${DdayMonth}/${DdayDate}(${DdayDay})`
     };
 
-    render() {
-        const Card = document.querySelector(`#studyList #${this.data.id}`);
+    // 메인(타이틀, 프로그래스바, 상세 정보 영역) 출력
+    getMainTemplate = (calculatedDday, unit, DdayNum) => {
+        const initialData = {
+            title: '타이틀',
+            pass: false,
+            memo: '상세 정보입니다',
+            information: {
+                startDay: '0000-00-00',
+                Dday: 'D-00',
+                type: '페이지',
+                totalAmount: 0
+            }
+        };
 
-        const { startDay, Dday, type, totalAmount, currentAmount, table } = this.data.information;
-        const unit = this.getTypeUnit(type);
-        const calculatedDday = calculateDday(Dday);
-        let DdayNum = Number(calculatedDday.split('D')[1]);
-        DdayNum = calculatedDday === 'D-day' ? 0
-        : DdayNum !== undefined ? DdayNum : 1;
-        const isComingSoon = Date.now() - (Date.parse(startDay) + new Date().getTimezoneOffset()*60*1000) < 0 ? true : false;
-
+        const { title, memo, information: {startDay, Dday, type, totalAmount, currentAmount} } = this.data ?? initialData;
+        const isComingSoon = Date.parse(startDay) === NaN ? true :
+            Date.now() - (Date.parse(startDay) + new Date().getTimezoneOffset()*60*1000) < 0 ? true : false;
+        
         const progressPercent = currentAmount === 0 ? 0 : Math.round((currentAmount / totalAmount * 100));
-        // main 출력
+
+        let dateTemplate;
+        if (DdayNum > 0) {// TODO : Dday 대신 종료일 출력하기. 근데 이걸하려면 // TODO : 표에 날짜 입력 방식을 바꿔야함
+            dateTemplate=`${startDay} ~ ${Dday}`;
+        } else if (isComingSoon) {
+            dateTemplate=`<span class="coming-soon">준비중</span>시작일 ${startDay}`;
+        } else {
+            dateTemplate=`시작일 ${startDay}`;
+        };
+
         const mainTemplate = `
             <div class="main">
                 <div class="title-and-d-day flex">
-                    <h2>${this.data.title}</h2>
-                    <div class="d-day-and-progress flex">
-                        <span class="d-day">${this.data.complete ? `목표달성🎉 (완료일 : D${table[0].Dday})` : calculatedDday}</span>
-                        <progress value="${progressPercent}" min="0" max="100"></progress>
-                        <span class="percent">${progressPercent}%</span>
-                    </div>
+                    <h2>${title}</h2>
+                    ${this.getDdayAndProgressTemplate(progressPercent, calculatedDday)}
                 </div>
                 <div class="detail flex">
                     <p class="memo">
-                        ${this.data.memo} ${type + ': ' + totalAmount + unit}
+                        ${memo} ${type + ': ' + totalAmount + unit}
                     </p>
-                    <p class="date"> ${DdayNum > 0 ? `${startDay} ~ ${Dday}` : `${isComingSoon ? '<span class="coming-soon">준비중</span>' : ''} 시작일 ${startDay}`}</p>
+                    <p class="date">${dateTemplate}</p>
                 </div>
             </div>
         `;
-        Card.insertAdjacentHTML('afterbegin', mainTemplate);
-        if (this.data.complete) {
-            Card.classList.add('complete');
-        } else if (this.data.pass) {
-            Card.classList.add('pass');
-        } else if (DdayNum > 0) {
-            Card.classList.add('incomplete');
-        }
+        return mainTemplate;
+    };
+    // 메인 영역 중 D-day와 프로그래스바 출력
+    getDdayAndProgressTemplate = (progressPercent=0, calculatedDday='D-00') => {
+        const { pass, information: {totalAmount, currentAmount, table} } = this.data ?? initialData;
+        let template = `
+            <span class="d-day">${'D-00'}</span>
+            <progress value="${0}" min="0" max="100"></progress>
+            <span class="percent">${0}%</span>
+        `;
+        // 목표달성과 pass 여부에 따라 main UI가 다름
+        if (totalAmount === currentAmount) { // 목표 달성
+            template = `
+                <span class="d-day">목표달성🎉 (완료일 : D${table[0].Dday})</span>
+                <progress value="${progressPercent}" min="0" max="100"></progress>
+                <span class="percent">${progressPercent}%</span>
+            `
+        } else if (pass === true) { // 목표일이 지났고, 더 이상 학습하지 않음
+            template = `<span class="percent">종료(미달성) ${progressPercent}%</span>`
+        } else { // 학습중
+            template = `
+                <span class="d-day">${calculatedDday}</span>
+                <progress value="${progressPercent}" min="0" max="100"></progress>
+                <span class="percent">${progressPercent}%</span>
+            `
+        };
+        return `<div class="d-day-and-progress flex">${template}</div>`;
+    }
 
-        // table 출력을 위한 데이터 처리
+    // 테이블 영역 출력
+    getTableTemplate = (DdayNum, calculatedDday, unit) => {
+        const { totalAmount, currentAmount, type } = this.data.information;
+        const DdayInfo = DdayNum > 0 ? 
+            { text: `목표일이 지났어요😥 ${calculatedDday}`, bgColor: '--red' } :
+            { text: `목표일까지🔥 ${calculatedDday}`, bgColor: '--point' };
+
+        // 목표를 달성하거나, 학습 종료했을 경우 calculateDdayTemplate 출력 안함
+        const calculateDdayTemplate = `
+            ${totalAmount === (currentAmount || 0) || this.data.pass ? '' : `
+                <tr>
+                    <th colspan="4" style="border-right: none; background-color: var(${DdayInfo.bgColor}); color: var(--bg-content)" class="date">
+                        ${DdayInfo.text}
+                    </th>
+                </tr>
+            `}
+        `;
+
         const tableTemplate = `
             <div class="amount-table ${this.isOpen ? '' : 'hidden'}">
                 <table>
                     <thead>
-                        ${totalAmount === (currentAmount || 0) || this.data.pass ? '' : `
-                            ${DdayNum > 0 ? `
-                                <tr>
-                                    <th colspan="4" style="border-right: none; background-color: var(--red); color: var(--bg-content)" class="date">
-                                        목표일이 지났어요😥 ${calculatedDday}
-                                    </th>
-                                </tr>
-                            ` : `
-                                <tr>
-                                    <th colspan="4" style="border-right: none; background-color: var(--point); color: var(--bg-content)" class="date">
-                                        목표일까지🔥 ${calculatedDday}
-                                    </th>
-                                </tr>
-                            `}
-                        `}
+                        ${calculateDdayTemplate}
+                        ${this.getTrMemo(DdayNum, unit)}
                         <tr>
                             <th width="20%" class="date">날짜</th>
                             <th width="35%" class="amount">총 ${type} 수</th>
@@ -124,226 +159,101 @@ class CreateStudyTable {
                             <th width="25%" class="quota">총 진행률(%)</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>${this.getTableBodyList(unit)}</tbody>
                 </table>
             </div>
         `;
-        let quotaAmount = 0;
-        const trList = table?.map((item, index) => {
-                const progress = ((item.amount / totalAmount)*100).toFixed(2);
-                const remainingAmount = totalAmount - item.amount;
-                let quota = Math.ceil(remainingAmount / Math.abs(item.Dday < 0 ? item.Dday : 1));
-                if(index === 0) { // 가장 최근 날짜일 경우 할당량을 구함
-                    quotaAmount = item.amount + quota;
-                }
-                return `
-                        <tr>
-                            <td class="date">${item.date}</td>
-                            <td class="amount">${item.amount + unit}</td>
-                            <td class="quota">D${item.Dday}</td>
-                            <td class="progress">${progress}%</td>
-                        </tr>
-                    `
-            }).join('')
-            || `
+        return tableTemplate;
+    };
+    // 테이블 tbody 영역 출력
+    getTableBodyList = (unit) => {
+        const { table, totalAmount } = this.data.information;
+        const trList = table?.map((item) => {
+            const progress = ((item.amount / totalAmount)*100).toFixed(2);
+            return `
+                <tr>
+                    <td class="date">${item.date}</td>
+                    <td class="amount">${item.amount + unit}</td>
+                    <td class="quota">D${item.Dday}</td>
+                    <td class="progress">${progress}%</td>
+                </tr>
+            `}).join('') || `
             <tr>
                 <td colspan=4>아직 기록이 없어요😙 </td>
             </tr>
         `;
-        const today = new Date();
-        const recentAmount = table[0]?.amount || 0;
+        return trList;
+    };
+    // 테이블 상단에 할당량 출력
+    getTrMemo = (DdayNum, unit) => {
+        const { totalAmount, currentAmount, table } = this.data.information;
+        if (table.length === 0) {
+            if (totalAmount !== 0 && totalAmount !== currentAmount) {
+                return  `
+                    <tr style="background-color: var(--bg-basic);">
+                        <td colspan="4" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
+                    </tr>
+                `;
+            }
+        } else {
+            const recentAmount = table[0]?.amount || 0;
+            if (totalAmount > recentAmount && !this.data.pass) {
+                const today = new Date();
+                const quota = (totalAmount - recentAmount) / Math.abs(DdayNum < 0 ? DdayNum : 1);
+                let quotaAmount, remainingQuota, quotaText;
+                if (unit === '시간') {
+                    quotaAmount = Math.round((recentAmount + quota)*100)/100;
+                    remainingQuota = Math.round((quotaAmount - (currentAmount || 0))*100)/100;
+                } else {
+                    quotaAmount = Math.round(recentAmount + quota);
+                    remainingQuota = Math.round(quotaAmount - (currentAmount || 0));
+                }
 
-        // table 출력
-        Card.insertAdjacentHTML('beforeend',tableTemplate);
-        Card.querySelector('table tbody').innerHTML = trList;
-
-        // table 상단에 할당량 출력
-        if (table.length !== 0 && totalAmount !== recentAmount) {
-            let quota = Math.ceil((totalAmount - recentAmount) / Math.abs(DdayNum < 0 ? DdayNum : 1));
-            quotaAmount = recentAmount + quota;
-            // const remainingQuota = (quotaAmount - (currentAmount || 0)).toFixed(2);
-            const remainingQuota = Math.round((quotaAmount - (currentAmount || 0))*100)/100;
-            let trMemo = `
-                <tr style="background-color: var(--bg-basic);">
-                    <td style="border-right: none;" class="date">${this.printDate(today)}</td>
-                    <td style="border-right: none;" class="amount">${currentAmount + unit}</td>
-                    <td colspan="2" class="quota">할당량 : ${quotaAmount + unit}까지 ${remainingQuota + unit}남음</td>
-                </tr>
-            `;
-            Card.querySelector('table thead tr:first-child').insertAdjacentHTML('afterend',trMemo);
-        } else if (totalAmount !== 0 && this.data.complete === false) {
-            let trMemo = `
-                <tr style="background-color: var(--bg-basic);">
-                    <td colspan="4" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
-                </tr>
-            `;
-            Card.querySelector('table thead tr:first-child').insertAdjacentHTML('afterend',trMemo);
+                if (remainingQuota === 0) {
+                    quotaText = `오늘 할당량 완료!`
+                } else if (remainingQuota < 0) {
+                    quotaText = `할당량 완료! ${Math.abs(remainingQuota) + unit}초과`
+                } else {
+                    quotaText = `할당량 : ${quotaAmount + unit}까지 ${remainingQuota + unit}남음`
+                }
+                return  `
+                    <tr style="background-color: var(--bg-basic);">
+                        <td style="border-right: none;" class="date">${this.printDate(today)}</td>
+                        <td style="border-right: none;" class="amount">${currentAmount + unit}</td>
+                        <td colspan="2" class="quota">${quotaText}</td>
+                    </tr>
+                `;
+            }
         }
+        return '';
+    }
+
+    render() {
+        const Card = document.querySelector(`#studyList #${this.data.id}`);
+
+        const { Dday, type, totalAmount, currentAmount } = this.data.information;
+        const unit = this.getTypeUnit(type);
+        const calculatedDday = calculateDday(Dday);
+        let DdayNum = Number(calculatedDday.split('D')[1]); // 음의 정수, 0, 양의 정수
+        DdayNum = calculatedDday === 'D-day' ? 0 :
+            DdayNum !== undefined ? DdayNum : 1;
+        
+        // Card에 스타일 적용을 위함
+        if (totalAmount === currentAmount) { // 목표 달성
+            Card.classList.add('complete');
+        } else if (this.data.pass) { // 목표 미달성이지만, 학습 종료
+            Card.classList.add('pass');
+        } else if (DdayNum > 0) { // 목표 기간 초과지만, 학습중
+            Card.classList.add('incomplete');
+        };
+
+        // main과 table 출력
+        Card.insertAdjacentHTML('afterbegin', 
+            this.getMainTemplate(calculatedDday, unit, DdayNum) + this.getTableTemplate(DdayNum, calculatedDday, unit)
+        );
+
         Card.querySelector('.main').addEventListener('click', function() {
             this.parentNode.querySelector('.amount-table').classList.toggle('hidden');
         })
     }
 }
-
-// TODO 
-// 필요할때마다 추가하다보니 코드가 난잡하다!!
-// 할당량처럼 계산하는 부분도 반복적으로 여러곳에서 쓰니까
-// 로직과 뷰를 분리해서 재사용되어 깔끔하도록 코드 고치자! 오늘공부 끝나면 고쳐!!
-
-// TEST
-// const test = new CreateStudyTable({
-//     id : 'test',
-//     title : 'TEST',
-//     memo : '테스트 입니다!,',
-//     complete: false,
-//     information : {
-//         startDay : '2023-06-12',
-//         Dday : '2023-06-14',
-//         type : '문제',
-//         totalAmount : 10,
-//         currentAmount: 2,
-//         table : [
-//             { date : '6/12(월)', amount: 2, Dday: '-2'}
-//         ],
-//     }
-// }, true); // true이면 카드 열림
-// test.render();
-
-
-// 정보처리기사 실기
-const engineerInformationProcessing2 = new CreateStudyTable({
-    id : 'engineer-information-processing2',
-    title : '정보처리기사 실기 1회독',
-    memo : '<span class="red">7/22 시험</span> 복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>기본서 2권-980p 문제-178p 총',
-    complete: false,
-    information : {
-        startDay : '2023-06-22',
-        Dday : '2023-07-15',
-        type : '페이지',
-        totalAmount : 1158,
-        currentAmount: 160,
-        table : [
-            { date : '6/28(수)', amount: 160, Dday: '-17'},
-            { date : '6/26(월)', amount: 93, Dday: '-19'},
-            { date : '6/22(금)', amount: 53, Dday: '-22'},
-            { date : '6/22(목)', amount: 36, Dday: '-23'}
-        ],
-    }
-}, true);
-engineerInformationProcessing2.render();
-
-// 리액트 강의
-const reactQuery = new CreateStudyTable({
-    id : 'react-query',
-    title : 'Slack 클론 코딩 with React',
-    memo : '<a href="https://www.inflearn.com/course/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%B1%84%ED%8C%85#curriculum">인프런 조현영 강의</a>',
-    complete: false,
-    information : {
-        startDay : '2023-06-30',
-        Dday : '2023-07-09',
-        type : '강의',
-        totalAmount : 11,
-        currentAmount: 2.03,
-        table : [
-            { date : '7/1(토)', amount: 1.56, Dday: '-8'},
-            { date : '6/30(금)', amount: 0.73, Dday: '-9'}
-        ],
-    }
-}, true);
-reactQuery.render();
-
-// 리액트를 다루는 기술
-const reactVelopert = new CreateStudyTable({
-    id : 'react-velopert',
-    title : '리액트를 다루는 기술',
-    memo : '드디어 프로젝트!',
-    complete: true,
-    information : {
-        startDay : '2022-12-14',
-        Dday : '2023-06-18',
-        type : '페이지',
-        totalAmount : 905,
-        currentAmount: 905,
-        table : [
-            { date : '6/29(목)', amount: 905, Dday: '+11'},
-            { date : '6/23(금)', amount: 880, Dday: '+5'},
-            { date : '6/16(금)', amount: 872, Dday: '-2'},
-            { date : '6/15(목)', amount: 836, Dday: '-3'},
-            { date : '6/13(화)', amount: 794, Dday: '-5'},
-            { date : '5/19(금)', amount: 776, Dday: '+5'},
-            { date : '5/12(금)', amount: 770, Dday: '-2'},
-            { date : '5/11(목)', amount: 763, Dday: '-3'},
-            { date : '5/8(월)', amount: 752, Dday: '-6'},
-            { date : '5/7(일)', amount: 714, Dday: '-7'},
-            { date : '1/3(화)', amount: 468, Dday: '-5'},
-            { date : '1/2(월)', amount: 442, Dday: '-6'},
-            { date : '12/30(금)', amount: 412, Dday: '-6'},
-            { date : '12/29(목)', amount: 381, Dday: '-9'},
-            { date : '12/28(수)', amount: 355, Dday: '-10'},
-            { date : '12/27(화)', amount: 317, Dday: '-11'},
-            { date : '12/26(월)', amount: 304, Dday: '-12'},
-            { date : '12/22(목)', amount: 250, Dday: '-13'},
-            { date : '12/19(월)', amount: 180, Dday: '-17'},
-            { date : '12/18(일)', amount: 162, Dday: '-21'},
-            { date : '12/15(목)', amount: 92, Dday: '-23'},
-            { date : '12/14(수)', amount: 69, Dday: '-24'}
-        ],
-    }
-});
-reactVelopert.render();
-
-// SQLD
-const sqld = new CreateStudyTable({
-    id : 'sqld',
-    title : 'SQLD',
-    memo : '6/10(토) 시험응시! <br>복습 : <a href="/word-memorization/?post=post1">단어 암기장</a>,',
-    complete: false,
-    pass: true,
-    information : {
-        startDay : '2023-06-04',
-        Dday : '2023-06-10',
-        type : '문제',
-        totalAmount : 146,
-        currentAmount: 90,
-        table : [
-            { date : '6/9(금)', amount: 90, Dday: '-day'},
-            { date : '6/7(수)', amount: 70, Dday: '-3'},
-            { date : '6/5(월)', amount: 50, Dday: '-5'},
-            { date : '6/4(일)', amount: 30, Dday: '-6'}
-        ],
-    }
-});
-sqld.render();
-
-// 정보처리기사 필기
-const engineerInformationProcessing = new CreateStudyTable({
-    id : 'engineer-information-processing',
-    title : '정보처리기사 필기',
-    memo : '6/1(목) 시험 합격',
-    complete: true,
-    information : {
-        startDay : '2023-05-19',
-        Dday : '2023-06-01',
-        type : '페이지',
-        totalAmount : 888,
-        currentAmount: 888,
-        table : [
-            { date : '5/28(수)', amount: 888, Dday: '-1'},
-            { date : '5/28(화)', amount: 704, Dday: '-2'},
-            { date : '5/28(월)', amount: 606, Dday: '-3'},
-            { date : '5/28(일)', amount: 531, Dday: '-4'},
-            { date : '5/27(토)', amount: 466, Dday: '-5'},
-            { date : '5/25(목)', amount: 414, Dday: '-7'},
-            { date : '5/24(수)', amount: 346, Dday: '-8'},
-            { date : '5/23(화)', amount: 303, Dday: '-9'},
-            { date : '5/22(월)', amount: 264, Dday: '-10'},
-            { date : '5/21(일)', amount: 256, Dday: '-11'},
-            { date : '5/20(토)', amount: 236, Dday: '-12'},
-            { date : '5/19(금)', amount: 145, Dday: '-13'}
-        ],
-    }
-});
-engineerInformationProcessing.render();
-
-
-
