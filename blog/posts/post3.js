@@ -1,5 +1,14 @@
-export const post3 = `
-    <h1 class="title">좋은 코드 작성하기</h1>
+
+const title = '좋은 코드 작성하기';
+
+export const postMeta = {
+    title : title,
+    description: '선언적인 코드 작성하기 선언적인 코드 = 추상화 레벨이 높아진 코드 좋은 코드 = 수정하기 쉬운 코드 만약 바뀔 수 있는 부분이 많다면 인자를 많이 주게되어 오히려 더 복잡해질 수 있기에 코드의 어느부분이 수정될지 잘 예측하여 작성할것',
+    keywords : ['좋은 코드', '추상화', '수정하기 쉬운 코드']
+};
+
+const post3 = `
+    <h1 class="title">${title}</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-05-09</span>
         <span class="modification-date">수정일 : 2023-05-09</span>

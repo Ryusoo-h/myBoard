@@ -45,7 +45,7 @@
 <hr>
 */
 
-export const postTemplate = `
+const postTemplate = `
 <h1 class="title">📦 찾아본 기록</h1>
 
 

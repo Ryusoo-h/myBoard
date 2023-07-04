@@ -21,8 +21,16 @@
 //     </article>
 // </article>
 
-export const postTemplate = `
-    <h1 class="title">💛타이틀입니다</h1>
+const title = '💛타이틀입니다';
+
+export const postMeta = {
+    title : title,
+    description: '검색 결과 화면에 노출되는 텍스트',
+    keywords : ['키워드1', '키워드2', '키워드3']
+};
+
+const postTemplate = `
+    <h1 class="title">${title}</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-00-00💛</span>
         <span class="modification-date">수정일 : 2023-00-00💛</span>

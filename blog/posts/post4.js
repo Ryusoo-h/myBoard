@@ -1,6 +1,13 @@
 
-export const post4 = `
-    <h1 class="title">[프론트엔드 아키택처] API 요청 관리</h1>
+const title = '[프론트엔드 아키택처] API 요청 관리';
+
+export const postMeta = {
+    title : title,
+    description: '📂API 요청 폴더 관리 프론트엔드에서 습관적으로 api라고 이름짓고 사용한다 ❔ 왜 repository, request를 사용하지 않는가? 안되나? => 백엔드를 살펴보자 백엔드는 어떻게 하고있나 ✅새로 알게된 단어 | ORM(Object-relational mapping) : 객체지향으로 구성된 프로그램과 스칼라 데이터를 다루는 관계형 데이터베이스 사이에 데이터 매핑을 해주는 프로그래밍기법 Repository : 창고. 서버에서 데이터를 보관하고 관리하는 대상을 Repository로 추상화하여 이해하기 쉽고 유연하게 관리가 가능하도록함. 프론트엔드에 적용하기 서버와 API 통신, Cookie, LocalStorage 등을 Repository로 추상화하면 장점1. 이 중 어떤 방식인지 알 필요없이 목적을 파악하고 사용할 수 있다 장점2. 언제든 관련 엔드 포인트를 변경할 수도 있다.',
+    keywords : ['프론트엔드 아키택처', 'API 요청', '백엔드', 'API 이름 짓기', '로직 분리', '추상화']
+}; 
+const post4 = `
+    <h1 class="title">${title}</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-05-17</span>
         <span class="modification-date">수정일 : 2023-05-17</span>

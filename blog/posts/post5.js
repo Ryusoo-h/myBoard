@@ -1,6 +1,13 @@
 
-export const postTemplate = `
-<h1 class="title">모듈이란</h1>
+const title = '모듈이란';
+
+export const postMeta = {
+    title : title,
+    description: '모듈 개념찾기 단순히 "모듈"을 구글 검색해보면 대부분 아래와 같은 설명들이 나온다 프로그램을 구성하는 구성 요소로, 관련된 데이터와 함수를 하나로 묶은 단위 모듈은 대개 클래스 하나 혹은 특정한 목적을 가진 복수의 함수로 구성된 라이브러리 하나 여러 기능들에 관한 코드가 모여있는 하나의 파일 하나의 소스 파일에 모든 함수를 작성하지 않고, 함수의 기능별로 따로 모듈을 구성',
+    keywords : ['모듈', '개념', '모듈화', '재사용성', '독립성', '넓은 의미', '모순']
+};
+const postTemplate = `
+<h1 class="title">${title}</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-06-22</span>
     <span class="modification-date">수정일 : 2023-06-22</span>

@@ -1,5 +1,14 @@
-export const post1 = `
-    <h1 class="title">[프론트엔드 아키텍처] [React] 비지니스 로직 관리</h1>
+
+const title = '[프론트엔드 아키텍처] [React] 비지니스 로직 관리';
+
+export const postMeta = {
+    title : title,
+    description: '🍋좋은 습관들이기 습관1 : 휴리스틱 끄기 우리는 문제를 풀때 휴리스틱을 사용해서 푸는데 좋지못한 습관이 될 수도 있다. 상황에 맞는 판단을 하기 위해선 종종 휴리스틱을 꺼야한다. ❓ 단어 검색 | 휴리스틱(heuristic) : 경험적인, 스스로 발견하게 하는 문제를 해결하거나 불확실한 사항에 대해 판단을 내릴 필요가 있지만, 명확한 실마리가 없을 경우에 사용하는 편의적 발견적인 방법',
+    keywords : ['프론트엔드 아키텍처', 'React', '비지니스 로직', '뷰와 로직', '비지니스 로직', '관심사의 분리']
+};
+
+const post1 = `
+    <h1 class="title">${title}</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-05-06</span><span class="modification-date">수정일 : 2023-05-15</span>
     </p>

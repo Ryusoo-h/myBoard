@@ -1,14 +1,18 @@
 
 import * as blogPosts from "../../blog/posts/index.js";
+import * as blogMetaTag from "../../blog/posts/meta.js";
 import * as codeDrawerPosts from "../../code-drawer/posts/index.js";
 import * as wordMemorizationPosts from "../../word-memorization/posts/index.js";
 import noPost from "../../blog/posts/noPost.js";
+import  handleMetaTag from "./handleMetaTag.js";
+
+const urlPathname = new URL(location.href).pathname;
 
 // 단순히 제목출력, 내용 출력 기능만 구현함
-
 class PrintPost {
-    constructor(posts, page) {
+    constructor(posts, postsMetaData, page) {
         this.posts = posts;
+        this.postsMetaData = postsMetaData;
         this.postKeys = Object.keys(this.posts).sort((a, b) => {
             const regex = /[^0-9]/g;
             return Number(a.replace(regex, "")) - Number(b.replace(regex, "")) < 0 ? -1 : 1 ;
@@ -66,17 +70,17 @@ class PrintPost {
         });
         asideList += '</li>';
 
-        this.quickSideMenu.insertAdjacentHTML('afterbegin', asideList); // asideList 출력
+        this.quickSideMenu.innerHTML = asideList; // asideList 출력
     };
 
     printPost(postKey, isprintAsideList) {
         // article 출력
         if (!this.postKeys.includes(postKey)) { // 포스트가 없다면 404 출력, 탈출
-            this.postElement.insertAdjacentHTML('afterbegin', noPost);
+            this.postElement.innerHTML = noPost;
             return;
         }
         const currentPost = this.posts[postKey];
-        this.postElement.insertAdjacentHTML('afterbegin', currentPost); // article 출력
+        this.postElement.innerHTML = currentPost; // article 출력
 
         // asideList 출력
         if (isprintAsideList) {
@@ -102,10 +106,10 @@ class PrintPost {
         let postTitleList = ``;
         titles.forEach((value, key) => {
             postTitleList = postKey === key 
-                ? `<li><a class="current" href="${pathname}?post=${key}">${value}</a></li>` + postTitleList
-                : `<li><a href="${pathname}?post=${key}">${value}</a></li>` + postTitleList;
+                ? `<li><a class="current ajax-link" href="${pathname}?post=${key}">${value}</a></li>` + postTitleList
+                : `<li><a class="ajax-link" href="${pathname}?post=${key}">${value}</a></li>` + postTitleList;
         });
-        this.postTitleListElement.insertAdjacentHTML('afterbegin', postTitleList); // PostTitle 목록 출력
+        this.postTitleListElement.innerHTML = postTitleList; // PostTitle 목록 출력
     };
 
     render(isprintAsideList) {
@@ -114,23 +118,24 @@ class PrintPost {
         if (!currentPostKey) { // 만약 파라미터가 없다면 최신글(recentPostKey와 일치하는 글) 출력
             this.printSubMenuList(this.recentPostKey);
             this.printPost(this.recentPostKey, isprintAsideList);
+            if (this.postsMetaData) handleMetaTag(this.postsMetaData[this.recentPostKey]);
             return;
         }
         this.printSubMenuList(currentPostKey);
         this.printPost(currentPostKey, isprintAsideList);
+        if (this.postsMetaData) handleMetaTag(this.postsMetaData[currentPostKey]);
+
     };
 }
 
 // blog 페이지 포스트
-const printBlogPost = new PrintPost(blogPosts, 'blog');
+export const printBlogPost = new PrintPost(blogPosts, blogMetaTag, 'blog');
 
 // code-Drawer 페이지 포스트
-const printCodeDrawerPost = new PrintPost(codeDrawerPosts, 'code-drawer');
+export const printCodeDrawerPost = new PrintPost(codeDrawerPosts, null, 'code-drawer');
 
 // word-Memorization 페이지 포스트
-const printWordMemorization = new PrintPost(wordMemorizationPosts, 'word-memorization');
-
-const urlPathname = new URL(location.href).pathname;
+export const printWordMemorization = new PrintPost(wordMemorizationPosts, null, 'word-memorization');
 
 if (urlPathname.includes('blog')) printBlogPost.render(true)
 else if (urlPathname.includes('code-drawer')) printCodeDrawerPost.render(true)

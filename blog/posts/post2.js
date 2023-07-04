@@ -1,5 +1,14 @@
-export const post2 = `
-    <h1 class="title">XSS와 CSRF 비교 정리</h1>
+
+const title = 'XSS와 CSRF 비교 정리';
+
+export const postMeta = {
+    title : title,
+    description: '여러 블로그 정보들을 보고, XSS와 CSRF를 비교한 표',
+    keywords : ['XSS', 'CSRF', '특징', '차이', '목적', '기법', '토큰 사용 이유']
+};
+
+const post2 = `
+    <h1 class="title">${title}</h1>
     <p class="post-date">
         <span class="creation-date">작성일 : 2023-05-07</span>
         <span class="modification-date">수정일 : 2023-05-07</span>
