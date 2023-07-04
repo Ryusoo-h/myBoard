@@ -5,6 +5,7 @@ import * as codeDrawerPosts from "../../code-drawer/posts/index.js";
 import * as wordMemorizationPosts from "../../word-memorization/posts/index.js";
 import noPost from "../../blog/posts/noPost.js";
 import  handleMetaTag from "./handleMetaTag.js";
+import hideWordButton from "../page-word-memorization/hideWordButton.js";
 
 const urlPathname = new URL(location.href).pathname;
 
@@ -125,6 +126,7 @@ class PrintPost {
         this.printPost(currentPostKey, isprintAsideList);
         if (this.postsMetaData) handleMetaTag(this.postsMetaData[currentPostKey]);
 
+        if (urlPathname.includes('word-memorization')) hideWordButton();
     };
 }
 
