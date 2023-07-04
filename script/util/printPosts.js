@@ -115,17 +115,10 @@ class PrintPost {
 
     render(isprintAsideList) {
         const urlParams = new URL(location.href).searchParams;
-        const currentPostKey = urlParams.get('post');
-        if (!currentPostKey) { // 만약 파라미터가 없다면 최신글(recentPostKey와 일치하는 글) 출력
-            this.printSubMenuList(this.recentPostKey);
-            this.printPost(this.recentPostKey, isprintAsideList);
-            if (this.postsMetaData) handleMetaTag(this.postsMetaData[this.recentPostKey]);
-            return;
-        }
+        let currentPostKey = urlParams.get('post') ?? this.recentPostKey;
         this.printSubMenuList(currentPostKey);
         this.printPost(currentPostKey, isprintAsideList);
         if (this.postsMetaData) handleMetaTag(this.postsMetaData[currentPostKey]);
-
         if (urlPathname.includes('word-memorization')) hideWordButton();
     };
 }
