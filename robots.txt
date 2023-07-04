@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /word-memorization/
+
+Sitemap: https://ryusoo-h.github.io/myBoard/sitemap.xml
