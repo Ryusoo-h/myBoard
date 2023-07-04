@@ -1,10 +1,7 @@
 
-const postButtonElements = document.querySelectorAll('#post article button:not(.not-hidden)');
-
-const printButtonCount = () => {
+const printButtonCount = (buttonElements) => {
     const buttonCountElement = document.querySelector('#button-count');
-    
-    const totalCount = postButtonElements.length;
+    const totalCount = buttonElements.length;
     let currentCount = 0; // 현재 클릭된 버튼수
 
     const updateCurrentCount = (isShowed) => {
@@ -17,9 +14,7 @@ const printButtonCount = () => {
     return updateCurrentCount;
 };
 
-const isButtonShowed = printButtonCount();
-isButtonShowed();
-const toggleClassOnClick = (element, className) => {
+const toggleClassOnClick = (isButtonShowed, element, className) => {
     element.addEventListener('click', function () {
         if (element.classList.contains(className)) {
             element.classList.remove(className);
@@ -29,6 +24,13 @@ const toggleClassOnClick = (element, className) => {
         element.classList.add(className);
         isButtonShowed(true);
     })
-}
+};
 
-postButtonElements.forEach(button => toggleClassOnClick(button, 'show'));
+const hideWordButton = () => {
+    const postButtonElements = document.querySelectorAll('#post article button:not(.not-hidden)');
+    const isButtonShowed = printButtonCount(postButtonElements);
+    isButtonShowed();
+    postButtonElements.forEach(button => toggleClassOnClick(isButtonShowed, button, 'show'));
+};
+
+export default hideWordButton;
