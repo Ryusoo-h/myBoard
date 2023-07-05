@@ -16,4 +16,4 @@ export { default as post10 } from './post10.js';
 export { default as post11 } from './post11.js';
 // 2.데이터 입출력 구현
 export { default as post12 } from './post12.js';
-// export { default as post13 } from './post13.js';
+export { default as post13 } from './post13.js';
