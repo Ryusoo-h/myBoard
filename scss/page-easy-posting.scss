@@ -1,11 +1,13 @@
 
 @import 'page-word-memorization';
 
+@mixin contentBox {
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 7px;
+}
 #post {
   flex-direction: column;
-  & > article {
-    height: 400px;
-  }
   button {
     color: var(--bg-content);
     &.red {
@@ -15,8 +17,8 @@
 }
 #editor {
   textarea {
+    @include contentBox;
     width: 100%;
-    height: 400px;
     font-size: 18px;
     font-family: inherit;
     border: none;
@@ -25,10 +27,22 @@
     outline: none;
     padding: 0.5rem;
     box-sizing: border-box;
-    border-radius: 7px;
     &:active, &:focus {
       border: solid 2px var(--point);
       background-color: var(--bg-point);
     }
+  }
+}
+#posting {
+  & > div {
+    @include contentBox;
+    border: solid 2px var(--point-sub);
+  }
+}
+#posting-code {
+  pre {
+    @include contentBox;
+    background-color: var(--bg-point);
+    white-space: break-spaces;
   }
 }

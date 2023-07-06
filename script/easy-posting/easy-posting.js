@@ -5,8 +5,8 @@ window.onbeforeunload = function (e) {
   return '왜.. 메세지 안나타나지?'; // TODO 왜 안나타나는지 알아보기..!
 }
 
-const editor = document.querySelector('#editor textarea');
-const posting = document.getElementById('posting');
+const editor = document.querySelector('#editor > textarea');
+const posting = document.querySelector('#posting > div');
 const postingCode = document.querySelector('#posting-code > pre');
 
 let prevEditorValue = '';

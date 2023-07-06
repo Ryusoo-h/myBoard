@@ -755,9 +755,6 @@ html[data-theme=dark] #change-theme {
 #post {
   flex-direction: column;
 }
-#post > article {
-  height: 400px;
-}
 #post button {
   color: var(--bg-content);
 }
@@ -766,8 +763,10 @@ html[data-theme=dark] #change-theme {
 }
 
 #editor textarea {
-  width: 100%;
   height: 400px;
+  overflow-y: scroll;
+  border-radius: 7px;
+  width: 100%;
   font-size: 18px;
   font-family: inherit;
   border: none;
@@ -776,9 +775,23 @@ html[data-theme=dark] #change-theme {
   outline: none;
   padding: 0.5rem;
   box-sizing: border-box;
-  border-radius: 7px;
 }
 #editor textarea:active, #editor textarea:focus {
   border: solid 2px var(--point);
   background-color: var(--bg-point);
+}
+
+#posting > div {
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 7px;
+  border: solid 2px var(--point-sub);
+}
+
+#posting-code pre {
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 7px;
+  background-color: var(--bg-point);
+  white-space: break-spaces;
 }
