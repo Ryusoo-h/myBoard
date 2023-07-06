@@ -1,38 +1,16 @@
 
-// class 잊을까봐 따로 적는 탬플릿..
-// 💛마다 빼먹지말고 내용 적고 💛지우기
-
-//📌 article마다 sub1, sub1-2 이렇게 아이디를 주어야합니다.
-// article이 각 heading tag를 감싼 구조여야함('.' aside-menu 출력을 위해) 
-// 구조 예시)
-// <article id="sub1">
-//     <h2 class="sub-title">제목</h2>
-// </article>
-
-// <hr>
-
-// <article id="sub2">
-//     <h2 class="sub-title">제목</h2>
-//     <article id="sub2-1">
-//         <h3>소제목</h3>
-//     </article>
-//     <article id="sub2-2">
-//         <h3>소제목</h3>
-//     </article>
-// </article>
-
-// ✅word-memorization은 heading태그에 따른 asideMenu를 따로 출력하지 않기 때문에
-// 꼭 article에 id를 주는 규칙을 지키지 않아도 괜찮습니다.
-
 const post = `
-<h1 class="title">💛대제목</h1>
+<h1 class="title">정처기 실기 2. 데이터 입·출력 구현5</h1>
 <p class="post-date">
-    <span class="creation-date">작성일 : 2023-00-00💛</span>
-    <span class="modification-date">수정일 : 2023-00-00💛</span>
+    <span class="creation-date">작성일 : 2023-07-06</span>
+    <span class="modification-date">수정일 : 2023-07-06💛</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
-    <br><mark>💛</mark> <mark>💛</mark>
+    <br><mark>B052 자료 구조</mark>
+    <br><mark>C053 트리(Tree)</mark>
+    <br><mark>A054 이진 트리</mark>
+    <br><mark>A055 정렬</mark>
 </p>
 <hr>
 
