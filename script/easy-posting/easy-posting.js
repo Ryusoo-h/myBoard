@@ -71,10 +71,10 @@ const changeAndPrintEditorValue = () => {
       postingValue = editorValue
         .replace(/ /g, "&nbsp") // 띄어쓰기
         .replace(/(?:\r\n|\r|\n)/g, '<br/>') // 줄바꿈
-        .replace(/(\\\\\\\[)([^\/]*)(\])/g, changeTextToNotHiddenButton) // 패턴 : \\\[검은버튼]
-        .replace(/(\\\\\[)([^\/]*)(\])/g, changeTextToRedButton) // 패턴 : \\[빨간버튼]
-        .replace(/(\\\[)([^\/]*)(\])/g, changeTextToButton) // 패턴 : \[파란버튼]
-        .replace(/((&nbsp)*)(\\\-&nbsp)([^\\\-]*)(\<br\/\>)/g, changeTextToList) // li 패턴 : \- 텍스트 줄바꿈
+        .replace(/(\\\\\\\[)([^\\\[]*)(\])/g, changeTextToNotHiddenButton) // 패턴 : \\\[검은버튼]
+        .replace(/(\\\\\[)([^\\\[]*)(\])/g, changeTextToRedButton) // 패턴 : \\[빨간버튼]
+        .replace(/(\\\[)([^\\\[]*)(\])/g, changeTextToButton) // 패턴 : \[파란버튼]
+        .replace(/((&nbsp)*)(\\\-&nbsp)([^\\]*)(\<br\/\>)/g, changeTextToList) // li 패턴 : \- 텍스트 줄바꿈
         + '</li>';
 
       posting.innerHTML = `<ul>${postingValue}</ul>`;
