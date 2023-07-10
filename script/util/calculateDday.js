@@ -39,6 +39,7 @@ const renderDday = (id, date) => {
 
 renderDday("pre-onboarding", "2023-06-21"); // 프리온보딩 사전과제
 renderDday("engineer-info-test2", "2023-07-22"); // 정처기 실기
+renderDday("toss-test", "2023-07-08"); // 토스 과제테스트
 renderDday("sqld-test-result", "2023-07-07"); // sqld 결과
 renderDday("engineer-info-test2-receipt", "2023-06-27"); // 정처기 실기 접수
 renderDday("sqld-test", "2023-06-10"); // sqld

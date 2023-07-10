@@ -10,6 +10,12 @@
 
 const timeLine = [
     {
+        icon: "fun",
+        title: "토스 과제테스트 응시함!",
+        content: "과제 테스트란 이렇구나..! 많은 걸 배워감. 구현이 어렵진 않은데 엉뚱한데서 자꾸 시간을 많이 소비해서.. 문제 파악을 처음부터 꼼꼼히 해야하는것을 꺠달음. 그리고 <code>dangerouslySetInnerHTML</code> 태그를 첨알게 됨!",
+        date: "2023-07-08 토 7PM"
+    },
+    {
         icon: "tired",
         title: "타임라인 오류 수정! 새로운걸 알게 됨!",
         content: "3줄 안넘쳐도 '+더보기'버튼 생기는 오류 수정. 100자 넘으면 3줄이하로 줄이라고 해놔서 2줄이어도 더보기가 생기는 문제가 있었다. 내가 아는 방법중엔 없어서 찾다가 발견했다. text-overflow: ellipsis;를 했을때 offsetHeight와 scrollHeight의 차이를 이용하면 된다고 한다! 아니 scrollHeight가 줄이지 않은 크기 그대로 일줄 몰랐어! 덕분에 쉽게 고쳤다. 👉 <a href='https://velog.io/@rkio/Javascript-text-overflow-ellipsis-%ED%99%9C%EC%84%B1-%EC%97%AC%EB%B6%80%EB%A5%BC-JS%EB%A1%9C-%ED%8C%90%EB%8B%A8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95'>참고 블로그</a>",
