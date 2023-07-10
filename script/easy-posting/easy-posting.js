@@ -55,7 +55,7 @@ const changeAndPrintEditorValue = () => {
         closeUl += '</ul>'
       }
       listTabLevel = currentLevel;
-      return `</li>${closeUl}<li>${text}`;
+      return `</li>${closeUl}</li><li>${text}`;
     } else if (isFirst) {
       isFirst = false;
       return `<li>${text}`;
@@ -75,6 +75,7 @@ const changeAndPrintEditorValue = () => {
         .replace(/(\\\\\[)([^\\\[]*)(\])/g, changeTextToRedButton) // 패턴 : \\[빨간버튼]
         .replace(/(\\\[)([^\\\[]*)(\])/g, changeTextToButton) // 패턴 : \[파란버튼]
         .replace(/((&nbsp)*)(\\\-&nbsp)([^\\]*)(\<br\/\>)/g, changeTextToList) // li 패턴 : \- 텍스트 줄바꿈
+        .replace(/&nbsp/g, " ") // 띄어쓰기를 다시 띄어쓰기로 변환
         + '</li>';
 
       posting.innerHTML = `<ul>${postingValue}</ul>`;
