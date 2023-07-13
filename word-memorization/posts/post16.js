@@ -3,7 +3,7 @@ const post = `
 <h1 class="title">정처기 실기 2. 데이터 입·출력 구현5</h1>
 <p class="post-date">
     <span class="creation-date">작성일 : 2023-07-06</span>
-    <span class="modification-date">수정일 : 2023-07-06💛</span>
+    <span class="modification-date">수정일 : 2023-07-10</span>
 </p>
 <p class="top-fixed-guide">
     <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
@@ -14,8 +14,7 @@ const post = `
 </p>
 <hr>
 
-
-<article id="💛sub1">
+<article id="sub1">
     <h2 class="sub-title"><b class="red">052</b></h2>
     <ul>
         <li><button type="button">자료구조</button><br/>
@@ -127,68 +126,110 @@ const post = `
     </ul>
 </article>
 <hr>
-
-<!-- 아티클 복사 탬플릿 -->
-<article id="💛sub2">
-    <h2 class="sub-title">053</h2>
+<article id="sub3">
+    <h2 class="sub-title"><b class="red">054</b></h2>
     <ul>
-        <li><button type="button" class="red">💛단어</button>(<button type="button">💛단어</button>)
+    <li><button type="button">이진 트리</button>
+    <ul>
+        <li>차수가 2이하인 노드들로 구성된 트리(자식이 둘 이하)<li>이진 트리의 레벨 i에서 최대 노드의 수는 2^(i-1)</li>
+        <li>이진 트리에서 <button type="button" class="not-hidden">Terminal Node(단말노드)</button> 수가 n0, <button type="button" class="not-hidden">차수가 2인 노드</button> 수가 n2라 할때 n0 = n2 +1<br/></li></ul></li><li>트리의 운행법(Traversal)
             <ul>
-
+                <li>산술식의 표기법과 연관성을 가짐</li>
+                <li><button type="button">Preorder 운행법</button>
+                    <ul>
+                        <li><button type="button" class="red">Root</button> -> <button type="button" class="not-hidden">left</button> → <button type="button" class="not-hidden">right</button></li>
+                    </ul>
+                </li>
+                <li><button type="button">Inorder 운행법</button>
+                    <ul>
+                        <li><button type="button" class="not-hidden">left</button> → <button type="button" class="red">Root</button> -> <button type="button" class="not-hidden">right</button></li>
+                    </ul>
+                </li>
+                <li><button type="button">Postorder 운행법</button>
+                    <ul>
+                        <li><button type="button" class="not-hidden">left</button> → <button type="button" class="not-hidden">right</button> -><button type="button" class="red">Root</button></li>
+                    </ul>
+                </li>
             </ul>
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>수식의 표기법
+            <ul>
+                <li>이진 트리로 만들어진 수식을 운행하면 각 전위, 중위, 후위 표기법이됨</li>
+                <li><button type="button">전위 표기법</button> (<button type="button">PreFix</button>)
+                    <ul>
+                        <li><button type="button" class="red">연산자</button> -> <button type="button" class="not-hidden">left</button> → <button type="button" class="not-hidden">right</button></li>
+                    </ul>
+                </li>
+                <li><button type="button">중위 표기법</button> (<button type="button">InFix</button>)
+                    <ul>
+                        <li><button type="button" class="not-hidden">left</button> → <button type="button" class="red">연산자</button> -> <button type="button" class="not-hidden">right</button></li>
+                    </ul>
+                </li>
+                <li><button type="button">후위 표기법</button> (<button type="button">PostFix</button>)
+                    <ul>
+                        <li><button type="button" class="not-hidden">left</button> → <button type="button" class="not-hidden">right</button> -><button type="button" class="red">연산자</button><br/></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
     </ul>
 </article>
 <hr>
-
-<!-- 내부 복사 탬플릿 -->
-<li><button type="button" class="red">💛단어</button>(<button type="button">💛단어</button>)
+<article id="sub4">
+    <h2 class="sub-title"><b class="red">055</b></h2>
     <ul>
-
+        <li><button type="button" class="red">삽입 정렬</button>(<button type="button">Insertion Sort</button>)⭐
+            <ul>
+                <li>가장 간단한 정렬방식 <b>이미 순서화된 파일에 새로운 하나의 레코드를 순서에 맞게 삽입시켜 정렬하는 방식</b></li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(n^2)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">선택 정렬</button>(<button type="button">Selection Sort</button>)⭐
+            <ul><li>n개의 레코드 중 <b>최소값을 찾아 첫번째 레코드에 놓고,</b><br> 나머지 (n-1)개 중 <b>최소값을 찾아 두번째 레코드 위치에 놓는 방식 반복</b></li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(n^2)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">버블 정렬</button>(<button type="button">Bubble Sort</button>)⭐
+            <ul>
+                <li> <b>인접한 두 개의 레코드 키 값을 비교하여 그 크기에 따라 레코드 위치를 서로 교환하는 정렬 방식</b></li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(n^2)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">쉘 정렬</button>(<button type="button">Shell Short</button>)
+            <ul>
+                <li> 입력 파일을<b>어떤 매개변수의 값으로 서브 파일을 구성하고, 각 서브 파일을 Insertion 정렬 방식으로 순서 배열하는 과정을 반복하는 정렬방식</b></li>
+                <li><button type="button" class="not-hidden">삽입 정렬(Insertion Sort)</button>을 확장한 개념</li>
+                <li>수행 시간 복잡도 : <mark>평균 O(n^1.5), 최악 O(n^2)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">퀵 정렬</button>(<button type="button">Quick Sort</button>)
+            <ul>
+                <li> <b>키를 기준으로 작은 값은 왼쪽, 큰 값은 오른쪽 서브 파일에 분해시키는 과정을 반복하는 정렬 방식</b></li>
+                <li>레코드의 많은 자료이동을 없애고, 하나의 파일을 부분적으로 나누어 가면서 정렬함</li>
+                <li>수행 시간 복잡도 : <mark>평균 O(nlog2n), 최악 O(n^2)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">힙 정렬</button>(<button type="button">Heap Sort</button>)
+            <ul>
+                <li> <b>전이진 트리를 이용한 정렬 방식</b></li>
+                <li>구성된 <button type="button" class="not-hidden">전이진 트리(Complete Binary Tree)</button>를 Heap Tree로 변환하여 정렬</li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(nlog2n)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">2-Way 합병 정렬</button>(<button type="button">Merge Sort</button>)⭐
+            <ul>
+                <li> <b>이미 정렬되어 있는 두 개의 파일을 한 개의 파일로 합병하는 정렬 방식</b></li>
+                li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(nlog2n)</mark></li>
+            </ul>
+        </li>
+        <li><button type="button" class="red">기수 정렬</button>(<button type="button">Radix Sort</button>) = (<button type="button">Bucket Sort</button>)
+            <ul>
+                <li> <b><button type="button" class="not-hidden">Queue</button>를 이용하여 자릿수(Digit)별로 정렬하는 방식</b></li>
+                <li>레코드의 키 값을 분석하여 같은 수 또는 같은 문자끼리 그 순서에 맞는 버킷에 분배하였다가 버킷의 순서대로 레코드를 꺼내어 정렬함</li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(dn)</mark><br/><br/><br/><br/><br/></li>
+            </ul>
+        </li>
     </ul>
-</li>
-
-<!-- 복사 요소 -->
-<button type="button">💛단어</button>
-<button type="button" class="red">💛단어</button>
-<button type="button" class="not-hidden">💛단어</button>
-
-<button class="code">
-    <span class="comment">/* 주석 */</span>
-    <br>code <span class="text">텍스트</span> <span class="point">강조</span>
-</button>
-<hr>
-
-<article id="sub2💛">
-    <h2 class="sub-title">💛구현된 UI 복사해서 써!</h2>
-    <article id="sub2-1💛">
-        <h3>💛</h3>
-        <ul>
-            <li>
-                <span class="red">🧡붉은 색 글자</span>
-            </li>
-            <li>
-                <mark>💛단어만 마크할 수 도 있고</mark>
-            </li>
-            <li>
-                <mark class="block">
-                💛블록 단위로 마크할 수도 있습니다.
-                </mark>
-            </li>
-            <li>
-                <span class="exam">💚ex)문장</span>
-            </li>
-                <span class="exam block exam-tag">
-                💚블록 단위 예시, '.exam-tag'클래스 유무로 'ex)'를 추가/제거 할 수 있습니다
-                </span>
-            </li>
-        </ul>
-    </article>
 </article>
 `;
 
