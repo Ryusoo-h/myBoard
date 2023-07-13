@@ -45,20 +45,21 @@ const changeAndPrintEditorValue = () => {
   const changeTextToList = (match, space, singleSpace, openTag, text, closeTag) => {
     let currentLevel = Math.round(space.split('&nbsp').length / 4);
     // console.log(match, ' / ', space, ' / ', singleSpace, ' / ', openTag, ' / ', text, ' / ', closeTag);
-    if (listTabLevel < currentLevel) {
+    if (isFirst) {
+      isFirst = false;
+      return `<li>${text}`;
+    } else if (listTabLevel < currentLevel) {
       listTabLevel = currentLevel;
       return `<ul><li>${text}`;
     } else if (listTabLevel > currentLevel) {
       let closeUl = '';
       while(listTabLevel - currentLevel > 0) {
         listTabLevel--;
-        closeUl += '</ul>'
+        closeUl += '</li></ul>'
       }
+      closeUl += '</li>';
       listTabLevel = currentLevel;
-      return `</li>${closeUl}</li><li>${text}`;
-    } else if (isFirst) {
-      isFirst = false;
-      return `<li>${text}`;
+      return `${closeUl}<li>${text}`;
     } else {
       return `</li><li>${text}`;
     }
@@ -68,6 +69,7 @@ const changeAndPrintEditorValue = () => {
     if (prevEditorValue !== editorValue) {
       editor.value = editorValue;
       isFirst = true;
+      listTabLevel = 0;
       postingValue = editorValue
         .replace(/ /g, "&nbsp") // 띄어쓰기
         .replace(/(?:\r\n|\r|\n)/g, '<br/>') // 줄바꿈
@@ -75,11 +77,14 @@ const changeAndPrintEditorValue = () => {
         .replace(/(\\\\\[)([^\\\[]*)(\])/g, changeTextToRedButton) // 패턴 : \\[빨간버튼]
         .replace(/(\\\[)([^\\\[]*)(\])/g, changeTextToButton) // 패턴 : \[파란버튼]
         .replace(/((&nbsp)*)(\\\-&nbsp)([^\\]*)(\<br\/\>)/g, changeTextToList) // li 패턴 : \- 텍스트 줄바꿈
-        .replace(/&nbsp/g, " ") // 띄어쓰기를 다시 띄어쓰기로 변환
-        + '</li>';
+        .replace(/&nbsp/g, " "); // 띄어쓰기를 다시 띄어쓰기로 변환
+        while(listTabLevel > 0) {
+          listTabLevel--;
+          postingValue += '</li></ul>'
+        }
 
-      posting.innerHTML = `<ul>${postingValue}</ul>`;
-      postingCode.innerText = `<ul>${postingValue}</ul>`;
+      posting.innerHTML = `<ul>${postingValue}</li></ul>`;
+      postingCode.innerText = `<ul>${postingValue}</li></ul>`;
 
       prevEditorValue = editorValue;
     }
