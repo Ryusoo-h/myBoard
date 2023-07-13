@@ -1,0 +1,48 @@
+
+@import 'page-word-memorization';
+
+@mixin contentBox {
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 7px;
+}
+#post {
+  flex-direction: column;
+  button {
+    color: var(--bg-content);
+    &.red {
+      color: var(--bg-content);
+    }
+  }
+}
+#editor {
+  textarea {
+    @include contentBox;
+    width: 100%;
+    font-size: 18px;
+    font-family: inherit;
+    border: none;
+    background-color: var(--bg-basic);
+    color: var(--font-color);
+    outline: none;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    &:active, &:focus {
+      border: solid 2px var(--point);
+      background-color: var(--bg-point);
+    }
+  }
+}
+#posting {
+  & > div {
+    @include contentBox;
+    border: solid 2px var(--point-sub);
+  }
+}
+#posting-code {
+  pre {
+    @include contentBox;
+    background-color: var(--bg-point);
+    white-space: break-spaces;
+  }
+}
