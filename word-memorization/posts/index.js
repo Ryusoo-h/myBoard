@@ -26,3 +26,10 @@ export { default as post17 } from './post17.js';
 export { default as post18 } from './post18.js';
 export { default as post19 } from './post19.js';
 export { default as post20 } from './post20.js';
+// 5.인터페이스 구현
+export { default as post21 } from './post21.js';
+export { default as post22 } from './post22.js';
+// 6.화면 설계
+export { default as post23 } from './post23.js';
+// 7.화면 설계
+export { default as post24 } from './post24.js';
