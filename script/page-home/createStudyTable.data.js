@@ -30,15 +30,18 @@ const engineerInformationProcessing2 = new CreateStudyTable({
         startDay : '2023-06-22',
         Dday : '2023-07-17',
         type : '페이지',
-        totalAmount : 1158,
-        currentAmount: 375,
+        totalAmount : 980,
+        currentAmount: 581,
         table : [
+            { date : '7/15(토)', amount: 581, Dday: '-2'},
+            { date : '7/14(금)', amount: 480, Dday: '-3'},
+            { date : '7/13(목)', amount: 375, Dday: '-4'},
             { date : '7/10(월)', amount: 285, Dday: '-7'},
             { date : '7/6(목)', amount: 227, Dday: '-11'},
             { date : '7/5(수)', amount: 191, Dday: '-12'},
             { date : '6/28(수)', amount: 160, Dday: '-19'},
             { date : '6/26(월)', amount: 93, Dday: '-21'},
-            { date : '6/22(금)', amount: 53, Dday: '-24'},
+            { date : '6/23(금)', amount: 53, Dday: '-24'},
             { date : '6/22(목)', amount: 36, Dday: '-25'}
         ],
     }
