@@ -33,3 +33,6 @@ export { default as post22 } from './post22.js';
 export { default as post23 } from './post23.js';
 // 7.화면 설계
 export { default as post24 } from './post24.js';
+export { default as post25 } from './post25.js';
+// 8.SQL 응용
+export { default as post26 } from './post26.js';
