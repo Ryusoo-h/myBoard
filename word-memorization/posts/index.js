@@ -36,3 +36,6 @@ export { default as post24 } from './post24.js';
 export { default as post25 } from './post25.js';
 // 8.SQL 응용
 export { default as post26 } from './post26.js';
+// 9.소프트웨어 개발 보안 구축
+export { default as post27 } from './post27.js';
+export { default as post28 } from './post28.js';
