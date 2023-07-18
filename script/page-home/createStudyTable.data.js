@@ -23,26 +23,27 @@ import CreateStudyTable from "./createStudyTable.js";
 // 정보처리기사 실기
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
-    title : '정보처리기사 실기 1회독',
-    memo : '<span class="red">7/22 시험</span> 복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>기본서 2권-980p 문제-178p 총',
+    title : '정보처리기사 실기',
+    memo : '<span class="red">7/22 시험</span> 복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>문제-178p 기본서 총',
     complete: false,
     information : {
         startDay : '2023-06-22',
-        Dday : '2023-07-17',
+        Dday : '2023-07-22',
         type : '페이지',
         totalAmount : 980,
-        currentAmount: 581,
+        currentAmount: 675,
         table : [
-            { date : '7/15(토)', amount: 581, Dday: '-2'},
-            { date : '7/14(금)', amount: 480, Dday: '-3'},
-            { date : '7/13(목)', amount: 375, Dday: '-4'},
-            { date : '7/10(월)', amount: 285, Dday: '-7'},
-            { date : '7/6(목)', amount: 227, Dday: '-11'},
-            { date : '7/5(수)', amount: 191, Dday: '-12'},
-            { date : '6/28(수)', amount: 160, Dday: '-19'},
-            { date : '6/26(월)', amount: 93, Dday: '-21'},
-            { date : '6/23(금)', amount: 53, Dday: '-24'},
-            { date : '6/22(목)', amount: 36, Dday: '-25'}
+            { date : '7/17(월)', amount: 623, Dday: '-5'},
+            { date : '7/15(토)', amount: 581, Dday: '-7'},
+            { date : '7/14(금)', amount: 480, Dday: '-8'},
+            { date : '7/13(목)', amount: 375, Dday: '-9'},
+            { date : '7/10(월)', amount: 285, Dday: '-12'},
+            { date : '7/6(목)', amount: 227, Dday: '-16'},
+            { date : '7/5(수)', amount: 191, Dday: '-17'},
+            { date : '6/28(수)', amount: 160, Dday: '-24'},
+            { date : '6/26(월)', amount: 93, Dday: '-26'},
+            { date : '6/23(금)', amount: 53, Dday: '-29'},
+            { date : '6/22(목)', amount: 36, Dday: '-30'}
         ],
     }
 }, true);
