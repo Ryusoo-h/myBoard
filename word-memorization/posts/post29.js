@@ -1,0 +1,58 @@
+
+const post = `
+<h1 class="title">정처기 실기 10.프로그래밍 언어 활용</h1>
+<p class="post-date">
+    <span class="creation-date">작성일 : 2023-00-00💛</span>
+    <span class="modification-date">수정일 : 2023-00-00💛</span>
+</p>
+<p class="top-fixed-guide">
+    <span class="red font-size-s">* 최종 암기 확인/복습을 위한 요약본</span>
+    <br><mark>A118 데이터 입·출력</mark>
+    <br><mark>A119 제어문</mark>
+    <br><mark>A120 포인터</mark>
+    <br><mark>A121 구조체</mark>
+    <br><mark>A122 사용자 정의 함수</mark>
+    <br><mark>A123 JAVA의 클래스</mark>
+    <br><mark>A124 JAVA의 활용</mark>
+    <br><mark>A125 Python의 활용1</mark>
+    <br><mark>A126 Python의 활용2</mark>
+    <br><mark>D127 절차적 프로그래밍 언어</mark>
+    <br><mark>D128 객체지향 프로그래밍 언어</mark>
+    <br><mark>C129 스크립트 언어</mark>
+    <br><mark>C130 라이브러리</mark>
+    <br><mark>D131 예외 처리</mark>
+</p>
+<hr>
+
+<article id="💛sub1">
+    <h2 class="sub-title"><b class="red">118 ~ 126</b></h2>
+
+</article>
+<hr>
+<article id="💛sub1">
+    <h2 class="sub-title">127</h2>
+    <ul><li><button type="button" class="red">절차적 프로그래밍 언어</button><ul><li><b>일련의 처리 절차를 정해진 문법에 따라 순차적으로 기술하는 언어</b></li><li>프로그램이 실행되는 절차를 중요시 함</li><li>데이터를 중심으로 프로시저를 구현하며, 프로그램 전체가 유기적으로 연결되어있음</li><li>자연어에 가까운 단어와 문장으로 구성됨</li><li>과학 계산이나 하드웨어 제어에 주로 사용됨</li><li><b>종류</b><ul><li><button type="button">C</button><ul><li>1972년 미국 벨 연구소의 데니스 리치에 의해 개발됨</li><li>시스템 프로그램이 언어로 널리 사용됨</li><li>고급 프로그래밍 언어이면서 저급 프로그램 언어의 특징을 모두 갖춤</li><li>이식성이 좋아 컴퓨터 기종에 관계없이 프로그램을 작성할 수 있음</li><li>자료의 주소를 조작할 수 있는 포인터를 제공함</li><li>UNIX의 일부가 이 언어로 구현됨</li></ul></li><li><button type="button">ALCOL</button><ul><li>수치 계산이나 논리 연산을 위한 과학 기술 계산용 언어</li><li>RASCAL과 C언어의 모체가 됨</li></ul></li><li><button type="button">COBOL</button><ul><li>사무 처리용 언어</li><li>영어 문장 형식으로 구성되어 있어 이해와 사용이 쉬움</li><li>4개의 DIVISION으로 구성됨(Identification, Enviroment, Data, Procedure)</li></ul></li><li><button type="button">FORTRAN</button><ul><li>과학 기술 계산용 언어</li><li>수학과 공학 분야의 공식이나 수식과 같은 형태로 프로그래밍 할 수 있음</li></ul></li></ul></li></ul></li></ul>
+</article>
+<hr>
+<article id="💛sub1">
+    <h2 class="sub-title">128</h2>
+    <ul><li><button type="button" class="red">객체지향 프로그래밍 언어</button><ul><li>현실 세계의 개체를 하나의 객체로 만들어, 객체들을 조립해서 프로그램을 작성하는 기법</li><li><b>종류</b><ul><li><button type="button">JAVA</button><ul><li>분산 네트워크 환경에 적용이 가능함</li><li>멀티스레드 기능을 제공하므로 여러 작업을 동시에 처리할 수 있음</li><li>운영체제 및 하드웨어에 독립적이며, 이식성이 강함</li></ul></li><li><button type="button">C++</button><ul><li>C 언어에 객체지향 개념을 적용한 언어</li><li>모든 문제를 객체로 모델링하여 표현함</li></ul></li><li><button type="button">Smalltalk</button><ul><li>1세대 객체지향 프로그래밍 언어. 순수한 객체지향 프로그래밍 언어임</li><li>최초로 GUI를 제공함</li></ul></li></ul></li></ul></li></ul>
+</article>
+<hr>
+<article id="💛sub1">
+    <h2 class="sub-title">129</h2>
+    <ul><li><button type="button">스크립트 언어(Script Language)</button><ul><li><b>HTML 문서 안에 직접 프로그래밍 언어를 삽입하여 사용하는 언어</b></li><li>기계어로 컴파일되지 않고 별도의 번역기가 소스를 분석하여 동작함</li><li>게시판 입력, 상품 검색, 회원 가입 등과 같은 데이터베이스 처리 작업을 수행하기 위해 주로 사용함</li><li>서버용과 클라이언트용으로 구분됨</li><li><b>분류</b><ul><li><button type="button" class="red">서버용 스크립트 언어</button><ul><li>서버에서 해석되어 실행된 후 결과만 클라이언트로 보냄</li><li><b>종류</b><ul><li><button type="button">ASP(Active Server Page)</button><ul><li>서버 측에서 동적으로 수행되는 페이지를 만들기 위한 언어</li><li>마이크로소프트 사에서 제작함</li><li>Windows 계열에서만 수행 가능함</li></ul></li><li><button type="button">JSP(Java Server Page)</button><ul><li>JAVA로 만들어진 서버용 스크립트 언어</li><li>다양한 운영체제에서 사용 가능함</li></ul></li><li><button type="button">PHP(Professional Hypertext Preprocessor)</button><ul><li>Linux, Unix, Windows 운영체제에서 사용 가능한 서버용 스크립트 언어</li><li>C, Java 등과 문법이 유사하므로 배우기 쉬워 웹 페이지 제작에 많이 사용됨</li></ul></li><li><button type="button">파이썬(Python)</button><ul><li>객체지향 기능을 지원하는 대화형 인터프리터 언어</li><li>플랫폼에 독립적이고 문법이 간단하여 배우기 쉬움</li></ul></li></ul></li></ul></li><li><button type="button" class="red">클라이언트용 스크립트 언어</button><ul><li>클라이언트의 웹 브라우저에서 해석되어 실행됨</li><li><b>종류</b><ul><li><button type="button">자바 스크립트(JAVA Script)</button><ul><li>웹 페이지의 동작을 제어하는 데 사용되는 클라이언트용 스크립트 언어</li><li>클래스가 존재하지 않으며 변수 선언도 필요 없음</li><li>서버에서 데이터를 전송할 떄 아이디, 비밀번호, 수량 드으이 입력 사항을 확인하기 위한 용도로 많이 사용됨</li></ul></li><li><button type="button">VB 스크립트(Visual Basic Script)</button><ul><li>마이크로소프트 사에서 자바 스크립트에 대응하기 위해 제작한 언어</li><li>Active X를 사용하여 마이크로소프트 사의 애플리케이션들을 컨트롤할 수 있음</li></ul></li></ul></li></ul></li></ul></li><li><b>종류</b><ul><li><button type="button">쉘 스크립트</button><ul><li>유닉스/리눅스 계열의 쉘(Shell)에서 사용되는 명령어들의 조합으로 구성된 스크립트 언어</li><li>쉘 스크립트에서 사용되는 제어문<ul><li>선택형 : <code>if</code>, <code>case</code></li><li>반복형 : <code>for</code>, <code>while</code>, <code>until</code></li></ul></li></ul></li><li><button type="button">Basic</button><ul><li>절차지향 기능을 지원하는 대화형 인터프리터 언어</li><li>초보자도 쉽게 사용할 수 있는 문법 구조를 가짐</li></ul></li></ul></li></ul></li></ul>
+</article>
+<hr>
+<article id="💛sub1">
+    <h2 class="sub-title">130</h2>
+    <ul><li><button type="button" class="red">라이브러리</button><ul><li>프로그램을 효율적으로 개발할 수 있도록 <b>자주 사용하는 함수나 데이터들을 미리 만들어 모아 놓은 집합체</b></li><li>자주 사용하는 함수들의 반복적인 코드 작성을 피하기 위해 미리 만들어 놓은것. 필요할 때는 언제든지 호출하여 사용할 수 있음</li><li><b>분류</b><ul><li><button type="button">표준 라이브러리</button><ul><li>프로그래밍 언어에 기본적으로 포함되어 있는 라이브러리</li><li>여러 종류의 모듈이나 패키지 형태임</li></ul></li><li><button type="button">외부 라이브러리</button><ul><li>개발자들이 필요한 기능들을 만들어 인터넷 등에 공유해 놓은 라이브러리</li><li>외부 라이브러리를 다운받아 설치한 후 사용</li></ul></li></ul></li></ul></li><li><b>C언어의 대표적인 표준 라이브러리</b><ul><li>헤더 파일로 제공</li><li>사용하려면 <code>#include &lt;studio.h&gt;</code>와 같이 include문을 이용해 선언한 후 사용해야함</li><li><b>헤더 파일</b><ul><li><button type="button">stdio.h</button><ul><li>데이터의 입·출력에 사용되는 기능들을 제공함</li><li>주요 함수 : <code>printf</code>, <code>scanf</code>, <code>fprintf</code>, <code>fscanf</code>, <code>fclose</code>, <code>fopen</code></li></ul></li><li><button type="button">math.h</button><ul><li>수학 함수들을 제공함</li><li>주요 함수 : <code>sprt</code>, <code>pow</code>, <code>abs</code> 등</li></ul></li><li><button type="button">string.h</button><ul><li>문자열 처리에 사용되는 기능들을 제공함</li><li>주요함수 : <code>strlen</code>, <code>strcpy</code>, <code>strcmp</code> 등</li></ul></li><li><button type="button" class="red">stdlib.h</button><ul><li>자료형 변환, 난수 발생, 메모리 할당에 사용되는 기능들을 제공함</li><li>주요함수 : <code>atoi</code>, <code>atof</code>, <code>srand</code>, <code>rand</code>, <code>malloc</code>, <code>free</code> 등</li></ul></li><li><button type="button">time.h</button><ul><li>시간 처리에 사용되는 기능들을 제공함</li><li>주요함수 : <code>time</code>, <code>clock</code> 등</li></ul></li></ul></li></ul></li><li><b>Java의 대표적인 표준 라이브러리</b><ul><li>라이브러릴르 패키지에 포함하여 제공함</li><li>사용하려면 <code>import java.util</code>과 같이 import문을 이용해 선언한 후 사용해야함</li><li>import로 선언된 패키지 안에 있는 클래스의 메소드를 사용할 때는 클래스와 메소드를 마침표(.)로 구분하여 <code>Math.abs()</code>와 같이 사용함</li><li><b>패키지</b><ul><li><button type="button">java.lang</button><ul><li>자바에 기본적으로 필요한 인터페이스, 자료형, 예외 처리 등에 관련된 기능을 제공함</li><li>import 문 없이도 사용할 수 있음</li><li>주요 클래스 : <code>String</code>, <code>System</code>, <code>Process</code>, <code>Runtime</code>, <code>Math</code>, <code>Error</code> 등</li></ul></li><li><button type="button">java.util</button><ul><li>날짜 처리, 난수 발생, 복잡한 문자열 처리 등에 관련된 기능을 제공함</li><li>주요 클래스 : <code>Date</code>, <code>Calender</code>, <code>Random</code>, <code>StringTokenizer</code> 등</li></ul></li><li><button type="button">java.io</button><ul><li>파일 입·출력과 관련된 기능 및 프로토콜을 제공함</li><li>주요 클래스 : <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code> 등</li></ul></li><li><button type="button">java.net</button><ul><li>네트워크와 관련된 기능을 제공함</li><li>주요 클래스 : <code>Socket</code>, <code>URL</code>, <code>InetAddress</code> 등</li></ul></li><li><button type="button">java.awt</button><ul><li>사용자 인터페이스(UI)와 관련된 기능을 제공함</li><li>주요 클래스 : <code>Frame</code>, <code>Panel</code>, <code>Dialog</code>, <code>Button</code>, <code>Checkbox</code> 등</li></ul></li></ul></li></ul></li><li><b>Python의 대표적인 표준 라이브러리</b><ul><li><code>import random</code>과 같이 선언하고, 사용할 때는 마침표(.)로 구분하여 <code>random.choice()</code>와 같이 사용함</li><li><b>클래스</b><ul><li><button type="button">내장 함수</button><ul><li>Python에 기본적인 인터페이스로, import문이나 클래스명 없이도 사용할 수 있음</li><li>주요 메소드 : <code>abs()</code>, <code>slice()</code>, <code>pow()</code>, <code>print()</code> 등</li></ul></li><li><button type="button">os</button><ul><li>운영체제와 상호 작용하기 위한 기능을 제공함</li><li>주요 메소드 : <code>getcwd()</code>, <code>chdir()</code>, <code>system()</code> 등</li></ul></li><li><button type="button">re</button><ul><li>고급 문자열 처리를 위한 기능을 제공함</li><li>주요 메소드 : <code>findall()</code>, <code>sub()</code> 등</li></ul></li><li><button type="button">math</button><ul><li>복잡한 수학 연산을 위한 기능을 제공함</li><li>주요 메소드 : <code>cos()</code>, <code>log()</code> 등</li></ul></li><li><button type="button">random</button><ul><li>무작위 선택을 위한 기능을 제공함</li><li>주요 메소드 : <code>choice()</code>, <code>sample()</code>, <code>random()</code>, <code>randrange()</code> 등</li></ul></li><li><button type="button">statistics</button><ul><li>통계값 산출을 위한 기능을 제공함</li><li>주요 메소드 : <code>mean()</code>, <code>median()</code>, <code>variance()</code> 등</li></ul></li><li><button type="button">datetime</button><ul><li>날짜와 시간 조작을 위한 기능을 제공함</li><li>주요 메소드 : <code>today()</code>, <code>, date()</code>, <code>strftime()</code> 등</li></ul></li></ul></li></ul></li></ul>
+</article>
+<hr>
+<article id="💛sub1">
+    <h2 class="sub-title">131</h2>
+    <ul><li><button type="button" class="red">예외 처리</button>(<button type="button">Exception Handling</button>)<ul><li>예외가 발생했을 때 프로그래머가 해당 문제에 대비해 작성해 놓은 처리 루틴이 수행되도록 하는것</li><li>예외 발생 시 일반적인 처리 루틴은 프로그램을 종류시키거나 로그(Log)를 남기는 것임</li><li>C++, Ada, Java, 자바스크립트와 같은 언어에는 예외 처리 기능이 내장되어 있음</li><li>필요한 경우 조건문을 이용해 예외 처리 루틴을 작성함</li><li><b>대표적인 예외의 원인</b><ul><li>컴퓨터 하드웨어 문제</li><li>운영체제의 설정 실수</li><li>라이브러리 손상</li><li>사용자의 입력 실수</li><li>받아들일 수 없는 연산</li><li>할당하지 못하는 기억장치 접근</li></ul></li><li><b>Java의 예외 처리</b><ul><li>예외를 객체로 취급하며, 예외와 관련된 클래스를 <button type="button">java.lang 패키지</button>에서 제공함</li><li><code>try ~ catch</code>문을 이용해 예외를 처리함</li><li><code>try</code> 블록 코드를 수행하다 예외가 발생하면 예외를 처리하는 <code>catch</code> 블록으로 이동하여 예외 처리 코드를 수행하므로 예외가 발생한 이후의 코드는 실행되지 않음</li><li><code>catch</code> 블록에서 선언한 변수는 해당 <code>catch</code> 블록에서만 유효함</li><li><code>try ~ catch</code>문 안에 또 다른 <code>try ~ catch</code>문을 포함할 수 있음</li><li><code>try ~ catch</code>문 안에서는 실행 코드가 한 줄이라도 중괄호({})를 생략할 수 없음</li><li><code class="block"><pre>try{<br/>    <span class="comment">// 예외가 발생할 가능성이 있는 코드</span><br/>}<br/>catch ( 예외객체1 매개변수 ) {<br/>    <span class="comment">// 예외객체1에 해당하는 예외 발생 시 처리 코드</span><br/>}<br/>catch ( 예외객체2 매개변수 ) {<br/>    <span class="comment">// 예외객체2에 해당하는 예외 발생 시 처리 코드</span><br/>}<br/>catch (Exception 매개변수) {<br/>    <span class="comment">// 예외객체1~2에 해당하지 않는 예외 발생 시 처리 코드</span><br/>}<br/>finally {<br/>    <span class="comment">// 예외의 발생 여부와 관계없이 무조건 처리되는 코드</span><br/>}</pre></code></li><li><b>JAVA의 주요 예외 객체</b><ul><li><button type="button">ClassNotFoundException</button> : 클래스를 찾지 못한 경우</li><li><button type="button">NoSuchMethodException</button> : 메소드를 찾지 못한 경우</li><li><button type="button">FileNotFOundException</button> : 파일을 찾지 못한 경우</li><li><button type="button">InterruptedIOException</button> : 입·출력 처리가 중단된 경우</li><li><button type="button">ArithmeticException</button> : 0으로 나누는 등의 산술 연산에 대한 예외가 발생한 경우</li><li><button type="button">IllegalArgumentException</button> : 잘못된 인자를 전달한 경우</li><li><button type="button">NumberFormatException</button> : 숫자 형식으로 변환할 수 없는 문자열을 숫자 형식으로 변환한 경우</li><li><button type="button">ArrayIndexOutOfBoundsException</button> : 배열의 범위를 벗어난 접근을 시도한 경우</li><li><button type="button">NegativeArraySizeException</button> : 0보다 작은 값으로 배열의 크기를 지정한 경우</li><li><button type="button">NullPointerException</button> : 존재하지 않는 객체를 참조한 경우</li></ul></li></ul></li></ul></li></ul>
+</article>
+`;
+
+export default post;

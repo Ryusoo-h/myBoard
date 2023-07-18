@@ -11,7 +11,7 @@ export const postTemplate = `
     <br><mark>A034 관계형 데이터베이스의 구조 / 관계형 데이터 모델</mark>
     <br><mark>A035 관계형 데이터베이스의 제약조건 - 키(Key)</mark>
     <br><mark>B036 관계형 데이터베이스의 제약조건 - 무결성(Integrity)</mark>
-    <br><mark>A037 관계대수 ㅁ치 관계 해석</mark>
+    <br><mark>A037 관계대수 및 관계 해석</mark>
     <br><mark>A038 이상 / 함수적 종속</mark>
 </p>
 <hr>

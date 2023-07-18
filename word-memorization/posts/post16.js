@@ -11,6 +11,7 @@ const post = `
     <br><mark>C053 트리(Tree)</mark>
     <br><mark>A054 이진 트리</mark>
     <br><mark>A055 정렬</mark>
+    <br><mark>기억상자 내용보충</mark>
 </p>
 <hr>
 
@@ -226,10 +227,15 @@ const post = `
             <ul>
                 <li> <b><button type="button" class="not-hidden">Queue</button>를 이용하여 자릿수(Digit)별로 정렬하는 방식</b></li>
                 <li>레코드의 키 값을 분석하여 같은 수 또는 같은 문자끼리 그 순서에 맞는 버킷에 분배하였다가 버킷의 순서대로 레코드를 꺼내어 정렬함</li>
-                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(dn)</mark><br/><br/><br/><br/><br/></li>
+                <li>수행 시간 복잡도 : <mark>평균, 최악 모두 O(dn)</mark></li>
             </ul>
         </li>
     </ul>
+</article>
+<hr>
+<article id="sub4">
+    <h2 class="sub-title"><b class="red">기억상자 내용보충</b></h2>
+    <ul><li>7.2 098 : 결함 추적 순서<ul><li> <b>오류관리 목록</b><ul><li><b>오류상태</b> : 오류 데이터를 분석하여 확인할 수 있음</li><li><button type="button">Open</button> : 오류가 보고만 되고 분석되지 않은 상태</li><li><button type="button">Reviewed</button> : 등록된 오류를 담당자와 검토하는 상태</li><li><button type="button">Assigned</button> : 오류의 영향 분석 및 수정을 위해 개발자에게 오류를 전달한 상태</li><li><button type="button">Fixed</button> : 개발자가 오류를 수정한 상태</li><li><button type="button">Deferred</button> : 오류 수정을 연기한 상태</li><li><button type="button">Closed</button> : 수정된 오류 테스트 후 오류가 발견되지 않은 상태</li><li><button type="button">Classified</button> : 보고된 오류를 관련자들이 확인했을 때 오류가 아니라고 확인된 상태<br/></li></ul></li></ul></li><li><button type="button">외부 테이블</button> : DB에서 일반 테이블처럼 이용할 수 있는 외부 파일. DB내 객체로 존재</li><li><button type="button">임시 테이블</button> : 트랜잭션이나 세션별로 데이터를 저장하고 처리할 수 있는 테이블<br/></li><li><button type="button" class="red">배타 관계</button> : 개체 속성·구분자 기준으로 개체의 특성 분할 관계<br/></li><li><b>물리데이터의 품질 기준</b><ul><li><button type="button">최신성</button> : 최근의 이슈나 현행 시스템을 반영하고 있음</li><li><button type="button">준거성</button> : 데이터 표준, 표준화 규칙, 법적 요건들을 정확히 준수함</li><li><button type="button">정확성</button> : 데이터 모델이 요구사항이나 업무 규칙, 표기법에 따라 정확하게 표현됨</li><li><button type="button">일관성</button> : 데이터 모델이 표현상의 일관성을 유지하고 있음</li></ul></li><li><b>검증</b><ul><li><button type="button" class="red">데이터 검증</button> : 원천 시스템의 데이터를 목록 시스템의 데이터로 생성하는 과정이 정상적으로 수행되었는지 여부 확인 과정</li><li><button type="button" class="red">응용 데이터 검증</button> : 사전에 정의된 업무규칙을 기준으로 데이터 전환의 정합성 검증</li><li><button type="button" class="red">응용 프로그램 검증</button> : 응용 프로그램을 통한 데이터 전환 정합성 검증</li><li><button type="button" class="red">데이터 정제요청서</button> : 원청 데이터 정제·전환 프로그램의 수정을 위해 요청사항·조치사항 등 문서 작성</li><li><button type="button" class="red">데이터 정제보고서</button> : 정제요청서를 통해 정상 정제 되었는지 확인한 결과 문서 작성</li></ul></li><li><b>식별자</b><ul><li><button type="button" class="red">주 식별자</button><ul><li><b>4가지 특징</b><ul><li><button type="button">유일성</button> : 유일하게 구분함</li><li><button type="button">최소성</button></li><li><button type="button">불변성</button> : 한번 지정되면 변하지 않음</li><li><button type="button">존재성</button> : 반드시 데이터 존재</li></ul></li></ul></li><li><button type="button" class="red">보조 식별자</button></li><li><button type="button" class="red">대리 식별자</button> = <button type="button">인조 식별자</button> = 속성 2개 이상을 1개의 속성으로 묶어 사용</li><li><button type="button" class="red">원조 식별자</button> = <button type="button">본질 식별자</button> = 가공하지않은 원래 식별자</li></ul></li><li>2.4 048 <b>접근통제 3요소</b><ul><li><button type="button">접근통제 정책</button></li><li><button type="button">접근통제 매커니즘</button></li><li><button type="button">접근통제 보안모델</button></li></ul></li></ul>
 </article>
 `;
 

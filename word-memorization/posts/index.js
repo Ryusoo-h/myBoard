@@ -39,3 +39,5 @@ export { default as post26 } from './post26.js';
 // 9.소프트웨어 개발 보안 구축
 export { default as post27 } from './post27.js';
 export { default as post28 } from './post28.js';
+// 10.프로그래밍 언어 활용
+export { default as post29 } from './post29.js';
