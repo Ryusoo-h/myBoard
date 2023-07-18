@@ -31,8 +31,9 @@ const engineerInformationProcessing2 = new CreateStudyTable({
         Dday : '2023-07-22',
         type : '페이지',
         totalAmount : 980,
-        currentAmount: 675,
+        currentAmount: 833,
         table : [
+            { date : '7/18(화)', amount: 833, Dday: '-4'},
             { date : '7/17(월)', amount: 623, Dday: '-5'},
             { date : '7/15(토)', amount: 581, Dday: '-7'},
             { date : '7/14(금)', amount: 480, Dday: '-8'},
