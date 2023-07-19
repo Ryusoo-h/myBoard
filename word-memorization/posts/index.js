@@ -41,3 +41,7 @@ export { default as post27 } from './post27.js';
 export { default as post28 } from './post28.js';
 // 10.프로그래밍 언어 활용
 export { default as post29 } from './post29.js';
+// 11.응용 SW 기초 기술 활용
+export { default as post30 } from './post30.js';
+export { default as post31 } from './post31.js';
+export { default as post32 } from './post32.js';
