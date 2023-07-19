@@ -45,3 +45,5 @@ export { default as post29 } from './post29.js';
 export { default as post30 } from './post30.js';
 export { default as post31 } from './post31.js';
 export { default as post32 } from './post32.js';
+export { default as post33 } from './post33.js';
+export { default as post34 } from './post34.js';
