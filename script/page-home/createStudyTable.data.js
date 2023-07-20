@@ -24,15 +24,16 @@ import CreateStudyTable from "./createStudyTable.js";
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
     title : '정보처리기사 실기',
-    memo : '<span class="red">7/22 시험</span> 복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>문제-178p 기본서 총',
-    complete: false,
+    memo : '복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>문제-178p 기본서 총',
+    complete: true,
     information : {
         startDay : '2023-06-22',
         Dday : '2023-07-22',
         type : '페이지',
         totalAmount : 980,
-        currentAmount: 964,
+        currentAmount: 980,
         table : [
+            { date : '7/20(목)', amount: 980, Dday: '-2'},
             { date : '7/19(수)', amount: 964, Dday: '-3'},
             { date : '7/18(화)', amount: 833, Dday: '-4'},
             { date : '7/17(월)', amount: 623, Dday: '-5'},
@@ -48,7 +49,7 @@ const engineerInformationProcessing2 = new CreateStudyTable({
             { date : '6/22(목)', amount: 36, Dday: '-30'}
         ],
     }
-}, true);
+});
 engineerInformationProcessing2.render();
 
 // 리액트 강의
