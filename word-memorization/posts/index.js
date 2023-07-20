@@ -47,3 +47,5 @@ export { default as post31 } from './post31.js';
 export { default as post32 } from './post32.js';
 export { default as post33 } from './post33.js';
 export { default as post34 } from './post34.js';
+// 12.제품 소프트웨어 패키징
+export { default as post35 } from './post35.js';
