@@ -54,16 +54,17 @@ engineerInformationProcessing2.render();
 
 // 리액트 강의
 const reactQuery = new CreateStudyTable({
-    id : 'react-query',
+    id : 'react-slack',
     title : 'Slack 클론 코딩 with React',
     memo : '<a href="https://www.inflearn.com/course/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%B1%84%ED%8C%85#curriculum">인프런 조현영 강의</a>',
     information : {
         startDay : '2023-06-30',
-        Dday : '2023-07-09',
+        Dday : '2023-07-28',
         type : '강의',
         totalAmount : 11,
-        currentAmount: 6.25,
+        currentAmount: 6.78,
         table : [
+            { date : '7/24(월)', amount: 6.6, Dday: '-4'},
             { date : '7/10(월)', amount: 6.25, Dday: '+1'},
             { date : '7/3(월)', amount: 4.33, Dday: '-6'},
             { date : '7/2(일)', amount: 2.03, Dday: '-7'},
