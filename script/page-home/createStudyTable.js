@@ -41,7 +41,6 @@ export default class CreateStudyTable {
             default:
                 console.log('✅getDay 오류 : 잘못된 날짜입니다');
                 return '';
-                break;
         };
     };
 
@@ -103,7 +102,7 @@ export default class CreateStudyTable {
     };
     // 메인 영역 중 D-day와 프로그래스바 출력
     getDdayAndProgressTemplate = (progressPercent=0, calculatedDday='D-00') => {
-        const { pass, information: {totalAmount, currentAmount, table} } = this.data ?? initialData;
+        const { pass, information: {Dday, totalAmount, currentAmount, table} } = this.data ?? initialData;
         let template = `
             <span class="d-day">${'D-00'}</span>
             <progress value="${0}" min="0" max="100"></progress>
@@ -112,7 +111,7 @@ export default class CreateStudyTable {
         // 목표달성과 pass 여부에 따라 main UI가 다름
         if (totalAmount === currentAmount) { // 목표 달성
             template = `
-                <span class="d-day">목표달성🎉 (완료일 : D${table[0].Dday})</span>
+                <span class="d-day">목표달성🎉 (완료일 : ${calculateDday(Dday, table[0].date)})</span>
                 <progress value="${progressPercent}" min="0" max="100"></progress>
                 <span class="percent">${progressPercent}%</span>
             `
@@ -139,7 +138,7 @@ export default class CreateStudyTable {
         const calculateDdayTemplate = `
             ${totalAmount === (currentAmount || 0) || this.data.pass ? '' : `
                 <tr>
-                    <th colspan="4" style="border-right: none; background-color: var(${DdayInfo.bgColor}); color: var(--bg-content)" class="date">
+                    <th colspan="5" style="border-right: none; background-color: var(${DdayInfo.bgColor}); color: var(--bg-content)" class="date">
                         ${DdayInfo.text}
                     </th>
                 </tr>
@@ -153,10 +152,11 @@ export default class CreateStudyTable {
                         ${calculateDdayTemplate}
                         ${this.getTrMemo(DdayNum, unit)}
                         <tr>
-                            <th width="20%" class="date">날짜</th>
-                            <th width="35%" class="amount">총 ${type} 수</th>
-                            <th width="20%" class="d-day">D-day</th>
-                            <th width="25%" class="quota">총 진행률(%)</th>
+                            <th width="18%" class="date">날짜</th>
+                            <th width="24%" class="amount">총 ${type} 양</th>
+                            <th width="24%" class="d-day">하루 ${type} 양</th>
+                            <th width="16%" class="d-day">D-day</th>
+                            <th width="18%" class="quota">총 진행률(%)</th>
                         </tr>
                     </thead>
                     <tbody>${this.getTableBodyList(unit)}</tbody>
@@ -167,19 +167,23 @@ export default class CreateStudyTable {
     };
     // 테이블 tbody 영역 출력
     getTableBodyList = (unit) => {
-        const { table, totalAmount } = this.data.information;
-        const trList = table?.map((item) => {
+        const { Dday, table, totalAmount } = this.data.information;
+        const d = new Date();
+        const todayDate = `${d.getFullYear()}-${('0' + (d.getMonth() + 1)).slice(-2)}-${('0' + d.getDate()).slice(-2)}`;
+        const trList = table?.map((item, index) => {
             const progress = ((item.amount / totalAmount)*100).toFixed(2);
+            console.log(table[index + 1]);
             return `
                 <tr>
-                    <td class="date">${item.date}</td>
+                    <td class="date">${this.printDate(item.date)}</td>
                     <td class="amount">${item.amount + unit}</td>
-                    <td class="quota">D${item.Dday}</td>
+                    <td class="today-amount">${(table[index + 1] ? item.amount - table[index + 1].amount : item.amount).toFixed(2) + unit}</td>
+                    <td class="quota">${calculateDday(Dday, item.date)}</td>
                     <td class="progress">${progress}%</td>
                 </tr>
             `}).join('') || `
             <tr>
-                <td colspan=4>아직 기록이 없어요😙 </td>
+                <td colspan="5">아직 기록이 없어요😙 </td>
             </tr>
         `;
         return trList;
@@ -191,7 +195,7 @@ export default class CreateStudyTable {
             if (totalAmount !== 0 && totalAmount !== currentAmount) {
                 return  `
                     <tr style="background-color: var(--bg-basic);">
-                        <td colspan="4" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
+                        <td colspan="5" class="quota">오늘부터 시작하면 매일 ${Math.round(totalAmount/Math.abs(DdayNum)) + unit}씩 하면 성공!</td>
                     </tr>
                 `;
             }
@@ -220,7 +224,7 @@ export default class CreateStudyTable {
                     <tr style="background-color: var(--bg-basic);">
                         <td style="border-right: none;" class="date">${this.printDate(today)}</td>
                         <td style="border-right: none;" class="amount">${currentAmount + unit}</td>
-                        <td colspan="2" class="quota">${quotaText}</td>
+                        <td colspan="3" class="quota">${quotaText}</td>
                     </tr>
                 `;
             }

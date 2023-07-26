@@ -2,13 +2,17 @@
 // D-day 날짜 계산기
 // props로 date를 받아 Dday를 반환합니다.
 
-// - 인자 date : 기준 날짜. 형식 'yyyy-mm-dd'
+// - 인자가 1개 일때 date : 기준 날짜. 형식 'yyyy-mm-dd'
+//      반환값 : 오늘날짜 - date 결과를 D-day로 알려줌
+
+// - 인자가 2개 일때 date, date2 모두 형식은 'yyyy-mm-dd'임.
+//      반환값 : date2 - date 결과를 D-day로 알려줌
 
 // - 반환값 Dday : D-day. 형식 'D-n'
 // ex) date와 오늘 날짜와 동일한 경우 : D-day, 
 // ex) date가 오늘 날짜보다 작은 경우 : D+1
 // ex) date가 오늘 날짜보다 큰 경우 : D-1
-export const calculateDday = (date) => {
+export const calculateDday = (date, date2) => {
     const regex = new RegExp(/^(\d{4})\-(\d{2})\-(\d{2})$/);
     if (!regex.test(date)) {
         console.log('Error - calculateDday의 인자가 yyyy-mm-dd 형식이 아닙니다');
@@ -16,9 +20,9 @@ export const calculateDday = (date) => {
     }
 
     const timezoneOffset = new Date().getTimezoneOffset()*60*1000;
-    const today = Date.now();
+    const fromDate = date2 ? (Date.parse(date2) + timezoneOffset) : Date.now();
     const Dday = (Date.parse(date) + timezoneOffset);
-    const result = Math.floor((today - Dday) / (24*60*60*1000));
+    const result = Math.floor((fromDate - Dday) / (24*60*60*1000));
     if (isNaN(result)) {
         console.log('Error - calculateDday의 인자로 잘못된 날짜를 입력했습니다');
         return 'D-day Error';
