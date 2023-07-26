@@ -61,7 +61,7 @@ html[data-theme="dark"] {
         }
     }
 }
-#post, .record {
+.post-style {
     padding: $padding-base;
     margin-bottom: $padding-base*4;
     flex-direction: row;

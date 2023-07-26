@@ -501,7 +501,7 @@ html[data-theme=dark] #change-theme {
   color: var(--point);
 }
 
-#post, .record {
+.post-style {
   padding: 20px;
   margin-bottom: 80px;
   flex-direction: row;
@@ -509,183 +509,183 @@ html[data-theme=dark] #change-theme {
   flex-grow: 1;
   min-height: 800px;
 }
-#post > article, .record > article {
+.post-style > article {
   flex-shrink: 1;
   flex-grow: 1;
   padding: 0 20px 40px;
   line-height: 1.8em;
 }
-#post > article > *, .record > article > * {
+.post-style > article > * {
   padding: 0;
   margin: 10px 0;
   text-align: justify;
 }
-#post > article article > *:not(h2, h3, h4, h5, h6, img, button), .record > article article > *:not(h2, h3, h4, h5, h6, img, button) {
+.post-style > article article > *:not(h2, h3, h4, h5, h6, img, button) {
   padding-left: 2em;
 }
-#post > article hr, .record > article hr {
+.post-style > article hr {
   margin: 40px 0;
   background: var(--point-sub);
   height: 1px;
   border: 0;
 }
-#post > article h2, #post > article h3, #post > article h4, .record > article h2, .record > article h3, .record > article h4 {
+.post-style > article h2, .post-style > article h3, .post-style > article h4 {
   color: var(--point);
 }
-#post > article h2, .record > article h2 {
+.post-style > article h2 {
   font-size: 24px;
   margin: 40px 0 20px;
 }
-#post > article h3, .record > article h3 {
+.post-style > article h3 {
   font-size: 20px;
   margin: 30px 0 10px;
 }
-#post > article h4, .record > article h4 {
+.post-style > article h4 {
   font-size: 18px;
   margin: 24px 0 6px;
 }
-#post > article a, .record > article a {
+.post-style > article a {
   font-size: 18px;
   color: var(--point);
 }
-#post > article a:hover, .record > article a:hover {
+.post-style > article a:hover {
   color: var(--point-hover);
 }
-#post > article mark, .record > article mark {
+.post-style > article mark {
   color: var(--font-color);
   padding: 0.2em;
   background-color: var(--mark-sub);
   border: solid 1px var(--mark);
   border-radius: 4px;
 }
-#post > article blockquote, .record > article blockquote {
+.post-style > article blockquote {
   padding: 15px 20px;
   background-color: var(--bg-point);
 }
-#post > article ul, #post > article ol, .record > article ul, .record > article ol {
+.post-style > article ul, .post-style > article ol {
   margin: 0;
   padding-left: 1.5em;
 }
-#post > article ul li:not(li li), #post > article ol li:not(li li), .record > article ul li:not(li li), .record > article ol li:not(li li) {
+.post-style > article ul li:not(li li), .post-style > article ol li:not(li li) {
   margin-bottom: 0.5em;
 }
-#post > article code, .record > article code {
+.post-style > article code {
   color: var(--red);
   background-color: var(--bg-basic);
   padding: 0.2em 0.4em;
   border-radius: 4px;
 }
-#post > article code .comment, .record > article code .comment {
+.post-style > article code .comment {
   color: var(--font-color);
   opacity: 0.5;
 }
-#post > article img, .record > article img {
+.post-style > article img {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
   margin: 10px;
 }
-#post > article table, .record > article table {
+.post-style > article table {
   border-collapse: collapse;
   border: none;
   font-size: 16px;
   line-height: 1.5em;
 }
-#post > article table tr, #post > article table th, #post > article table td, .record > article table tr, .record > article table th, .record > article table td {
+.post-style > article table tr, .post-style > article table th, .post-style > article table td {
   border: none;
 }
-#post > article table th, .record > article table th {
+.post-style > article table th {
   background-color: var(--table-th);
   text-align: center;
 }
-#post > article table td, .record > article table td {
+.post-style > article table td {
   vertical-align: top;
 }
-#post > article table tbody tr, .record > article table tbody tr {
+.post-style > article table tbody tr {
   border-top: solid 1px var(--point-sub);
 }
-#post > article table tbody tr:nth-child(2n-1) th, .record > article table tbody tr:nth-child(2n-1) th {
+.post-style > article table tbody tr:nth-child(2n-1) th {
   background-color: var(--table-th-odd);
 }
-#post > article table tbody tr:nth-child(2n-1) td, .record > article table tbody tr:nth-child(2n-1) td {
+.post-style > article table tbody tr:nth-child(2n-1) td {
   background-color: var(--table-td-odd);
 }
-#post > article table th + th, #post > article table th + td, #post > article table td + td, .record > article table th + th, .record > article table th + td, .record > article table td + td {
+.post-style > article table th + th, .post-style > article table th + td, .post-style > article table td + td {
   border-left: solid 1px var(--bg-content);
 }
-#post > article .title, .record > article .title {
+.post-style > article .title {
   color: var(--font-color);
 }
-#post > article .post-date, .record > article .post-date {
+.post-style > article .post-date {
   font-size: 15px;
   color: var(--font-color-sub);
   text-align: right;
 }
-#post > article .post-date .creation-date, .record > article .post-date .creation-date {
+.post-style > article .post-date .creation-date {
   padding-right: 1em;
 }
-#post > article .block, .record > article .block {
+.post-style > article .block {
   display: block;
   margin: 6px 0;
   padding: 0.7em 1em;
   border-radius: 7px;
 }
-#post > article .exam, .record > article .exam {
+.post-style > article .exam {
   background-color: var(--exam-sub);
   color: var(--exam);
   padding: 0.2em 0.5em;
   font-size: 0.9375em;
 }
-#post > article .exam.block, .record > article .exam.block {
+.post-style > article .exam.block {
   padding: 0.7em 1em;
   position: relative;
 }
-#post > article .exam.block.exam-tag, .record > article .exam.block.exam-tag {
+.post-style > article .exam.block.exam-tag {
   padding-left: 2.7em;
 }
-#post > article .exam.block.exam-tag::before, .record > article .exam.block.exam-tag::before {
+.post-style > article .exam.block.exam-tag::before {
   content: "ex)";
   position: absolute;
   top: 0.7em;
   left: 1em;
 }
-#post > aside, .record > aside {
+.post-style > aside {
   flex-shrink: 0;
   flex-grow: 0;
   width: 240px;
   border-left: solid 1px var(--font-color-sub);
   position: relative;
 }
-#post > aside ol, .record > aside ol {
+.post-style > aside ol {
   list-style: none;
   padding-left: 0.5em;
 }
-#post > aside ol li, .record > aside ol li {
+.post-style > aside ol li {
   margin-bottom: 0.5em;
 }
-#post > aside ol a, .record > aside ol a {
+.post-style > aside ol a {
   display: inline-block;
   padding: 0.2em;
   font-size: 15px;
   color: var(--font-color-sub);
 }
-#post > aside ol a:hover, .record > aside ol a:hover {
+.post-style > aside ol a:hover {
   color: var(--point);
 }
-#post > aside ol ol, .record > aside ol ol {
+.post-style > aside ol ol {
   padding-left: 1.5em;
 }
-#post > aside #quick-side-menu, .record > aside #quick-side-menu {
+.post-style > aside #quick-side-menu {
   position: fixed;
   width: 240px;
 }
 
-#post #quick-button {
+.word-memorizing-style #quick-button {
   position: fixed;
   bottom: 1em;
   right: 1em;
   display: flex;
   gap: 1rem;
 }
-#post #quick-button button, #post #quick-button div {
+.word-memorizing-style #quick-button button, .word-memorizing-style #quick-button div {
   padding: 1em 1.5em;
   border-radius: 2em;
   background-color: var(--bg-content);
@@ -693,16 +693,16 @@ html[data-theme=dark] #change-theme {
   box-shadow: 0 0 20px rgba(158, 173, 201, 0.2823529412);
   transition: all 0.2s ease-in-out;
 }
-#post #quick-button button:hover, #post #quick-button div:hover {
+.word-memorizing-style #quick-button button:hover, .word-memorizing-style #quick-button div:hover {
   box-shadow: 0 0 10px 5px rgba(158, 173, 201, 0.2823529412);
 }
-#post #quick-button #button-count {
+.word-memorizing-style #quick-button #button-count {
   flex-direction: row;
   background-color: var(--font-color);
   color: var(--bg-content);
   gap: 0.4em;
 }
-#post button {
+.word-memorizing-style button {
   background-color: var(--point);
   color: var(--point);
   border: none;
@@ -712,42 +712,42 @@ html[data-theme=dark] #change-theme {
   font-weight: bold;
   line-height: 1em;
 }
-#post button.red {
+.word-memorizing-style button.red {
   background-color: var(--red);
   color: var(--red);
 }
-#post button.not-hidden {
+.word-memorizing-style button.not-hidden {
   background-color: var(--font-color);
   color: var(--bg-content);
 }
-#post button.show {
+.word-memorizing-style button.show {
   color: var(--bg-content);
 }
-#post button.code {
+.word-memorizing-style button.code {
   text-align: left;
   line-height: 1.5em;
   background-color: var(--bg-basic);
   color: var(--bg-basic);
 }
-#post button.code pre {
+.word-memorizing-style button.code pre {
   margin: 0;
 }
-#post button.code .point {
+.word-memorizing-style button.code .point {
   color: var(--bg-basic);
 }
-#post button.code.show {
+.word-memorizing-style button.code.show {
   color: var(--red);
 }
-#post button.code.show .text {
+.word-memorizing-style button.code.show .text {
   color: var(--font-color);
 }
-#post button.code.show .comment {
+.word-memorizing-style button.code.show .comment {
   color: var(--font-color);
   opacity: 0.5;
 }
-#post button.code.show .point {
+.word-memorizing-style button.code.show .point {
   color: var(--point);
 }
-#post mark.block, #post span.exam.block {
+.word-memorizing-style mark.block, .word-memorizing-style span.exam.block {
   display: inline-block;
 }
