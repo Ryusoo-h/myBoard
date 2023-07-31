@@ -20,6 +20,35 @@ import CreateStudyTable from "./createStudyTable.js";
 // }, true); // true이면 카드 열림
 // test.render();
 
+// 리액트 강의
+const reactQuery = new CreateStudyTable({
+    id : 'react-slack',
+    title : 'Slack 클론 코딩',
+    memo : '<a href="https://www.inflearn.com/course/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%B1%84%ED%8C%85">인프런 조현영 리액트 강의</a>',
+    information : {
+        startDay : '2023-06-30',
+        Dday : '2023-07-28',
+        type : '강의',
+        totalAmount : 11,
+        currentAmount: 11,
+        table : [
+            { date : '2023-07-31', amount: 11},
+            { date : '2023-07-29', amount: 10.38},
+            { date : '2023-07-28', amount: 9.75},
+            { date : '2023-07-27', amount: 8.88},
+            { date : '2023-07-26', amount: 8.1},
+            { date : '2023-07-25', amount: 7.22},
+            { date : '2023-07-24', amount: 6.6},
+            { date : '2023-07-10', amount: 6.25},
+            { date : '2023-07-03', amount: 4.33},
+            { date : '2023-07-02', amount: 2.03},
+            { date : '2023-07-01', amount: 1.56},
+            { date : '2023-06-30', amount: 0.73}
+        ],
+    }
+});
+reactQuery.render();
+
 // 정보처리기사 실기
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
@@ -51,30 +80,6 @@ const engineerInformationProcessing2 = new CreateStudyTable({
     }
 });
 engineerInformationProcessing2.render();
-
-// 리액트 강의
-const reactQuery = new CreateStudyTable({
-    id : 'react-slack',
-    title : 'Slack 클론 코딩 with React',
-    memo : '<a href="https://www.inflearn.com/course/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%B1%84%ED%8C%85#curriculum">인프런 조현영 강의</a>',
-    information : {
-        startDay : '2023-06-30',
-        Dday : '2023-07-28',
-        type : '강의',
-        totalAmount : 11,
-        currentAmount: 7.22,
-        table : [
-            { date : '2023-07-25', amount: 7.22},
-            { date : '2023-07-24', amount: 6.6},
-            { date : '2023-07-10', amount: 6.25},
-            { date : '2023-07-03', amount: 4.33},
-            { date : '2023-07-02', amount: 2.03},
-            { date : '2023-07-01', amount: 1.56},
-            { date : '2023-06-30', amount: 0.73}
-        ],
-    }
-}, true);
-reactQuery.render();
 
 // 리액트를 다루는 기술
 const reactVelopert = new CreateStudyTable({
