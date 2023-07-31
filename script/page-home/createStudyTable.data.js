@@ -53,7 +53,7 @@ reactQuery.render();
 const engineerInformationProcessing2 = new CreateStudyTable({
     id : 'engineer-information-processing2',
     title : '정보처리기사 실기',
-    memo : '복습 : <a href="/word-memorization/?post=post7">단어 암기장</a><br>문제-178p 기본서 총',
+    memo : '복습 : <a href="./word-memorization/?post=post7">단어 암기장</a><br>문제-178p 기본서 총',
     complete: true,
     information : {
         startDay : '2023-06-22',
